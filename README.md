@@ -13,10 +13,12 @@ Hummingbird UI Framework provides easy to use classes to build User Friendly, In
 
 ## Built-in and custom themes
 The whole library comes with 10 built-in themes including Light and Dark themes with the possibility to use your own theme definition.
+
 ![colors](https://huaxing-yuan.github.io/hummingbird.ui.doc/media/themes.png)
 
 ### Built-in Icons
 To easily build application with professional feel and look, Hummingbird UI library comes with more than 1200 community-led vectors icons. And gives the possibility to use Windows 8.1 and Windows 10 icon fonts
+
 ![icons](https://huaxing-yuan.github.io/hummingbird.ui.doc/media/icons.png)
 
 ### Native controls
