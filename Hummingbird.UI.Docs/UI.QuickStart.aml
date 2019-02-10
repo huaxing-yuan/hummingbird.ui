@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="2d044243-ea98-4212-bddf-257e4b84a285" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>
+        This is a quick introduction article, lets you to create an empty but functional modern application in less than 10 minutes.
+      </para>
+    </introduction>
+    <section>
+      <!--h1-->
+      <title>Create a WPF project</title>
+      <content>
+
+        <para>
+          Using Visual Studio, you could get a free copy of Visual Studio Community, Create a new <literal>WPF App project</literal>, as
+          shown
+        </para>
+
+        <para>
+          <mediaLink>
+            <image xlink:href="image001" />
+          </mediaLink>
+        </para>
+
+      </content>
+    </section>
+
+    <section>
+      <!--h1-->
+      <title>Install package from nugget</title>
+      <content>
+
+        <para>Right click on the project and choose <literal>Manage Nuget Packages</literal>
+        </para>
+
+        <para>Search the package <literal>Hummingbird.UI</literal> and install it:</para>
+
+        <para>
+          <mediaLink>
+            <image xlink:href="image002" />
+          </mediaLink>
+        </para>
+
+        <para>
+          Now the packages and its dependencies has installed
+          correctly.
+        </para>
+
+      </content>
+    </section>
+
+    <section>
+      <!--h1-->
+      <title>Add Resources to App.xaml</title>
+      <content>
+
+        <para>Open App.xaml and insert the following code:</para>
+
+        <code language="XAML">
+          <![CDATA[    
+<Application.Resources>
+    <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="pack://application:,,,/Hummingbird.UI;component/Styles/DefaultStyle.xaml" />
+        </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+</Application.Resources>]]>
+        </code>
+
+
+        <para>
+          This resource will import Hummingbird UI Styles and
+          ColorShemes in the application. The default theme is Blue / White, if you want
+          to use other color schemes, you can add a Resource Dictionary. For example
+          these codes in App.xaml will choose Purple / Black theme:
+        </para>
+        <code language="XAML">
+          <![CDATA[
+<Application.Resources>
+    <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="pack://application:,,,/Hummingbird.UI;component/Styles/DefaultStyle.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/Hummingbird.UI;component/Styles/ColorShemes/Dark_Purple.xaml" />
+        </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+</Application.Resources>]]>
+        </code>
+
+
+        <para>
+          Some build-in theme are available. Please refer to Article
+          Themes for details.
+        </para>
+
+      </content>
+    </section>
+
+    <section>
+      <!--h1-->
+      <title>Use ModernWindow in MainWindow.xaml</title>
+      <content>
+
+        <para>
+          In Hummingbird UI Framework, There are two types of Window: <codeEntityReference>T:Hummingbird.UI.ModernWindow</codeEntityReference> that is used for Modern UI Applications, <codeEntityReference>T:Hummingbird.UI.BasicWindow</codeEntityReference> is used to build traditional like windows.
+        </para>
+        <para>
+          ModernWindow is a MVVM container, holds different ModernContents. It is recommended to use ModernWindow as application's main window 
+        </para>
+
+        <para>
+          While BasicWindow is the classic independent window. It is recommended to use BasicWindow as Dialogs or Popup Windows.
+        </para>
+
+        <para>
+          To define the main application user interface, you need to change the Window tag to <codeEntityReference>T:Hummingbird.UI.ModernWindow</codeEntityReference> and import the UI Framework namespace <codeInline>xmlns:ui="clr-namespace:Hummingbird.UI;assembly=Hummingbird.UI</codeInline>
+        </para>
+
+        <code language="XAML">
+          <![CDATA[
+<ui:ModernWindow
+    xmlns:ui="clr-namespace:Hummingbird.UI;assembly=Hummingbird.UI" x:Class="Elastic_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Elastic_App"
+        mc:Ignorable="d"
+        Title="My Elastic App" Height="450" Width="800">
+    <ui:ModernWindow.MainMenu>                                                    <!-- Defines the MainMenu of the application -->
+        <ui:ModernMenuItem Header="search" Key="SEARCH">
+            <ui:ModernMenuItem Header="BY JSON" Key="JSON" >    
+                <ui:ModernMenuItem Header="BUILD JSON REQUEST" Key="BUILD" />     <!-- MenuItem can contain sub items -->
+                <ui:ModernMenuItem Header="RUN JSON REQUEST" Key="RUN" />
+            </ui:ModernMenuItem>
+            <ui:ModernMenuItem Header="BY COMMAND LINE" Key="COMMAND" />
+            <ui:ModernMenuItem Header="BY CONTEXT ID" Key="ID" />
+        </ui:ModernMenuItem>
+        <ui:ModernMenuItem Header="configuration" />
+        <ui:ModernMenuItem Header="help" />
+    </ui:ModernWindow.MainMenu>
+</ui:ModernWindow>
+]]>
+        </code>
+
+      </content>
+    </section>
+
+    <section>
+      <!--h1-->
+      <title>Menu and Sub menus</title>
+      <content>
+
+        <para>
+          The above example created an application with 3 main menu
+          items: Search, Configuration and Help.&#160; While the search menu contains
+          also some sub items. In Hummingbird UI Framework, the Modern Window can hold
+          maximum of 3 level menus. To each level, you can add sub items in the tag
+          &lt;ui:ModernMenuItem&gt;
+        </para>
+
+        <para>
+          For each <codeEntityReference>T:Hummingbird.UI.ModernMenuItem</codeEntityReference>, you must provide <codeEntityReference>P:Hummingbird.UI.ModernMenuItem.Header</codeEntityReference> - the text
+          to display, and the <codeEntityReference>P:Hummingbird.UI.ModernMenuItem.Key</codeEntityReference> - unique identifier of the menu item.
+          You should also assign a <codeEntityReference>T:Hummingbird.UI.ModernContent</codeEntityReference> to the property <codeEntityReference>P:Hummingbird.UI.ModernMenuItem.ContentType</codeEntityReference> in order to create the link between the Menu item and it's content.
+          Hummingbird UI framework handles the instance of the content.
+        </para>
+
+        <para>
+          Congratulations, you can now build and see a Black backgrounded
+          Window with Purple highlighted text (if Dark_Purple.xaml is applied in App.xaml).
+        </para>
+
+        <para>
+          <mediaLink>
+            <image xlink:href="image003" />
+          </mediaLink>
+        </para>
+
+        <para>
+          So the content is empty. Please refer to next article for detailed information of ModernWindow
+        </para>
+
+
+
+
+      </content>
+    </section>
+
+    <relatedTopics>
+    </relatedTopics>
+
+  </developerConceptualDocument>
+</topic>

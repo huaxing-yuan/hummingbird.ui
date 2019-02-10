@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Hummingbird.UI.ModernProgressBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  IsEnabledChanged="UserControl_IsEnabledChanged"
+             mc:Ignorable="d"  d:DesignHeight="10" d:DesignWidth="400" IsVisibleChanged="UserControl_IsVisibleChanged" SizeChanged="UserControl_SizeChanged">
+    <UserControl.Resources>
+        <Storyboard RepeatBehavior="Forever" x:Key="DotStoryboard">
+            <DoubleAnimation Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TranslateTransform.X)" Duration="0:0:0.8" From="0" To="250" DecelerationRatio="0.3" />
+            <DoubleAnimation Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TranslateTransform.X)" BeginTime="0:0:0.8" Duration="0:0:1.2" To="350" />
+            <DoubleAnimation Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TranslateTransform.X)" BeginTime="0:0:2" Duration="0:0:0.8" To="600" AccelerationRatio="0.3" />
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"  Duration="0:0:0.4" BeginTime="0:0:0" From="0" To="1" />
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"  Duration="0:0:0.4" BeginTime="0:0:2.4" From="1" To="0" />
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid>
+        <Rectangle Height="{Binding Radius}" Width="{Binding Radius}" StrokeThickness="0" Fill="{DynamicResource HighlightBrush}" HorizontalAlignment="Left" x:Name="rDot1" Opacity="0" >
+            <Rectangle.RenderTransform>
+                <TranslateTransform X="0" />
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Height="{Binding Radius}" Width="{Binding Radius}" StrokeThickness="0" Fill="{DynamicResource HighlightBrush}" HorizontalAlignment="Left" x:Name="rDot2" Opacity="0" >
+            <Rectangle.RenderTransform>
+                <TranslateTransform X="0" />
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Height="{Binding Radius}" Width="{Binding Radius}" StrokeThickness="0" Fill="{DynamicResource HighlightBrush}" HorizontalAlignment="Left" x:Name="rDot3" Opacity="0" >
+            <Rectangle.RenderTransform>
+                <TranslateTransform X="0" />
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Height="{Binding Radius}" Width="{Binding Radius}" StrokeThickness="0" Fill="{DynamicResource HighlightBrush}" HorizontalAlignment="Left" x:Name="rDot4" Opacity="0" >
+            <Rectangle.RenderTransform>
+                <TranslateTransform X="0" />
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Height="{Binding Radius}" Width="{Binding Radius}" StrokeThickness="0" Fill="{DynamicResource HighlightBrush}" HorizontalAlignment="Left" x:Name="rDot5" Opacity="0" >
+            <Rectangle.RenderTransform>
+                <TranslateTransform X="0" />
+            </Rectangle.RenderTransform>
+        </Rectangle>
+
+        <Ellipse Height="{Binding Radius}" Width="{Binding Radius}" StrokeThickness="0" Fill="{DynamicResource HighlightBrush}" HorizontalAlignment="Left" x:Name="rCircle1" Opacity="0" >
+            <Ellipse.RenderTransform>
+                <TranslateTransform X="0" />
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Height="{Binding Radius}" Width="{Binding Radius}" StrokeThickness="0" Fill="{DynamicResource HighlightBrush}" HorizontalAlignment="Left" x:Name="rCircle2" Opacity="0" >
+            <Ellipse.RenderTransform>
+                <TranslateTransform X="0" />
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Height="{Binding Radius}" Width="{Binding Radius}" StrokeThickness="0" Fill="{DynamicResource HighlightBrush}" HorizontalAlignment="Left" x:Name="rCircle3" Opacity="0" >
+            <Ellipse.RenderTransform>
+                <TranslateTransform X="0" />
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Height="{Binding Radius}" Width="{Binding Radius}" StrokeThickness="0" Fill="{DynamicResource HighlightBrush}" HorizontalAlignment="Left" x:Name="rCircle4" Opacity="0" >
+            <Ellipse.RenderTransform>
+                <TranslateTransform X="0" />
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Ellipse Height="{Binding Radius}" Width="{Binding Radius}" StrokeThickness="0" Fill="{DynamicResource HighlightBrush}" HorizontalAlignment="Left" x:Name="rCircle5" Opacity="0" >
+            <Ellipse.RenderTransform>
+                <TranslateTransform X="0" />
+            </Ellipse.RenderTransform>
+        </Ellipse>
+
+    </Grid>
+</UserControl>

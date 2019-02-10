@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="60c5b27b-8100-4ec4-aab3-74b7a012f10c" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <introduction>
+      <para>ModernWindow, represents Modern UI style Window object, which holds its contents in MVVM techniques. </para>
+    </introduction>
+
+    <!-- Add one or more top-level section elements.  These are collapsible.
+         If using <autoOutline />, add an address attribute to identify it
+         and specify a title so that it can be jumped to with a hyperlink. -->
+    <section address="Section1">
+      <title>Concepts</title>
+      <content>
+        <para>The following diagram shows the basic conception structure of a Modern Window. Application Icon, Title bar and Control Box (including minimize, maximum and close) button are found in their traditional position.</para>
+        <para>Then followed by the Main menu and sub menus.</para>
+        <para>The main area is the content, which is defined in the ContentType property of selected ModernMenuItem.</para>
+        <para>At the bottom, the Status Bar. Where you can hold buttons and text to show the status.</para>
+        <mediaLink>
+          <caption placement="after">Conceptional layout of a ModernWindow</caption>
+          <image placement="center" class="withborder" xlink:href="mw_concept" />
+        </mediaLink>
+      </content>
+    </section>
+
+    <section address="Section1">
+      <title>Main menu and sub menus</title>
+      <content>
+        <para>Hummingbird UI Framework supports a 3-level-menu system, The first level is shown on top, with larger font. The second level is under the first level with smaller font. And the 3rd level  is shown on the left side of the Content Panel</para>
+        <para>To add items in the <codeEntityReference>P:Hummingbird.UI.ModernWindow.MainMenu</codeEntityReference>, you should add elements of Type <codeEntityReference>T:Hummingbird.UI.ModernMenuItem</codeEntityReference> in ModernWindow.MainMenu property. The ModernMenuItem contains an Items that can present second or third level menu items</para>
+        <para>To create the link between the content and the <codeEntityReference>T:Hummingbird.UI.ModernMenuItem</codeEntityReference>, assign the Property <codeEntityReference>P:Hummingbird.UI.ModernMenuItem.ContentType</codeEntityReference>
+      </para>
+        <para>The following XAML code shows an example of a 3 level menu system:</para>
+        <code language="XAML">
+          <![CDATA[    <ui:ModernWindow.MainMenu>
+        <ui:ModernMenuItem Header="menus" Key="menus" >
+            <ui:ModernMenuItem Header="level2" Key="level2">
+                <ui:ModernMenuItem Header="level 3 menu 1" Key="31" ContentType="{x:Type demo:ViewLevel3MenuDemo1}" />
+                <ui:ModernMenuItem Header="level 3 menu 2" Key="32" ContentType="{x:Type demo:ViewLevel3MenuDemo2}"  />
+                <ui:ModernMenuItem Header="level 3 menu 3" Key="33" />
+            </ui:ModernMenuItem>
+        </ui:ModernMenuItem>
+        <ui:ModernMenuItem	Header="themes" Key="themes" ContentType="{x:Type demo:ViewThemes}" />
+        <ui:ModernMenuItem	Header="advanced features" Key="advanced" />
+    </ui:ModernWindow.MainMenu>]]>
+        </code>
+        <para>If the Menu contains sub items, the <codeEntityReference>P:Hummingbird.UI.ModernMenuItem.ContentType</codeEntityReference> should not be assigned.</para>
+        <alert>
+          <para>You must give a unique value to Key to each <codeEntityReference>T:Hummingbird.UI.ModernMenuItem</codeEntityReference>, that you can then use NavigateTo Method to switch between views via le code.</para>
+        </alert>
+      </content>
+    </section>
+
+    <section address="Section2">
+      <title>Backstage panel</title>
+      <content>
+        <para>
+          <codeEntityReference>P:Hummingbird.UI.ModernWindow.BackstagePanel</codeEntityReference> is where you can put application configurations, settings or other global information. Inside the Backstage Panel, you should place a <codeEntityReference>T:System.Windows.Controls.TabControl</codeEntityReference> with one or more TabItem, as shown by the following XAML Code, each tab item is empty in the example.</para>
+        <code language="XAML">
+          <![CDATA[    <ui:ModernWindow.BackstagePanel>
+        <TabControl>
+            <TabItem Header="General"></TabItem>
+            <TabItem Header="Settings"></TabItem>
+            <TabItem Header="Extensions"></TabItem>
+        </TabControl>
+    </ui:ModernWindow.BackstagePanel>]]>
+        </code>
+        <mediaLink>
+          <caption placement="after">Example of Backstage of an Application</caption>
+          <image placement="center" class="withborder" xlink:href="mw_backstage" />
+        </mediaLink>
+      </content>
+    </section>
+    
+    
+    <section address="Section3">
+      <title>Status Bar</title>
+      <content>
+        <para>
+          In the ModernWindow, you can define a default status bar, which shows in the bottom of the window. This <codeEntityReference>P:Hummingbird.UI.ModernWindow.DefaultStatusBar</codeEntityReference> is shown if the current ModernContent does not have a status bar.</para>
+        <para>When a StatusBar is defined in the ModernContent, this area will be replaced by the StatusBar defined in the ModernContent.</para>
+        <para>When switching from a ModernContent having a StatusBar to a ModernContent without StatusBar defined, The Default status bar will be shown.</para>
+        <para>The following example shows how to initialize a Status bar, and how it appears.</para>
+        <code language="XAML">
+          <![CDATA[    <ui:ModernWindow.DefaultStatusBar>
+        <StatusBar>
+            <ui:AppBarButton IconKey="appbar_new" Caption="new" />
+            <ui:AppBarButton IconKey="appbar_folder_open" Caption="open" />
+            <ui:AppBarButton IconKey="appbar_save" Caption="save" />
+            <ui:AppBarButton IconKey="appbar_close" Caption="close" />
+            <ui:AppBarButton IconKey="appbar_arrow_expand" Caption="expand" />
+            <ui:AppBarButton IconKey="appbar_draw_brush" Caption="brush" />
+        </StatusBar>
+    </ui:ModernWindow.DefaultStatusBar>]]>
+        </code>
+        <mediaLink>
+          <caption placement="after">Example of an Status Bar</caption>
+          <image placement="center" class="withborder" xlink:href="mw_statusbar" />
+        </mediaLink>
+      </content>
+    </section>
+    
+    <relatedTopics>
+      <codeEntityReference>T:Hummingbird.UI.ModernWindow</codeEntityReference>
+      <codeEntityReference>P:Hummingbird.UI.ModernWindow.MainMenu</codeEntityReference>
+      <codeEntityReference>P:Hummingbird.UI.ModernWindow.DefaultStatusBar</codeEntityReference>
+      <codeEntityReference>P:Hummingbird.UI.ModernWindow.BackstagePanel</codeEntityReference>
+      <codeEntityReference>T:Hummingbird.UI.ModernContent</codeEntityReference>
+      <codeEntityReference>T:Hummingbird.UI.ModernMenuItem</codeEntityReference>
+      <codeEntityReference>P:Hummingbird.UI.ModernMenuItem.ContentType</codeEntityReference>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

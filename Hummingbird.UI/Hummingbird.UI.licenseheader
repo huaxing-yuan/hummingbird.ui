@@ -1,0 +1,26 @@
+﻿extensions: designer.cs generated.cs
+extensions: .cs .cpp .h
+// <copyright file="%FileName%" company="Huaxing YUAN">
+// Copyright (c) 2013-2018 Huaxing YUAN, All Rights Reserved
+// </copyright>
+// <author>%UserDisplayName%</author>
+// <date>%CreationYear%-%CreationMonth%-%CreationDay%  %CreationTime%</date>
+// <summary>%Project%, A Modern UI Framework based on WPF and MVVM, originally developed for Hummingbird Test Studio</summary>
+extensions: .aspx .ascx
+<%-- 
+%FileName%
+%Project%, A product of Hummingbird ALM tool set
+Copyright (c) 2014-2017 Huaxing YUAN, All rights reserved
+Created at: %CreationYear%-%CreationMonth%-%CreationDay%  %CreationTime% by %UserDisplayName%
+--%>
+extensions: .vb
+' %Project%, A product of Hummingbird ALM tool set
+' Copyright (c) 2014-2017 Huaxing YUAN, All rights reserved
+' Created at: %CreationYear%-%CreationMonth%-%CreationDay%  %CreationTime%
+extensions:  .xml .config .xsd
+<!--
+ %FileName%
+ %Project%, A product of Hummingbird ALM tool set
+ Copyright (c) 2014-2017 Huaxing YUAN, All rights reserved
+ Created at: %CreationYear%-%CreationMonth%-%CreationDay%  %CreationTime% by %UserDisplayName%
+-->

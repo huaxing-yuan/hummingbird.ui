@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="c666aa90-4cf3-4ae5-aa33-617b6372f5c1" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <introduction>
+
+      <para>ModernLink is a Hyper link style UI element with Modern Icon </para>
+    </introduction>
+
+    <!-- Add one or more top-level section elements.  These are collapsible.
+         If using <autoOutline />, add an address attribute to identify it
+         and specify a title so that it can be jumped to with a hyperlink. -->
+    <section address="Section1">
+      <title>Using ModernLink</title>
+      <content>
+        <!-- Uncomment this to create a sub-section outline
+        <autoOutline /> -->
+        <para>Similar to AppBarButton and AppBarIcon, ModernLink benefits from the same Icon data base provided by the framework. You can specify an IconKey to indicate the Icon to use, IconForegroundBrush to indicate the color and IconSize to indicate the size.</para>
+        <para>In a real application, ModernLink can be used as follow:</para>
+        <mediaLink>
+          <image placement="center"  xlink:href="modernlink" />
+        </mediaLink>
+        <para>To make similar modern links than the above image, you can apply the following XAML example: shows 4 modern links are placed into a WrapPanel. </para>
+        <code language="XAML">
+          <![CDATA[            <WrapPanel  Orientation="Vertical" Margin="30,0" Grid.Row="1" Grid.Column="3">
+                <TextBlock Text="Documentation" Style="{DynamicResource TextBlockInformation}"  Margin="0,20,0,0"/>
+                <ui:ModernLink IconKey="appbar_home" Text="Hummingbird project home page" Click="mlHome_Click"  x:Name="mlHome" />
+                <ui:ModernLink IconKey="appbar_social_github_octocat_solid" Text="Resources on GitHub" IconForegroundBrush="DeepSkyBlue" Click="mlGithub_Click" x:Name="mlGithub" />
+                <ui:ModernLink IconKey="appbar_book" Text="Test Framework documentation" IconForegroundBrush="Orange" Click="mlTFDoc_Click"  x:Name="mlTFDoc" />
+                <ui:ModernLink IconKey="appbar_bug" Text="Report bugs/suggestions" IconForegroundBrush="Red" Click="mlBug_Click"  x:Name="mlBug" />
+            </WrapPanel>]]>
+        </code>
+        <para>You can use an event handler to receive the Click event when user interacts with this control.</para>
+      </content>
+
+    </section>
+
+    <relatedTopics>
+      <!-- One or more of the following:
+           - A local link
+           - An external link
+           - A code entity reference
+
+      <link xlink:href="Other Topic's ID"/>
+      <link xlink:href="Other Topic's ID">Link inner text</link>
+
+      <externalLink>
+          <linkText>Link text</linkText>
+          <linkAlternateText>Optional alternate link text</linkAlternateText>
+          <linkUri>URI</linkUri>
+      </externalLink>
+
+      <codeEntityReference>API member ID</codeEntityReference>
+
+      Examples:
+
+      <link xlink:href="00e97994-e9e6-46e0-b420-5be86b2f8270" />
+      <link xlink:href="00e97994-e9e6-46e0-b420-5be86b2f8278">Some other topic</link>
+
+      <externalLink>
+          <linkText>SHFB on GitHub</linkText>
+          <linkAlternateText>Go to GitHub</linkAlternateText>
+          <linkUri>https://GitHub.com/EWSoftware/SHFB</linkUri>
+      </externalLink>
+
+      <codeEntityReference>T:TestDoc.TestClass</codeEntityReference>
+      <codeEntityReference>P:TestDoc.TestClass.SomeProperty</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.#ctor</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.#ctor(System.String,System.Int32)</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.ToString</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.FirstMethod</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.SecondMethod(System.Int32,System.String)</codeEntityReference>
+      -->
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

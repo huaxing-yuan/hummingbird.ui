@@ -1,0 +1,85 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>
+    <Color x:Key="TextboxActiveBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="TextboxBackgroundColor">#EEEEEE</Color>
+    <Color x:Key="TextboxDisabledBackgroundColor">#EEEEEE</Color>
+    <Color x:Key="TextboxHighlightTextColor">#FFFFFF</Color>
+    <Color x:Key="TextboxActiveTextColor">#000000</Color>
+    <Color x:Key="TextboxTextColor">#333333</Color>
+    <Color x:Key="TextboxDisabledTextColor">#999999</Color>
+
+    <Color x:Key="ControlActiveBorderColor">Indigo</Color>
+    <Color x:Key="ControlBorderColor">#CCCCCC</Color>
+    <Color x:Key="ControlBackgroundColor">#DDDDDD</Color>
+    <Color x:Key="ControlBusyBorderColor">#FF9933</Color>
+    <Color x:Key="ControlGoodBorderColor">#00FF00</Color>
+    <Color x:Key="ControlBadBorderColor">#FF0000</Color>
+    <Color x:Key="AlertTextColor">#ff8000</Color>
+    <Color x:Key="GoodTextColor">Green</Color>
+    <Color x:Key="BadTextColor">#cc0000</Color>
+
+    <Color x:Key="HighlightColor">#6800b3</Color>
+    <Color x:Key="HighlightAlternativeColor">#2100BB</Color>    
+    <Color x:Key="HighlightDarkColor">Indigo</Color>
+    <Color x:Key="HighlightMiddleColor">#9f1aff</Color>
+    <Color x:Key="HighlightLightColor">#666800b3</Color>
+
+    <Color x:Key="ForegroundColor">Black</Color>
+    <Color x:Key="DisabledForegroundColor">#666666</Color>
+    <Color x:Key="BackgroundColor">#FFFFFF</Color>
+    <Color x:Key="DisabledBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="ButtonBorderColor">#333333</Color>
+    <Color x:Key="StatusBarBackgroundColor">#333333</Color>
+    <Color x:Key="SideBarBackgroundColor">#EEEEEE</Color>
+    
+    <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource ForegroundColor}" />
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
+    <SolidColorBrush x:Key="AlertTextBrush" Color="{StaticResource AlertTextColor}" />
+    <SolidColorBrush x:Key="GoodTextBrush" Color="{StaticResource GoodTextColor}" />
+    <SolidColorBrush x:Key="BadTextBrush" Color="{StaticResource BadTextColor}" />
+    <SolidColorBrush x:Key="FlatButtonForegroundBrush" Color="{StaticResource BackgroundColor}" />
+    <SolidColorBrush x:Key="FlatButtonBackgroundBrush" Color="{StaticResource ForegroundColor}" />
+    <SolidColorBrush x:Key="HighlightBrush" Color="{StaticResource HighlightColor}" />
+    <SolidColorBrush x:Key="HighlightAlternativeBrush" Color="{StaticResource HighlightAlternativeColor}" />
+    <SolidColorBrush x:Key="HighlightForegroundBrush" Color="{StaticResource BackgroundColor}" />
+    <SolidColorBrush x:Key="HighlightDarkBrush" Color="{StaticResource HighlightDarkColor}" />
+    <SolidColorBrush x:Key="HighlightLightBrush" Color="{StaticResource HighlightLightColor}" />
+    <SolidColorBrush x:Key="HighlightMiddleBrush" Color="{StaticResource HighlightMiddleColor}" />
+
+    <SolidColorBrush x:Key="StatusBarBackgroundBrush" Color="{StaticResource StatusBarBackgroundColor}" />
+    <SolidColorBrush x:Key="StatusBarForegroundBrush" Color="{StaticResource BackgroundColor}" />
+    <SolidColorBrush x:Key="SideBarBackgroundBrush" Color="{StaticResource SideBarBackgroundColor}" />
+
+    <SolidColorBrush x:Key="TextboxTextBrush" Color="{StaticResource TextboxTextColor}" />
+    <SolidColorBrush x:Key="TextboxBackgroundBrush" Color="{StaticResource TextboxBackgroundColor}" />
+    <SolidColorBrush x:Key="TextboxActiveBackgroundBrush" Color="{StaticResource TextboxActiveBackgroundColor}" />
+    <SolidColorBrush x:Key="TextboxActiveTextBrush" Color="{StaticResource TextboxActiveTextColor}" />
+    <SolidColorBrush x:Key="TextboxHighlightTextBrush" Color="{StaticResource TextboxHighlightTextColor}" />
+    <SolidColorBrush x:Key="TextboxDisabledBackgroundBrush" Color="{StaticResource TextboxDisabledBackgroundColor}" />
+    <SolidColorBrush x:Key="TextboxDisabledTextBrush" Color="{StaticResource TextboxDisabledTextColor}" />
+
+    <SolidColorBrush x:Key="ControlActiveBorderBrush" Color="{StaticResource ControlActiveBorderColor}" />
+    <SolidColorBrush x:Key="ControlBorderBrush" Color="{StaticResource ControlBorderColor}" />
+    <SolidColorBrush x:Key="ControlBusyBorderBrush" Color="{StaticResource ControlBusyBorderColor}" />
+    <SolidColorBrush x:Key="ControlGoodBorderBrush" Color="{StaticResource ControlGoodBorderColor}" />
+    <SolidColorBrush x:Key="ControlBadBorderBrush" Color="{StaticResource ControlBadBorderColor}" />
+    
+    <SolidColorBrush x:Key="ButtonBorderBrush" Color="{StaticResource ButtonBorderColor}" />
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{StaticResource ControlBackgroundColor}" />
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{StaticResource DisabledForegroundColor}" />
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="{StaticResource DisabledBackgroundColor}" />
+
+    <LinearGradientBrush x:Key="HighlightGradientBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="{StaticResource HighlightDarkColor}" Offset="0" />
+        <GradientStop Color="{StaticResource HighlightColor}" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HighlightGradientBrushHorizontal" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="{StaticResource HighlightColor}" Offset="0" />
+        <GradientStop Color="#cc66ff" Offset="1" />
+    </LinearGradientBrush>
+
+    <Thickness x:Key="DefaultControlBorderThickness">0</Thickness>
+    
+</ResourceDictionary>

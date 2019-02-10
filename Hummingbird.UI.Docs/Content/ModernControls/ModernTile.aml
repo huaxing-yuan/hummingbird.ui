@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="c9e5fe70-ac56-42bb-9f23-4d5e5ff67891" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <introduction>
+      <para>Required introduction</para>
+    </introduction>
+
+    <!-- Add one or more top-level section elements.  These are collapsible.
+         If using <autoOutline />, add an address attribute to identify it
+         and specify a title so that it can be jumped to with a hyperlink. -->
+    <section address="Section1">
+      <title>Optional section title</title>
+      <content>
+        <!-- Uncomment this to create a sub-section outline
+        <autoOutline /> -->
+        <para>ModernTile is a control similar to Tiles used in Start Screen in Windows 8/10. The personalization of a Tile is based on 3 elements: The Icon shown in the Tile, the Header text shown under the icon and the background color of the tile itself.</para>
+      </content>
+    </section>
+
+    <section address="Section2">
+      <title>Using ModernTile</title>
+      <content>
+        <para>It is not recommended to use the ModernTile alone, but use more than one Tile to fill the whole block, with different colors and dimensions and icons, change the sizes and margins to align them correctly.</para>
+        <para>For following example shows some tiles in a ModernPresenter, and each column uses a WrapPanel to hold the tiles.</para>
+        <mediaLink>
+          <image placement="center" xlink:href="moderntile" />
+        </mediaLink>
+
+        <para>The following code show how to show the column in the middle</para>
+        <code language="XAML">
+          <![CDATA[            <WrapPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                <ui:ModernTile Header="Regular Expression" Icon="/Images/Tools/regex.png" UseGradient="True" Width="200" Tag="REGEX"  MouseLeftButtonUp="ModernTile_MouseLeftButtonUp"/>
+                <ui:ModernTile Header="Hash &amp; Cryptography" Icon="/Images/Tools/crypto.png" UseGradient="True" StartColor="Orange" EndColor="Gold"  ToolTip="Hash, Encrypt and Decrypt using different cryptography methods" Tag="CRYPT"  MouseLeftButtonUp="ModernTile_MouseLeftButtonUp"/>
+                <ui:ModernTile Header="Document Formatting" Icon="/Images/Tools/indent.png" UseGradient="True" StartColor="CadetBlue" EndColor="LightBlue"  ToolTip="Encoding/Decoding text from Base64 and format XML and JSON documents." Tag="FORMAT"  MouseLeftButtonUp="ModernTile_MouseLeftButtonUp"/>
+                <ui:ModernTile Header="Base64 Encoding" Icon="/Images/Tools/base64.png" Width="200" UseGradient="True" StartColor="DarkCyan" EndColor="CornflowerBlue"  ToolTip="Encoding/Decoding text from Base64 and format XML and JSON documents." Tag="BASE64"  MouseLeftButtonUp="ModernTile_MouseLeftButtonUp"/>
+            </WrapPanel>]]>
+        </code>
+        <para>
+          Use <codeEntityReference>P:Hummingbird.UI.ModernTile.UseGradient</codeEntityReference> property to indicate whether the background color is rendered in gradient colors. If the value is true, you can indicate the <codeEntityReference>P:Hummingbird.UI.ModernTile.StartColor</codeEntityReference> and <codeEntityReference>P:Hummingbird.UI.ModernTile.EndColor</codeEntityReference>.</para>
+        <para>
+          Use <codeEntityReference>P:Hummingbird.UI.ModernTile.Header</codeEntityReference> property to indicate the text to show in the tile and Icon property to indicate an ImageResource as <codeEntityReference>P:Hummingbird.UI.ModernTile.Icon</codeEntityReference>.
+        </para>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <codeEntityReference>T:Hummingbird.UI.ModernTile</codeEntityReference>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which assemblies to include from solution and
+				 project documentation sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>564b5f18-b63b-4692-ba54-d69f41f64a29</ProjectGuid>
+    <SHFBSchemaVersion>2017.9.26.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual Studio adds them anyway -->
+    <AssemblyName>Hummingbird.Documentation</AssemblyName>
+    <RootNamespace>Hummingbird.Documentation</RootNamespace>
+    <Name>Hummingbird.UI.Doc</Name>
+    <!-- SHFB properties -->
+    <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
+    <OutputPath>..\..\Github\hummingbird.ui.doc\</OutputPath>
+    <HtmlHelpName>Hummingbird UI Framework</HtmlHelpName>
+    <Language>en-US</Language>
+    <TransformComponentArguments>
+      <Argument Key="logoFile" Value="" />
+      <Argument Key="logoHeight" Value="" />
+      <Argument Key="logoWidth" Value="" />
+      <Argument Key="logoAltText" Value="" />
+      <Argument Key="logoPlacement" Value="left" />
+      <Argument Key="logoAlignment" Value="left" />
+      <Argument Key="maxVersionParts" Value="" />
+      <Argument Key="defaultLanguage" Value="cs" />
+      <Argument Key="includeEnumValues" Value="false" />
+      <Argument Key="baseSourceCodeUrl" Value="" />
+      <Argument Key="requestExampleUrl" Value="" />
+    </TransformComponentArguments>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\Hummingbird.UI\Hummingbird.UI.csproj" xmlns="" />
+    </DocumentationSources>
+    <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
+    <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
+    <HelpFileFormat>Website</HelpFileFormat>
+    <IndentHtml>False</IndentHtml>
+    <KeepLogFile>False</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <CleanIntermediates>True</CleanIntermediates>
+    <HelpFileVersion>1.0.0.0</HelpFileVersion>
+    <MaximumGroupParts>12</MaximumGroupParts>
+    <NamespaceGrouping>False</NamespaceGrouping>
+    <SyntaxFilters>C#, Visual Basic, Managed C++, XAML Usage</SyntaxFilters>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <RootNamespaceContainer>True</RootNamespaceContainer>
+    <PresentationStyle>VS2013</PresentationStyle>
+    <Preliminary>False</Preliminary>
+    <NamingMethod>MemberName</NamingMethod>
+    <HelpTitle>Hummingbird UI Framework</HelpTitle>
+    <CopyrightText>Copyright 2013-2018 Huaxing YUAN, All rights reserved</CopyrightText>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+    <WebsiteSdkLinkType>Msdn</WebsiteSdkLinkType>
+    <HtmlSdkLinkType>Msdn</HtmlSdkLinkType>
+    <IncludeFavorites>True</IncludeFavorites>
+    <BinaryTOC>True</BinaryTOC>
+    <VisibleItems>Attributes, InheritedMembers, Protected, ProtectedInternalAsProtected, EditorBrowsableNever, NonBrowsable</VisibleItems>
+    <ComponentConfigurations>
+      <ComponentConfig id="Code Block Component" enabled="True">
+        <component id="Code Block Component">
+          <basePath value="{@HtmlEncProjectFolder}" />
+          <outputPaths>{@HelpFormatOutputPaths}</outputPaths>
+          <allowMissingSource value="false" />
+          <removeRegionMarkers value="false" />
+          <colorizer syntaxFile="{@SHFBFolder}PresentationStyles\Colorizer\highlight.xml" styleFile="{@SHFBFolder}PresentationStyles\Colorizer\highlight.xsl" stylesheet="{@SHFBFolder}PresentationStyles\Colorizer\highlight.css" scriptFile="{@SHFBFolder}PresentationStyles\Colorizer\highlight.js" disabled="{@DisableCodeBlockComponent}" language="cs" tabSize="0" numberLines="false" outlining="false" keepSeeTags="false" defaultTitle="true" />
+        </component>
+      </ComponentConfig>
+    </ComponentConfigurations>
+    <RootNamespaceTitle>Hummingbird UI References</RootNamespaceTitle>
+    <FooterText>&amp;lt%3ba href=&amp;quot%3bhttp://www.hummingbird-alm.com&amp;quot%3b target=&amp;quot%3b_blank&amp;quot%3b class=&amp;quot%3bicon fas fa-home&amp;quot%3b&amp;gt%3b&amp;lt%3b/a&amp;gt%3b
+ &amp;lt%3ba href=&amp;quot%3bhttps://github.com/huaxing-yuan/hummingbird.ui.doc/issues&amp;quot%3b target=&amp;quot%3b_blank&amp;quot%3b class=&amp;quot%3bicon fas fa-comments&amp;quot%3b&amp;gt%3b&amp;lt%3b/a&amp;gt%3b
+ &amp;lt%3ba href=&amp;quot%3bhttps://github.com/huaxing-yuan/&amp;quot%3b target=&amp;quot%3b_blank&amp;quot%3b class=&amp;quot%3bicon fab fa-github&amp;quot%3b&amp;gt%3b&amp;lt%3b/a&amp;gt%3b
+ &amp;lt%3ba href=&amp;quot%3bhttps://www.linkedin.com/in/huaxing-yuan-6954349a/&amp;quot%3b target=&amp;quot%3b_blank&amp;quot%3b class=&amp;quot%3bicon fab fa-linkedin-in&amp;quot%3b&amp;gt%3b&amp;lt%3b/a&amp;gt%3b</FooterText>
+    <HeaderText>
+    </HeaderText>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="XamlGeneratedNamespace" isDocumented="False" />
+      <NamespaceSummaryItem name="Hummingbird.TestFramework" isDocumented="True">Hummingbird provides a complete solution to test SOA based applications, natively support every popular web service standards, such as SOAP, REST. Meanwhile, it is highly customizable, extensible to support every network protocols. It comes with automation solutions to help you run your tests automatically, scheduled and integrated with your enterprise’s CI platform such as Visual Studio Team Services, and Jenkins.
+All functions of the Hummingbird is based on this Test Framework, makes it easy to extend the ability of the Hummingbird and your real requirements.
+With Hummingbird you can:
+&lt;ul&gt;
+&lt;li&gt;Test your web services SOAP, REST or other kind of services&lt;/li&gt;
+&lt;li&gt;Test your application with Virtual Services (Service Virtualization)&lt;/li&gt;
+&lt;li&gt;Build and Run automated tests&lt;/li&gt;
+&lt;li&gt;Running performance test of your services.&lt;/li&gt;
+&lt;/ul&gt;</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.UI" isDocumented="True">Hummingbird UI is a highly customizable GUI framework, based on WPF and applies Modern style and MVVM. 
+This namespace all useful UI elements and classes to help your building very user friendly desktop applications.
+Be sure to benefit the latest features, please install the package from NuGet.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.UI.Converters" isDocumented="True">This namespace provide some Converters which can help you develop MVVM style application by easily create data bindings.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework (Group)" isGroup="True" isDocumented="False">Hummingbird provides a complete solution to test SOA based applications, natively support every popular web service standards, such as SOAP, REST. Meanwhile, it is highly customizable, extensible to support every network protocols. It comes with automation solutions to help you run your tests automatically, scheduled and integrated with your enterprise’s CI platform such as Visual Studio Team Services, and Jenkins.
+All functions of the Hummingbird is based on this Test Framework, makes it easy to extend the ability of the Hummingbird and your real requirements.
+With Hummingbird you can:
+&lt;ul&gt;
+&lt;li&gt;Test your web services SOAP, REST or other kind of services&lt;/li&gt;
+&lt;li&gt;Test your application with Virtual Services (Service Virtualization)&lt;/li&gt;
+&lt;li&gt;Build and Run automated tests&lt;/li&gt;
+&lt;li&gt;Running performance test of your services.&lt;/li&gt;
+&lt;/ul&gt;</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.Automation (Group)" isGroup="True" isDocumented="True">In this namespace, we provides all necessary classes and libraries to build and run automated tests.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.Automation" isDocumented="True">In this namespace, we provides all necessary classes and libraries to build and run automated tests.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.Automation.FunctionalConditions" isDocumented="True">All fonctional conditions used by automation. Conditions are used by the automation engine to determine next steps and check test results.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.Automation.Operators" isDocumented="True">Operator namespace included 3 kinds of operators to evaluate test conditions and results. These 3 kinds of operators are:
+&lt;ul&gt;
+&lt;li&gt;Conditional Operators : Exists, Not Exists&lt;/li&gt;
+&lt;li&gt;Logical Operators: AND, Or, Xor, ...&lt;/li&gt;
+&lt;li&gt;Relational Operators : Equals To, Greater Than, ....&lt;/li&gt;
+&lt;/ul&gt;</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.CodeGenerator" isDocumented="True">Classes and methods required to build assembly from an Extension Project (Used by Hummingbird Test Manager - Extension Build module)</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.Configuration" isDocumented="True">Classes provides the configuration, settings, history and test data of the test framework</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.Cryptography" isDocumented="True">provides different methods of crytopraphy</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.Extensibility" isDocumented="True">Defines the base classes to build custom Service Extensions.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.ExtensionProject" isDocumented="True">Defines the base classes to build Service Extensions from Extension Builder.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.Messaging" isDocumented="True">Defines the classes to log messages during the test.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.Serialization" isDocumented="True">Provides diffenent classes of Serialization</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.Services" isDocumented="True">Defines the basic data structure of the simulated service. Built-in services such as HTTP Client, HTTP Server, SOAP Client and SOAP Server is also defined.</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.UI (Group)" isGroup="True" isDocumented="True">All namespaces used by Hummingbird UI</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="Hummingbird.TestFramework.Automation.Assertions" isDocumented="True">This namespace provide some assertions which can be used in automated tests</NamespaceSummaryItem>
+    </NamespaceSummaries>
+    <ApiFilter>
+      <Filter entryType="Namespace" fullName="Hummingbird.TestFramework" isExposed="True">
+        <Filter entryType="Class" fullName="Hummingbird.TestFramework.Global" filterName="Global" isExposed="True">
+          <Filter entryType="Field" fullName="Hummingbird.TestFramework.Global.Clients" filterName="Clients" isExposed="False" />
+          <Filter entryType="Field" fullName="Hummingbird.TestFramework.Global.DEFAULT_RESPONSE_NAME" filterName="DEFAULT_RESPONSE_NAME" isExposed="False" />
+          <Filter entryType="Field" fullName="Hummingbird.TestFramework.Global.RequestMetadatas" filterName="RequestMetadatas" isExposed="False" />
+          <Filter entryType="Field" fullName="Hummingbird.TestFramework.Global.ResponseMetadatas" filterName="ResponseMetadatas" isExposed="False" />
+          <Filter entryType="Field" fullName="Hummingbird.TestFramework.Global.RootNamespace" filterName="RootNamespace" isExposed="False" />
+          <Filter entryType="Field" fullName="Hummingbird.TestFramework.Global.Servers" filterName="Servers" isExposed="False" />
+          <Filter entryType="Field" fullName="Hummingbird.TestFramework.Global.UsedSystemVariables" filterName="UsedSystemVariables" isExposed="False" />
+        </Filter>
+      </Filter>
+      <Filter entryType="Namespace" fullName="XamlGeneratedNamespace" isExposed="False" />
+    </ApiFilter>
+    <PlugInConfigurations>
+      <PlugInConfig id="Additional Content Only" enabled="False">
+        <configuration />
+      </PlugInConfig>
+    </PlugInConfigurations>
+    <WarnOnMissingSourceContext>False</WarnOnMissingSourceContext>
+    <FeedbackEMailLinkText>
+    </FeedbackEMailLinkText>
+    <FeedbackEMailAddress>
+    </FeedbackEMailAddress>
+  </PropertyGroup>
+  <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
+			 the build.  The others are optional common platform types that may appear. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Content" />
+    <Folder Include="Content\builtin" />
+    <Folder Include="Content\ModernControls\" />
+    <Folder Include="Content\VersionHistory" />
+    <Folder Include="icons" />
+    <Folder Include="media" />
+    <Folder Include="styles" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Licence.aml" />
+    <None Include="Content\ModernControls\AppbarButton.aml" />
+    <None Include="Content\ModernControls\AppbarIcon.aml" />
+    <None Include="Content\ModernControls\BasicWindow.aml" />
+    <None Include="Content\ModernControls\ModernContent.aml" />
+    <None Include="Content\ModernControls\ModernControls.aml" />
+    <None Include="Content\ModernControls\ModernCounter.aml" />
+    <None Include="Content\ModernControls\ModernLink.aml" />
+    <None Include="Content\ModernControls\ModernPresenter.aml" />
+    <None Include="Content\ModernControls\ModernProgressBar.aml" />
+    <None Include="Content\ModernControls\ModernSwitch.aml" />
+    <None Include="Content\ModernControls\ModernTile.aml" />
+    <None Include="Content\ModernControls\ModernWindow.aml" />
+    <None Include="Content\VersionHistory\v1.0.0.0.aml" />
+    <None Include="Content\VersionHistory\VersionHistory.aml" />
+    <None Include="Content\Welcome.aml" />
+    <Content Include="icons\favicon.ico" />
+    <None Include="CustomThemes.aml" />
+    <None Include="UI.QuickStart.aml" />
+    <None Include="UI.Introduction.aml" />
+    <None Include="WindowsControls.aml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ContentLayout Include="ContentLayout.content" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons\Help.png">
+      <ImageId>Help</ImageId>
+      <AlternateText>Help</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="styles\branding-Website.css" />
+    <Content Include="styles\branding.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons\CodeExample.png">
+      <ImageId>Code_16x</ImageId>
+      <AlternateText>Code 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\CFW.gif">
+      <ImageId>Phone_16x</ImageId>
+      <AlternateText>Phone 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\AlertNote.png">
+      <ImageId>Note_16x</ImageId>
+      <AlternateText>Note 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\privclass.gif">
+      <ImageId>ClassPrivate_16x</ImageId>
+      <AlternateText>Class Private 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\protclass.gif">
+      <ImageId>ClassProtected_16x</ImageId>
+      <AlternateText>Class Protected 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\privdelegate.gif">
+      <ImageId>DelegatePrivate_16x</ImageId>
+      <AlternateText>Delegate Private 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\protdelegate.gif">
+      <ImageId>DelegateProtected_16x</ImageId>
+      <AlternateText>Delegate Protected 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\pubdelegate.gif">
+      <ImageId>Delegate_purple_16x</ImageId>
+      <AlternateText>Delegate purple 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\privenumeration.gif">
+      <ImageId>EnumPrivate_16x</ImageId>
+      <AlternateText>Enum Private 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\protenumeration.gif">
+      <ImageId>EnumProtect_16x</ImageId>
+      <AlternateText>Enum Protect 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\privevent.gif">
+      <ImageId>EventPrivate_16x</ImageId>
+      <AlternateText>Event Private 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\protevent.gif">
+      <ImageId>EventProtect_16x</ImageId>
+      <AlternateText>Event Protect 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\privfield.gif">
+      <ImageId>FieldPrivate_16x</ImageId>
+      <AlternateText>Field Private 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\protfield.gif">
+      <ImageId>FieldProtect_16x</ImageId>
+      <AlternateText>Field Protect 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\pubfield.gif">
+      <ImageId>Field_blue_16x</ImageId>
+      <AlternateText>Field blue 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\privinterface.gif">
+      <ImageId>InterfacePrivate_16x</ImageId>
+      <AlternateText>Interface Private 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\protinterface.gif">
+      <ImageId>InterfaceProtect_16x</ImageId>
+      <AlternateText>Interface Protect 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\pubinterface.gif">
+      <ImageId>Interface_blue_16x</ImageId>
+      <AlternateText>Interface blue 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\privmethod.gif">
+      <ImageId>MethodPrivate_16x</ImageId>
+      <AlternateText>Method Private 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\protmethod.gif">
+      <ImageId>MethodProtect_16x</ImageId>
+      <AlternateText>Method Protect 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\pubmethod.gif">
+      <ImageId>Method_purple_16x</ImageId>
+      <AlternateText>Method purple 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\privoperator.gif">
+      <ImageId>OperatorPrivate_16x</ImageId>
+      <AlternateText>Operator Private 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\protoperator.gif">
+      <ImageId>OperatorProtect_16x</ImageId>
+      <AlternateText>Operator Protect 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\puboperator.gif">
+      <ImageId>Operator_16x</ImageId>
+      <AlternateText>Operator 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\pubproperty.gif">
+      <ImageId>Property_16x</ImageId>
+      <AlternateText>Property 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\pubevent.gif">
+      <ImageId>Event_orange_16x</ImageId>
+      <AlternateText>Event orange 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\pubenumeration.gif">
+      <ImageId>Enumerator_16x</ImageId>
+      <AlternateText>Enumerator 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\pubclass.gif">
+      <ImageId>pubclass</ImageId>
+      <AlternateText>pubclass</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\search.png">
+      <ImageId>Search_16x</ImageId>
+      <AlternateText>Search 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\privstructure.gif">
+      <ImageId>StructurePrivate_16x</ImageId>
+      <AlternateText>Structure Private 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\protstructure.gif">
+      <ImageId>StructureProtect_16x</ImageId>
+      <AlternateText>Structure Protect 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\pubstructure.gif">
+      <ImageId>Structure_16x</ImageId>
+      <AlternateText>Structure 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\AlertCaution.png">
+      <ImageId>StatusWarning_16x</ImageId>
+      <AlternateText>Status Warning 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="icons\AlertSecurity.png">
+      <ImageId>StatusSecurityWarning_16x</ImageId>
+      <AlternateText>Status Security Warning 16x</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons\pubextension.gif">
+      <ImageId>ExtensionMethod_16x</ImageId>
+      <AlternateText>Extension Method 16x</AlternateText>
+    </Content>
+    <Content Include="icons\privproperty.gif">
+      <ImageId>PropertyPrivate_16x</ImageId>
+      <AlternateText>Property Private 16x</AlternateText>
+    </Content>
+    <Content Include="icons\protproperty.gif">
+      <ImageId>PropertyProtect_16x</ImageId>
+      <AlternateText>Property Protect 16x</AlternateText>
+    </Content>
+    <Content Include="icons\TocClose.gif">
+      <ImageId>TocClose</ImageId>
+      <AlternateText>Toc Close</AlternateText>
+    </Content>
+    <Content Include="icons\TocCollapsed.gif">
+      <ImageId>TocCollapsed</ImageId>
+      <AlternateText>Toc Collapsed</AlternateText>
+    </Content>
+    <Content Include="icons\TocExpanded.gif">
+      <ImageId>TocExpanded</ImageId>
+      <AlternateText>Toc Expanded</AlternateText>
+    </Content>
+    <Content Include="icons\TocOpen.gif">
+      <ImageId>TocOpen</ImageId>
+      <AlternateText>Toc Open</AlternateText>
+    </Content>
+    <Image Include="media\basicwindow.jpg">
+      <ImageId>basicwindow</ImageId>
+      <AlternateText>basicwindow</AlternateText>
+    </Image>
+    <Image Include="media\basicwindow2.jpg">
+      <ImageId>basicwindow2</ImageId>
+      <AlternateText>basicwindow 2</AlternateText>
+    </Image>
+    <Image Include="media\detach.png">
+      <ImageId>detach</ImageId>
+      <AlternateText>detach</AlternateText>
+    </Image>
+    <Image Include="media\flatbutton.png">
+      <ImageId>flatbutton</ImageId>
+      <AlternateText>flatbutton</AlternateText>
+    </Image>
+    <Image Include="media\icons.png">
+      <ImageId>icons</ImageId>
+      <AlternateText>icons</AlternateText>
+    </Image>
+    <Image Include="media\image001.png">
+      <ImageId>image001</ImageId>
+      <AlternateText>image 001</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Image>
+    <Image Include="media\image002.png">
+      <ImageId>image002</ImageId>
+      <AlternateText>image 002</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Image>
+    <Content Include="styles\bg.jpg">
+      <ImageId>bg</ImageId>
+      <AlternateText>bg</AlternateText>
+      <CopyToMedia>True</CopyToMedia>
+    </Content>
+    <Content Include="styles\header_bg.jpg">
+      <ImageId>header_bg</ImageId>
+      <AlternateText>header bg</AlternateText>
+    </Content>
+    <Image Include="media\image003.png">
+      <ImageId>image003</ImageId>
+      <AlternateText>image 003</AlternateText>
+    </Image>
+    <Image Include="media\informationbox.jpg">
+      <ImageId>informationbox</ImageId>
+      <AlternateText>informationbox</AlternateText>
+    </Image>
+    <Image Include="media\intro1.png">
+      <ImageId>intro1</ImageId>
+      <AlternateText>intro 1</AlternateText>
+    </Image>
+    <Image Include="media\messagebox.jpg">
+      <ImageId>messagebox</ImageId>
+      <AlternateText>messagebox</AlternateText>
+    </Image>
+    <Image Include="media\moderncounter.png">
+      <ImageId>moderncounter</ImageId>
+      <AlternateText>moderncounter</AlternateText>
+    </Image>
+    <Image Include="media\modernlink.png">
+      <ImageId>modernlink</ImageId>
+      <AlternateText>modernlink</AlternateText>
+    </Image>
+    <Image Include="media\modernprogressbar.gif">
+      <ImageId>modernprogressbar</ImageId>
+      <AlternateText>modernprogressbar</AlternateText>
+    </Image>
+    <Image Include="media\ModernSwitch.png">
+      <ImageId>ModernSwitch</ImageId>
+      <AlternateText>Modern Switch</AlternateText>
+    </Image>
+    <Image Include="media\moderntile.png">
+      <ImageId>moderntile</ImageId>
+      <AlternateText>moderntile</AlternateText>
+    </Image>
+    <Image Include="media\mw_backstage.png">
+      <ImageId>mw_backstage</ImageId>
+      <AlternateText>mw backstage</AlternateText>
+    </Image>
+    <Image Include="media\mw_concept.png">
+      <ImageId>mw_concept</ImageId>
+      <AlternateText>mw concept</AlternateText>
+    </Image>
+    <Image Include="media\mw_statusbar.png">
+      <ImageId>mw_statusbar</ImageId>
+      <AlternateText>mw statusbar</AlternateText>
+    </Image>
+    <Image Include="media\optionbutton.png">
+      <ImageId>optionbutton</ImageId>
+      <AlternateText>optionbutton</AlternateText>
+    </Image>
+    <Image Include="media\themes.png">
+      <ImageId>themes</ImageId>
+      <AlternateText>themes</AlternateText>
+    </Image>
+    <Image Include="media\toastnotification.jpg">
+      <ImageId>toastnotification</ImageId>
+      <AlternateText>toastnotification</AlternateText>
+    </Image>
+  </ItemGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+  <!-- The pre-build and post-build event properties must appear *after* the targets file import in order to be
+			 evaluated correctly. -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+</Project>

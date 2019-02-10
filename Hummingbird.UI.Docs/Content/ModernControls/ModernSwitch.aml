@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="61c8cae5-61dc-4c11-a8ce-312a9a5aaa31" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>ModernSwitch is intended to replace the classic 2-state checkbox by giving a most clear way to indicate users the current state. The control is inspirited originally from Windows 8 / 10</para>
+    </introduction>
+
+
+    <section address="Section1">
+      <title>Use of ModernSwitch Control</title>
+      <content>
+        <para>
+          ModernSwitch is a 2-state control, the status is either Check or Unchecked. The state is represented by the property <codeEntityReference>P:Hummingbird.UI.ModernSwitch.IsChecked</codeEntityReference>. To make the status more clearly, Text is specified for each status: <codeEntityReference>P:Hummingbird.UI.ModernSwitch.CheckedText</codeEntityReference> is shown if IsChecked property is True, and <codeEntityReference>P:Hummingbird.UI.ModernSwitch.UnCheckedText</codeEntityReference> is shown is IsChecked property is False.
+        </para>
+        <para>
+          When user interacts with the control, the IsChecked property changes its value and invoke <codeEntityReference>E:Hummingbird.UI.ModernSwitch.IsCheckedChanged</codeEntityReference> event.
+        </para>
+        <para>The follow example shows a usage of ModernSwitch control in a real application:</para>
+        <mediaLink>
+          <image placement="center" xlink:href="ModernSwitch" />
+        </mediaLink>
+        <para>To archive this, you can try for following XAML Code.</para>
+        <code language="XAML">
+          <![CDATA[                    <TextBlock Text="PreEmptive:" Style="{DynamicResource TextBlockHighlighted}" VerticalAlignment="Center" Grid.Row="2" />
+                    <ui:ModernSwitch CheckedText="Use Pre-Emptive Authentication" UnCheckedText="Use normal Authentication process" x:Name="msPreEmptiveAuthentication" Grid.Row="2" Grid.Column="1" />
+                    <TextBlock Text="Message Format:" Style="{DynamicResource TextBlockHighlighted}" VerticalAlignment="Center" Grid.Row="3" />
+                    <ui:ModernSwitch CheckedText="Send request in MTOM (attachment expected)" UnCheckedText="Send request in XML" x:Name="msSendMTOM"  Grid.Row="3" Grid.Column="1"  />
+                    <TextBlock Text="Message Version:" Style="{DynamicResource TextBlockHighlighted}" VerticalAlignment="Center" Grid.Row="4" />
+                    <ui:ModernSwitch CheckedText="Send request with SOAP 1.2" UnCheckedText="Soap 1.1" x:Name="msSendSOAP12" Grid.Row="4" Grid.Column="1" />
+                    ]]>
+        </code>
+        <para>You can then use DataBinding on IsChecked property or add event handler to IsCheckedChange event.</para>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <codeEntityReference>T:Hummingbird.UI.ModernSwitch</codeEntityReference>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

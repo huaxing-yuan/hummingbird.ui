@@ -1,0 +1,97 @@
+﻿<ui:ModernContent
+    xmlns:ui="clr-namespace:Hummingbird.UI;assembly=Hummingbird.UI" x:Class="Hummingbird.UI.Demo.ViewNativeControls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hummingbird.UI.Demo" IsDetachable="True" DetachedName="Detached Native Objects"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <TabControl>
+        <TabItem Header="TextBlock">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                <UniformGrid Rows="6" Columns="2">
+                    <TextBlock Text="TextBlockViewHeader" Style="{DynamicResource TextBlockViewHeader}" Margin="10" />
+                    <TextBlock Text="TextBlockViewHeaderHighlighted" Style="{DynamicResource TextBlockViewHeaderHighlighted}" Margin="10" />
+
+                    <TextBlock Text="TextBlockInformation" Style="{DynamicResource TextBlockInformation}" Margin="10" />
+                    <TextBlock Text="TextBlockInformationHighlighted" Style="{DynamicResource TextBlockInformationHighlighted}" Margin="10" />
+
+                    <TextBlock Text="TextBlockText" Style="{DynamicResource TextBlockText}" Margin="10" />
+                    <TextBlock Text="TextBlockLight" Style="{DynamicResource TextBlockLight}" Margin="10" />
+
+                    <TextBlock Text="TextBlockHighlighted" Style="{DynamicResource TextBlockHighlighted}" Margin="10" />
+                    <TextBlock Text="TextBlockBad" Style="{DynamicResource TextBlockBad}" Margin="10" />
+
+                    <TextBlock Text="TextBlockAlert" Style="{DynamicResource TextBlockAlert}" Margin="10" />
+                    <TextBlock Text="TextBlockGood" Style="{DynamicResource TextBlockGood}" Margin="10" />
+                    
+                    <TextBlock Text="TextBlockCodeStyle" Style="{DynamicResource TextBlockCodeStyle}" Margin="10" />
+                    <TextBlock Text="Default (without Style)" Margin="10" />
+                </UniformGrid>
+
+            </ScrollViewer>
+        </TabItem>
+        <TabItem Header="Label">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                    <Label Content="Default (without Style)" Margin="10" />
+                    <Label Content="Tag" Style="{DynamicResource Tag}" Margin="10" />
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+        <TabItem Header="TextBox">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                <UniformGrid Rows="6" Columns="2" VerticalAlignment="Top">
+                    <TextBox Text="DefaultTextboxStyle" Margin="4" IsReadOnly="True" />
+
+                    <TextBox Text="NoBorderTextboxStyle" Style="{DynamicResource NoBorderTextboxStyle}" Margin="4" IsReadOnly="True" />
+
+                    <PasswordBox Password="password" Margin="4" ToolTip="DefaultPasswordBoxStyle" />
+                    
+                    
+                </UniformGrid>
+            </ScrollViewer>
+        </TabItem>
+        <TabItem Header="Button">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                <UniformGrid Rows="6" Columns="4" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button Content="DefaultButtonStyle" Style="{DynamicResource DefaultButtonStyle}" Margin="4"  HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+                    <Button Content="DefaultButtonRedStyle" Style="{DynamicResource DefaultButtonRedStyle}" Margin="4"  HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+                    
+                    <Button Content="ControlBoxButton" Style="{DynamicResource ControlBoxButton}" Margin="4" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+                    <Button Content="CloseButton" Style="{DynamicResource CloseButton}" Margin="4"  HorizontalAlignment="Center"  VerticalAlignment="Center" />
+                    <Button Content="FlatButtonStyle" Style="{DynamicResource FlatButtonStyle}" Margin="4" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+                    <Button Content="FlatButtonRedStyle" Style="{DynamicResource FlatButtonRedStyle}" Margin="4" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+                    <Button Content="DialogButton" Style="{DynamicResource DialogButton}" Margin="4"  HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+                    <Button Content="CommandButton" Style="{DynamicResource CommandButton}" Margin="4" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+
+                    <Button Content="ToolbarButtonStyle" Style="{DynamicResource ToolbarButtonStyle}" Margin="4" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+
+                    <ToggleButton Content="ToolbarToggleButtonStyle" Style="{DynamicResource ToolbarToggleButtonStyle}" Margin="4" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+                    <ToggleButton Content="DefaultToggleButtonStyle" Style="{DynamicResource DefaultToggleButtonStyle}" Margin="4" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+
+                </UniformGrid>
+            </ScrollViewer>
+        </TabItem>
+        <TabItem Header="ListView">
+            <ListView>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Header1" />
+                        <GridViewColumn Header="Header2" />
+                        <GridViewColumn Header="Header3" />
+                        <GridViewColumn Header="Header4" />
+                    </GridView>
+                </ListView.View>
+                <ListViewItem Content="Text1" />
+                <ListViewItem Content="Text2" />
+                <ListViewItem Content="Text3" />
+            </ListView>
+        </TabItem>
+        <TabItem Header="DataGrid">
+            <DataGrid x:Name="dgDemo" >
+            </DataGrid>
+        </TabItem>
+    </TabControl>
+</ui:ModernContent>

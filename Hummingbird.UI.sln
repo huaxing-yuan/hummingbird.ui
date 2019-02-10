@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hummingbird.UI", "Hummingbird.UI\Hummingbird.UI.csproj", "{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Hummingbird.UI.Doc", "Hummingbird.UI.Docs\Hummingbird.UI.Doc.shfbproj", "{564B5F18-B63B-4692-BA54-D69F41F64A29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hummingbird.UI.Demo", "Hummingbird.UI.Test\Hummingbird.UI.Demo.csproj", "{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Debug|x64.ActiveCfg = Debug|x64
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Debug|x64.Build.0 = Debug|x64
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Debug|x86.ActiveCfg = Debug|x86
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Debug|x86.Build.0 = Debug|x86
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Release|x64.ActiveCfg = Release|x64
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Release|x64.Build.0 = Release|x64
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Release|x86.ActiveCfg = Release|x86
+		{54CCB31F-42CE-4F82-853A-18AF77ECA0C5}.Release|x86.Build.0 = Release|x86
+		{564B5F18-B63B-4692-BA54-D69F41F64A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564B5F18-B63B-4692-BA54-D69F41F64A29}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{564B5F18-B63B-4692-BA54-D69F41F64A29}.Debug|x64.Build.0 = Debug|Any CPU
+		{564B5F18-B63B-4692-BA54-D69F41F64A29}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{564B5F18-B63B-4692-BA54-D69F41F64A29}.Debug|x86.Build.0 = Debug|Any CPU
+		{564B5F18-B63B-4692-BA54-D69F41F64A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564B5F18-B63B-4692-BA54-D69F41F64A29}.Release|x64.ActiveCfg = Release|Any CPU
+		{564B5F18-B63B-4692-BA54-D69F41F64A29}.Release|x64.Build.0 = Release|Any CPU
+		{564B5F18-B63B-4692-BA54-D69F41F64A29}.Release|x86.ActiveCfg = Release|Any CPU
+		{564B5F18-B63B-4692-BA54-D69F41F64A29}.Release|x86.Build.0 = Release|Any CPU
+		{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}.Debug|x64.Build.0 = Debug|Any CPU
+		{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}.Debug|x86.ActiveCfg = Debug|x86
+		{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}.Debug|x86.Build.0 = Debug|x86
+		{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}.Release|x64.ActiveCfg = Release|Any CPU
+		{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}.Release|x64.Build.0 = Release|Any CPU
+		{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}.Release|x86.ActiveCfg = Release|x86
+		{CB13AC38-3F1A-4DEE-9DCE-6A75A386E870}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84CAC69C-BC5B-4F49-B1BE-C0AEA63155E4}
+	EndGlobalSection
+EndGlobal

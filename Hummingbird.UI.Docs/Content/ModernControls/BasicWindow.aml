@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="e248f946-41ce-4f62-a60a-700eb0d8115c" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <introduction>
+      <!-- Uncomment this to generate an outline of the section and sub-section
+           titles.  Specify a numeric value as the inner text to limit it to
+           a specific number of sub-topics when creating the outline.  Specify
+           zero (0) to limit it to top-level sections only.  -->
+      <!-- <autoOutline /> -->
+
+      <para>Basic Window is the restyled version of ordinary Window, For Front-end developers nothing has changed but the windows applies.</para>
+    </introduction>
+
+    <!-- Add one or more top-level section elements.  These are collapsible.
+         If using <autoOutline />, add an address attribute to identify it
+         and specify a title so that it can be jumped to with a hyperlink. -->
+    <section address="Section1">
+      <title>Layout of Basic Window</title>
+      <content>
+        <para>As shown in the following image, this is what a basic window looks like.</para>
+        <mediaLink>
+          <caption placement="after">Example of a BasicWindow with Highlighted Title</caption>
+          <image placement="center" xlink:href="basicwindow" />
+        </mediaLink>
+        <para>
+          You can control the highlighting of the Titlebar by using the <codeEntityReference>P:Hummingbird.UI.BasicWindow.IsTitleHighlighted</codeEntityReference> property. When this property is set to True, Titlebar will be highlighted, as above image, or the titlebar is not highlighted as the image below.
+        </para>
+        <mediaLink>
+          <caption placement="after">Example of a BasicWindow with a command button</caption>
+          <image placement="center"  xlink:href="basicwindow2" />
+        </mediaLink>
+        <para>
+          As you can see from the image above, the button <literal>Select Request</literal>is placed in the titlebar to gain maximum of workspace for user. The following example code shows how to declare a command button.
+        </para>
+      </content>
+    </section>
+
+    <section address="Section2">
+      <title>Message Box</title>
+      <content>
+        <para>
+          Hummingbird UI restyles also the standard MessageBox, call the <codeEntityReference>M:Hummingbird.UI.BasicWindow.ShowMessageBox</codeEntityReference> function of BasicWindow, ModernWindow or ModernContent will shows the modern style message box, an example of a message box is shown as follow, with Light Blue theme color.
+        </para>
+        <mediaLink>
+          <caption placement="after">Example of a MessageBox</caption>
+          <image placement="center"  xlink:href="messagebox" />
+        </mediaLink>
+        <para>Message box blocks the UI Thread and wait for the user’s choice.</para>
+
+      </content>
+    </section>
+
+    <section address="Section3">
+      <title>Information Box</title>
+      <content>
+        <para>Information box is used to alert users, give them some information that they must react. But the alert level is lower than the Message Box. The UI Thread continues to work even if the user does not react. An example of Information box is shown as follow, to show an information box, call <codeEntityReference>M:Hummingbird.UI.BasicWindow.ShowInformation</codeEntityReference> function from BasicWindow, ModernWindow or ModernContent.</para>
+        <mediaLink>
+          <caption placement="after">Example of a Information Box</caption>
+          <image placement="center"  xlink:href="informationbox" />
+        </mediaLink>
+      </content>
+    </section>
+
+    <section address="Section4">
+      <title>Toast Notification</title>
+      <content>
+        <para>Toast Notification is the lowest level of notification to users. It shows a message in a little popup window on the right side of the screen. Users may acknowledge the message but not required to react. The toast notification will disappear in 5 seconds by default. To show a Toast Notification, Call the function <codeEntityReference>M:Hummingbird.UI.BasicWindow.ShowToastNotification</codeEntityReference> from BasicWindow, ModernWindow or ModernContent.</para>
+        <mediaLink>
+          <caption placement="after">Example of a toast notification</caption>
+          <image placement="center"  xlink:href="toastnotification" />
+        </mediaLink>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <!-- One or more of the following:
+           - A local link
+           - An external link
+           - A code entity reference
+
+      <link xlink:href="Other Topic's ID"/>
+      <link xlink:href="Other Topic's ID">Link inner text</link>
+
+      <externalLink>
+          <linkText>Link text</linkText>
+          <linkAlternateText>Optional alternate link text</linkAlternateText>
+          <linkUri>URI</linkUri>
+      </externalLink>
+
+      <codeEntityReference>API member ID</codeEntityReference>
+
+      Examples:
+
+      <link xlink:href="00e97994-e9e6-46e0-b420-5be86b2f8270" />
+      <link xlink:href="00e97994-e9e6-46e0-b420-5be86b2f8278">Some other topic</link>
+
+      <externalLink>
+          <linkText>SHFB on GitHub</linkText>
+          <linkAlternateText>Go to GitHub</linkAlternateText>
+          <linkUri>https://GitHub.com/EWSoftware/SHFB</linkUri>
+      </externalLink>
+
+      <codeEntityReference>T:TestDoc.TestClass</codeEntityReference>
+      <codeEntityReference>P:TestDoc.TestClass.SomeProperty</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.#ctor</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.#ctor(System.String,System.Int32)</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.ToString</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.FirstMethod</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.SecondMethod(System.Int32,System.String)</codeEntityReference>
+      -->
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

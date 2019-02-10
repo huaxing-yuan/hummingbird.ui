@@ -1,0 +1,283 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Hummingbird.UI"        
+                    >
+
+    <!--TreeviewItem START -->
+    <Style x:Key="ExpandCollapseToggleStyle" TargetType="ToggleButton">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextFontSize}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid  Width="19"
+              Height="13" Background="Transparent"
+              >
+                        <Path x:Name="ExpandPath"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="1,1,1,1"
+                Fill="{DynamicResource ForegroundBrush}"
+                Data="M 2 0 L 7 5 L 2 10 Z"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked"
+                   Value="True">
+                            <Setter Property="Data"
+                    TargetName="ExpandPath"
+                    Value="M 7 0 L 0 7 L 7 7 Z"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TreeViewItemFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border>
+                        <Rectangle Margin="0,0,0,0"   StrokeThickness="5"   Stroke="{DynamicResource ForegroundBrush}"  StrokeDashArray="1 2"  Opacity="0"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--
+    <local:TreeViewLineConverter x:Key="LineConverter" x:Name="LineConverter"/>
+    <local:TreeViewRootConverter x:Key="RootConverter" x:Name="RootConverter"/>
+    -->
+
+    <Style x:Key="DefaultTreeViewItemStyle"  TargetType="TreeViewItem" >
+        <Setter Property="Background"  Value="Transparent"/>
+        <Setter Property="FontSize" Value="{DynamicResource ButtonFontSize }" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+        <Setter Property="VerticalContentAlignment"   Value="{Binding Path=VerticalContentAlignment,  RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+        <Setter Property="Padding" Value="1,0,0,0"/>
+        <Setter Property="Foreground"  Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="FocusVisualStyle"  Value="{StaticResource TreeViewItemFocusVisual}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource HighlightBrush}" />
+        <Setter Property="local:TreeViewItemExtender.UseExtender" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                    <Grid SnapsToDevicePixels="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="19" Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <!-- Connecting Lines -->
+                        <Rectangle x:Name="HorLn" Height="1" Stroke="{DynamicResource ControlBorderBrush}" Margin="9,0,0,0" SnapsToDevicePixels="true" />
+                        <Rectangle x:Name="VerLn" Width="1" Stroke="{DynamicResource ControlBorderBrush}" Grid.RowSpan="2" SnapsToDevicePixels="true"  />
+                        <ToggleButton x:Name="Expander" Style="{StaticResource ExpandCollapseToggleStyle}" IsChecked="{Binding Path=IsExpanded,  RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press"/>
+                        <Border Name="Bd"  Grid.Column="1" Grid.ColumnSpan="2" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter x:Name="PART_Header" ContentSource="Header" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                        </Border>
+                        <ItemsPresenter x:Name="ItemsHost" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" >
+                            <ItemsPresenter.RenderTransform>
+                                <TranslateTransform Y="0" />
+                            </ItemsPresenter.RenderTransform>
+                        </ItemsPresenter>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="local:TreeViewItemExtender.IsLastOne" Value="True">
+                            <Setter TargetName="VerLn" Property="Height" Value="11"/>
+                            <Setter TargetName="VerLn" Property="VerticalAlignment" Value="Top"/>
+                        </Trigger>
+
+                        <Trigger Property="IsExpanded" Value="False">
+                            <Setter TargetName="ItemsHost" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter TargetName="Expander" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                        <Trigger  Property="IsExpanded" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard DecelerationRatio="1">
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ItemsHost">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TranslateTransform.Y)" Storyboard.TargetName="ItemsHost">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="-10" />
+                                            <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasHeader" Value="false"/>
+                                <Condition Property="Width" Value="Auto"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Header" Property="MinWidth" Value="75"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasHeader" Value="false"/>
+                                <Condition Property="Height" Value="Auto"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Header" Property="MinHeight" Value="19"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource HighlightBrush}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="IsSelectionActive"  Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DisabledForegroundBrush}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled"  Value="false">
+                            <Setter Property="Foreground"  Value="{DynamicResource DisabledForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="DefaultSyncTreeViewItemStyle" TargetType="local:SyncTreeViewItem">
+        <Setter Property="Background"  Value="Transparent"/>
+        <Setter Property="FontSize" Value="{DynamicResource TextFontSize}" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+        <Setter Property="VerticalContentAlignment"   Value="{Binding Path=VerticalContentAlignment,  RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+        <Setter Property="Padding" Value="1,0,0,0"/>
+        <Setter Property="Foreground"  Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="FocusVisualStyle"  Value="{StaticResource TreeViewItemFocusVisual}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource HighlightBrush}" />
+        <Setter Property="local:TreeViewItemExtender.UseExtender" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:SyncTreeViewItem}">
+                    <Grid SnapsToDevicePixels="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="19" Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <!-- Connecting Lines -->
+                        <Rectangle x:Name="HorLn" Height="1" Stroke="{DynamicResource ControlBorderBrush}" Margin="9,0,0,0" SnapsToDevicePixels="true" />
+                        <Rectangle x:Name="VerLn" Width="1" Stroke="{DynamicResource ControlBorderBrush}" Grid.RowSpan="2" SnapsToDevicePixels="true"  />
+                        <ToggleButton x:Name="Expander" Style="{StaticResource ExpandCollapseToggleStyle}" IsChecked="{Binding Path=IsExpanded,  RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press"/>
+                        <Border Name="Bd"  Grid.Column="1" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter x:Name="PART_Header" ContentSource="Header" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                        </Border>
+                        <ItemsPresenter x:Name="ItemsHost" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" >
+                            <ItemsPresenter.RenderTransform>
+                                <TranslateTransform Y="0" />
+                            </ItemsPresenter.RenderTransform>
+                        </ItemsPresenter>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- This trigger changes the connecting lines if the item is the last in the list -->
+                        <!--<DataTrigger Binding="{Binding Converter={StaticResource LineConverter}, Mode=OneWay, RelativeSource={RelativeSource Self}}" Value="true">
+                            <Setter TargetName="VerLn" Property="Height" Value="11"/>
+                            <Setter TargetName="VerLn" Property="VerticalAlignment" Value="Top"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Converter={StaticResource RootConverter}, Mode=OneWay}" Value="true">
+                            <Setter TargetName="VerLn" Property="Visibility" Value="Hidden"/>
+                            <Setter TargetName="HorLn" Property="Visibility" Value="Hidden"/>
+                        </DataTrigger>
+                        -->
+
+                        <Trigger Property="local:TreeViewItemExtender.IsLastOne" Value="True">
+                            <Setter TargetName="VerLn" Property="Height" Value="11"/>
+                            <Setter TargetName="VerLn" Property="VerticalAlignment" Value="Top"/>
+                        </Trigger>
+
+                        <Trigger Property="IsExpanded" Value="False">
+                            <Setter TargetName="ItemsHost" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSynced" Value="True" />
+                                <Condition Property="HasItems" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="Expander" Property="Visibility" Value="Hidden"/>
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                        <!---
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter TargetName="Expander" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                        -->
+                        <Trigger  Property="IsExpanded" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard DecelerationRatio="1">
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ItemsHost">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+                                            <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(TranslateTransform.Y)" Storyboard.TargetName="ItemsHost">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="-10" />
+                                            <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasHeader" Value="false"/>
+                                <Condition Property="Width" Value="Auto"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Header" Property="MinWidth" Value="75"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasHeader" Value="false"/>
+                                <Condition Property="Height" Value="Auto"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Header" Property="MinHeight" Value="19"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource HighlightBrush}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextboxActiveTextBrush}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="IsSelectionActive"  Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DisabledForegroundBrush}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled"  Value="false">
+                            <Setter Property="Foreground"  Value="{DynamicResource DisabledForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{x:Type TreeViewItem}" TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource DefaultTreeViewItemStyle}" />
+    <Style x:Key="{x:Type local:SyncTreeViewItem}" TargetType="{x:Type local:SyncTreeViewItem}" BasedOn="{StaticResource DefaultSyncTreeViewItemStyle}" />
+
+    <Style x:Key="DefaultTreeViewStyle" TargetType="TreeView">
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource DefaultTreeViewItemStyle}" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+    </Style>
+
+    <Style  x:Key="{x:Type TreeView}" TargetType="TreeView" BasedOn="{StaticResource DefaultTreeViewStyle}" />
+
+    <!--TreeviewItem END -->
+</ResourceDictionary>

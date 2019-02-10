@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Hummingbird.UI">
+
+    <Style x:Key="{x:Type local:IconCheckBox}" TargetType="{x:Type local:IconCheckBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:IconCheckBox}">
+                    <Border BorderBrush="Transparent" Background="{DynamicResource BackgroundBrush}" BorderThickness="5,0,0,0" x:Name="Border" MinWidth="{TemplateBinding MaxWidth}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <!--<TextBlock Text="a" FontFamily="Marlett"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="2" Grid.RowSpan="2" Foreground="{DynamicResource BackgroundBrush}" FontSize="{DynamicResource Value24}" /> -->
+                            
+                            <Image Height="32" x:Name="Icon" Source="{TemplateBinding ImageSource}" Grid.RowSpan="2" VerticalAlignment="Center" Margin="{DynamicResource Thickness4444}" RenderOptions.BitmapScalingMode="HighQuality" />
+
+                            <TextBlock Text="{TemplateBinding Header}" Grid.Column="1" FontSize="{DynamicResource HeaderFontSize}" FontWeight="Bold" Margin="4,4,0,0" />
+                            <TextBlock Text="{TemplateBinding Description}" Grid.Column="1" Grid.Row="1" FontSize="{DynamicResource ButtonFontSize}" Margin="4,0" TextTrimming="CharacterEllipsis"  />
+
+                            <CheckBox Focusable="False" IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=IsChecked}" Grid.Column="2" Grid.RowSpan="2" Margin="{DynamicResource Thickness2222}" VerticalAlignment="Center" />
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource HighlightBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource HighlightLightBrush}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource HighlightLightBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

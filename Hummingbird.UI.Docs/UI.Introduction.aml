@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="0d5cd3b0-d659-4b04-aec6-c3b1c573c379" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>Hummingbird UI Framework helps to build professional desktop application using Windows Presentation Foundation. It provides highly customizable and modern user interface based on MVVM, helps to separate Data and its visualization.</para>
+      <para>The UI Framework restyles nearly all standard windows controls, let you to use already-have knowledges about these controls. </para>
+      <para>The framework comes with 10 built-in color schemes and 1000+ vector community-led icons support perfectly both traditional or Retina display adapters.</para>
+      <mediaLink>
+        <caption placement="after">Applications built with Hummingbird UI</caption>
+        <image placement="center" xlink:href="intro1" />
+      </mediaLink>
+    </introduction>
+    <section>
+      <!--h1-->
+      <title>Modern UI Design &amp; Model-View-Viewmodel (MVVM)</title>
+      <content>
+
+        <para>Hummingbird UI Framework builds upon .NET framework 4.5 and practices MVVM architectural pattern. That facilitates a separation of development of User Interface from the business logic.</para>
+
+        <para>The framework implements BasicWindow to allow you build graphic user interface in a traditional way, or ModernWindow to build application with a Modern UI Design.</para>
+        <para>For all of this, apply simply the following XAML code to your application (App.xaml)</para>
+        <code language="XAML" >
+          <![CDATA[
+          <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+              <ResourceDictionary Source="pack://application:,,,/Hummingbird.UI;component/Styles/DefaultStyle.xaml" />
+              <!-- If you want to use Blue accent color with Dark background, uncomment this
+              <ResourceDictionary Source="pack://application:,,,/Hummingbird.UI;component/Styles/ColorShemes/Dark_Blue.xaml" /> -->
+            </ResourceDictionary.MergedDictionaries>
+          </ResourceDictionary>
+          ]]>
+        </code>
+      </content>
+    </section>
+
+    <section>
+      <!--h2-->
+      <title>Built-in and Custom themes</title>
+      <content>
+
+        <para>10 color schemes are built-in, including 6 light backgrounded themes and 4 dark backgrounded themes. Adapts to everyone who use the application, in additional, you can create your own themes for either Light and Dark themes. Changing the theme of your application needs just 1 line of code.</para>
+        <mediaLink>
+          <image placement="center" xlink:href="themes" />
+        </mediaLink>
+      
+      </content>
+    </section>
+
+
+
+    <section>
+      <!--h1-->
+      <title>Built-in Icons</title>
+      <content>
+
+        <para>
+          The framework included more than 1000 vector icons that can be used in the application. If your application is targeting Windows 8.1 or Windows 10, you can even use these vector icons included in these operation systems. To preview these icons, you can download the demo application and its source code.
+        </para>
+        <mediaLink>
+          <image placement="center" xlink:href="icons" />
+        </mediaLink>
+      </content>
+    </section>
+
+    <relatedTopics>
+    </relatedTopics>
+
+  </developerConceptualDocument>
+</topic>

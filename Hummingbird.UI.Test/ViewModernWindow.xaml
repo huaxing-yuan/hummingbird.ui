@@ -1,0 +1,29 @@
+﻿<ui:ModernContent
+    xmlns:ui="clr-namespace:Hummingbird.UI;assembly=Hummingbird.UI" x:Class="Hummingbird.UI.Demo.ViewModernWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hummingbird.UI.Demo"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <ui:GridWithPadding Padding="4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ui:ModernSwitch Grid.Row="0" CheckedText="Show the border with Busy status" x:Name="msBorder"  UnCheckedText="Show the border with Normal status" IsCheckedChanged="ModernSwitch_IsCheckedChanged" />
+        <ui:ModernSwitch Grid.Row="1" CheckedText="Show the border with Good status" x:Name="msBorder2"  UnCheckedText="Show the border with Bad status" IsCheckedChanged="ModernSwitch2_IsCheckedChanged" />
+
+        <Button Grid.Row="2" Content="Show a BasicWindow" Click="Button_Click" />
+
+        <Button Grid.Row="3" Content="Show an Information" Click="Button1_Click" />
+
+        <Button Grid.Row="4" Content="Show an toast notification" Click="Button2_Click" />
+        
+        
+    </ui:GridWithPadding>
+</ui:ModernContent>

@@ -1,0 +1,219 @@
+﻿<ui:ModernContent
+    xmlns:ui="clr-namespace:Hummingbird.UI;assembly=Hummingbird.UI" x:Class="Hummingbird.UI.Demo.ViewWin8Icons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hummingbird.UI.Demo"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{DynamicResource TextBlockViewHeader}" Text="If you are targeting Windows 8.1 and above, you can use icons included in Segoe UI Symbol front. as the same using IconKey of AppBarIcon, AppBarButton and ModernLink controls." TextWrapping="Wrap" />
+        <ScrollViewer Grid.Row="1">
+            <WrapPanel ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"  >
+                <ui:AppBarIcon IconKey="symbol_Accept" Width="72" IsCircleVisible="True" ToolTip="symbol_Accept" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Account" Width="72" IsCircleVisible="True" ToolTip="symbol_Account" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Add" Width="72" IsCircleVisible="True" ToolTip="symbol_Add" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_AddFriend" Width="72" IsCircleVisible="True" ToolTip="symbol_AddFriend" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Admin" Width="72" IsCircleVisible="True" ToolTip="symbol_Admin" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_AlignCenter" Width="72" IsCircleVisible="True" ToolTip="symbol_AlignCenter" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_AlignLeft" Width="72" IsCircleVisible="True" ToolTip="symbol_AlignLeft" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_AlignRight" Width="72" IsCircleVisible="True" ToolTip="symbol_AlignRight" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_AllApps" Width="72" IsCircleVisible="True" ToolTip="symbol_AllApps" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Attach" Width="72" IsCircleVisible="True" ToolTip="symbol_Attach" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_AttachCamera" Width="72" IsCircleVisible="True" ToolTip="symbol_AttachCamera" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Audio" Width="72" IsCircleVisible="True" ToolTip="symbol_Audio" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Back" Width="72" IsCircleVisible="True" ToolTip="symbol_Back" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_BackToWindow" Width="72" IsCircleVisible="True" ToolTip="symbol_BackToWindow" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_BlockContact" Width="72" IsCircleVisible="True" ToolTip="symbol_BlockContact" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Bold" Width="72" IsCircleVisible="True" ToolTip="symbol_Bold" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Bookmarks" Width="72" IsCircleVisible="True" ToolTip="symbol_Bookmarks" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_BrowsePhotos" Width="72" IsCircleVisible="True" ToolTip="symbol_BrowsePhotos" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Bullets" Width="72" IsCircleVisible="True" ToolTip="symbol_Bullets" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Calculator" Width="72" IsCircleVisible="True" ToolTip="symbol_Calculator" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Calendar" Width="72" IsCircleVisible="True" ToolTip="symbol_Calendar" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_CalendarDay" Width="72" IsCircleVisible="True" ToolTip="symbol_CalendarDay" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_CalendarReply" Width="72" IsCircleVisible="True" ToolTip="symbol_CalendarReply" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_CalendarWeek" Width="72" IsCircleVisible="True" ToolTip="symbol_CalendarWeek" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Camera" Width="72" IsCircleVisible="True" ToolTip="symbol_Camera" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Cancel" Width="72" IsCircleVisible="True" ToolTip="symbol_Cancel" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Caption" Width="72" IsCircleVisible="True" ToolTip="symbol_Caption" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_CellPhone" Width="72" IsCircleVisible="True" ToolTip="symbol_CellPhone" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Character" Width="72" IsCircleVisible="True" ToolTip="symbol_Character" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Clear" Width="72" IsCircleVisible="True" ToolTip="symbol_Clear" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ClearSelection" Width="72" IsCircleVisible="True" ToolTip="symbol_ClearSelection" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Clock" Width="72" IsCircleVisible="True" ToolTip="symbol_Clock" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ClosedCaption" Width="72" IsCircleVisible="True" ToolTip="symbol_ClosedCaption" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ClosePane" Width="72" IsCircleVisible="True" ToolTip="symbol_ClosePane" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Comment" Width="72" IsCircleVisible="True" ToolTip="symbol_Comment" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Contact" Width="72" IsCircleVisible="True" ToolTip="symbol_Contact" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Contact2" Width="72" IsCircleVisible="True" ToolTip="symbol_Contact2" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ContactInfo" Width="72" IsCircleVisible="True" ToolTip="symbol_ContactInfo" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ContactPresence" Width="72" IsCircleVisible="True" ToolTip="symbol_ContactPresence" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Copy" Width="72" IsCircleVisible="True" ToolTip="symbol_Copy" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Crop" Width="72" IsCircleVisible="True" ToolTip="symbol_Crop" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Cut" Width="72" IsCircleVisible="True" ToolTip="symbol_Cut" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Delete" Width="72" IsCircleVisible="True" ToolTip="symbol_Delete" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Directions" Width="72" IsCircleVisible="True" ToolTip="symbol_Directions" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_DisableUpdates" Width="72" IsCircleVisible="True" ToolTip="symbol_DisableUpdates" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_DisconnectDrive" Width="72" IsCircleVisible="True" ToolTip="symbol_DisconnectDrive" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Dislike" Width="72" IsCircleVisible="True" ToolTip="symbol_Dislike" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_DockBottom" Width="72" IsCircleVisible="True" ToolTip="symbol_DockBottom" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_DockLeft" Width="72" IsCircleVisible="True" ToolTip="symbol_DockLeft" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_DockRight" Width="72" IsCircleVisible="True" ToolTip="symbol_DockRight" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Document" Width="72" IsCircleVisible="True" ToolTip="symbol_Document" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Download" Width="72" IsCircleVisible="True" ToolTip="symbol_Download" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Edit" Width="72" IsCircleVisible="True" ToolTip="symbol_Edit" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Emoji" Width="72" IsCircleVisible="True" ToolTip="symbol_Emoji" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Emoji2" Width="72" IsCircleVisible="True" ToolTip="symbol_Emoji2" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Favorite" Width="72" IsCircleVisible="True" ToolTip="symbol_Favorite" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Filter" Width="72" IsCircleVisible="True" ToolTip="symbol_Filter" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Find" Width="72" IsCircleVisible="True" ToolTip="symbol_Find" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Flag" Width="72" IsCircleVisible="True" ToolTip="symbol_Flag" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Folder" Width="72" IsCircleVisible="True" ToolTip="symbol_Folder" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Font" Width="72" IsCircleVisible="True" ToolTip="symbol_Font" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_FontColor" Width="72" IsCircleVisible="True" ToolTip="symbol_FontColor" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_FontDecrease" Width="72" IsCircleVisible="True" ToolTip="symbol_FontDecrease" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_FontIncrease" Width="72" IsCircleVisible="True" ToolTip="symbol_FontIncrease" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_FontSize" Width="72" IsCircleVisible="True" ToolTip="symbol_FontSize" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Forward" Width="72" IsCircleVisible="True" ToolTip="symbol_Forward" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_FourBars" Width="72" IsCircleVisible="True" ToolTip="symbol_FourBars" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_FullScreen" Width="72" IsCircleVisible="True" ToolTip="symbol_FullScreen" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_GlobalNavigationButton" Width="72" IsCircleVisible="True" ToolTip="symbol_GlobalNavigationButton" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Globe" Width="72" IsCircleVisible="True" ToolTip="symbol_Globe" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Go" Width="72" IsCircleVisible="True" ToolTip="symbol_Go" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_GoToStart" Width="72" IsCircleVisible="True" ToolTip="symbol_GoToStart" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_GoToToday" Width="72" IsCircleVisible="True" ToolTip="symbol_GoToToday" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_HangUp" Width="72" IsCircleVisible="True" ToolTip="symbol_HangUp" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Help" Width="72" IsCircleVisible="True" ToolTip="symbol_Help" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_HideBcc" Width="72" IsCircleVisible="True" ToolTip="symbol_HideBcc" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Highlight" Width="72" IsCircleVisible="True" ToolTip="symbol_Highlight" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Home" Width="72" IsCircleVisible="True" ToolTip="symbol_Home" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Import" Width="72" IsCircleVisible="True" ToolTip="symbol_Import" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ImportAll" Width="72" IsCircleVisible="True" ToolTip="symbol_ImportAll" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Important" Width="72" IsCircleVisible="True" ToolTip="symbol_Important" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Italic" Width="72" IsCircleVisible="True" ToolTip="symbol_Italic" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Keyboard" Width="72" IsCircleVisible="True" ToolTip="symbol_Keyboard" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_LeaveChat" Width="72" IsCircleVisible="True" ToolTip="symbol_LeaveChat" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Library" Width="72" IsCircleVisible="True" ToolTip="symbol_Library" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Like" Width="72" IsCircleVisible="True" ToolTip="symbol_Like" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_LikeDislike" Width="72" IsCircleVisible="True" ToolTip="symbol_LikeDislike" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Link" Width="72" IsCircleVisible="True" ToolTip="symbol_Link" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_List" Width="72" IsCircleVisible="True" ToolTip="symbol_List" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Mail" Width="72" IsCircleVisible="True" ToolTip="symbol_Mail" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_MailFilled" Width="72" IsCircleVisible="True" ToolTip="symbol_MailFilled" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_MailForward" Width="72" IsCircleVisible="True" ToolTip="symbol_MailForward" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_MailReply" Width="72" IsCircleVisible="True" ToolTip="symbol_MailReply" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_MailReplyAll" Width="72" IsCircleVisible="True" ToolTip="symbol_MailReplyAll" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Manage" Width="72" IsCircleVisible="True" ToolTip="symbol_Manage" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Map" Width="72" IsCircleVisible="True" ToolTip="symbol_Map" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_MapDrive" Width="72" IsCircleVisible="True" ToolTip="symbol_MapDrive" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_MapPin" Width="72" IsCircleVisible="True" ToolTip="symbol_MapPin" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Memo" Width="72" IsCircleVisible="True" ToolTip="symbol_Memo" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Message" Width="72" IsCircleVisible="True" ToolTip="symbol_Message" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Microphone" Width="72" IsCircleVisible="True" ToolTip="symbol_Microphone" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_More" Width="72" IsCircleVisible="True" ToolTip="symbol_More" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_MoveToFolder" Width="72" IsCircleVisible="True" ToolTip="symbol_MoveToFolder" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_MusicInfo" Width="72" IsCircleVisible="True" ToolTip="symbol_MusicInfo" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Mute" Width="72" IsCircleVisible="True" ToolTip="symbol_Mute" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_NewFolder" Width="72" IsCircleVisible="True" ToolTip="symbol_NewFolder" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_NewWindow" Width="72" IsCircleVisible="True" ToolTip="symbol_NewWindow" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Next" Width="72" IsCircleVisible="True" ToolTip="symbol_Next" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_OneBar" Width="72" IsCircleVisible="True" ToolTip="symbol_OneBar" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_OpenFile" Width="72" IsCircleVisible="True" ToolTip="symbol_OpenFile" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_OpenLocal" Width="72" IsCircleVisible="True" ToolTip="symbol_OpenLocal" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_OpenPane" Width="72" IsCircleVisible="True" ToolTip="symbol_OpenPane" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_OpenWith" Width="72" IsCircleVisible="True" ToolTip="symbol_OpenWith" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Orientation" Width="72" IsCircleVisible="True" ToolTip="symbol_Orientation" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_OtherUser" Width="72" IsCircleVisible="True" ToolTip="symbol_OtherUser" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_OutlineStar" Width="72" IsCircleVisible="True" ToolTip="symbol_OutlineStar" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Page" Width="72" IsCircleVisible="True" ToolTip="symbol_Page" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Page2" Width="72" IsCircleVisible="True" ToolTip="symbol_Page2" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Paste" Width="72" IsCircleVisible="True" ToolTip="symbol_Paste" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Pause" Width="72" IsCircleVisible="True" ToolTip="symbol_Pause" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_People" Width="72" IsCircleVisible="True" ToolTip="symbol_People" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Permissions" Width="72" IsCircleVisible="True" ToolTip="symbol_Permissions" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Phone" Width="72" IsCircleVisible="True" ToolTip="symbol_Phone" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_PhoneBook" Width="72" IsCircleVisible="True" ToolTip="symbol_PhoneBook" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Pictures" Width="72" IsCircleVisible="True" ToolTip="symbol_Pictures" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Pin" Width="72" IsCircleVisible="True" ToolTip="symbol_Pin" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Placeholder" Width="72" IsCircleVisible="True" ToolTip="symbol_Placeholder" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Play" Width="72" IsCircleVisible="True" ToolTip="symbol_Play" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_PostUpdate" Width="72" IsCircleVisible="True" ToolTip="symbol_PostUpdate" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Preview" Width="72" IsCircleVisible="True" ToolTip="symbol_Preview" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_PreviewLink" Width="72" IsCircleVisible="True" ToolTip="symbol_PreviewLink" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Previous" Width="72" IsCircleVisible="True" ToolTip="symbol_Previous" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Print" Width="72" IsCircleVisible="True" ToolTip="symbol_Print" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Priority" Width="72" IsCircleVisible="True" ToolTip="symbol_Priority" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ProtectedDocument" Width="72" IsCircleVisible="True" ToolTip="symbol_ProtectedDocument" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Read" Width="72" IsCircleVisible="True" ToolTip="symbol_Read" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Redo" Width="72" IsCircleVisible="True" ToolTip="symbol_Redo" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Refresh" Width="72" IsCircleVisible="True" ToolTip="symbol_Refresh" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Remote" Width="72" IsCircleVisible="True" ToolTip="symbol_Remote" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Remove" Width="72" IsCircleVisible="True" ToolTip="symbol_Remove" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Rename" Width="72" IsCircleVisible="True" ToolTip="symbol_Rename" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Repair" Width="72" IsCircleVisible="True" ToolTip="symbol_Repair" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_RepeatAll" Width="72" IsCircleVisible="True" ToolTip="symbol_RepeatAll" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_RepeatOne" Width="72" IsCircleVisible="True" ToolTip="symbol_RepeatOne" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ReportHacked" Width="72" IsCircleVisible="True" ToolTip="symbol_ReportHacked" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ReShare" Width="72" IsCircleVisible="True" ToolTip="symbol_ReShare" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Rotate" Width="72" IsCircleVisible="True" ToolTip="symbol_Rotate" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_RotateCamera" Width="72" IsCircleVisible="True" ToolTip="symbol_RotateCamera" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Save" Width="72" IsCircleVisible="True" ToolTip="symbol_Save" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_SaveLocal" Width="72" IsCircleVisible="True" ToolTip="symbol_SaveLocal" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Scan" Width="72" IsCircleVisible="True" ToolTip="symbol_Scan" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_SelectAll" Width="72" IsCircleVisible="True" ToolTip="symbol_SelectAll" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Send" Width="72" IsCircleVisible="True" ToolTip="symbol_Send" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_SetLockScreen" Width="72" IsCircleVisible="True" ToolTip="symbol_SetLockScreen" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_SetTile" Width="72" IsCircleVisible="True" ToolTip="symbol_SetTile" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Setting" Width="72" IsCircleVisible="True" ToolTip="symbol_Setting" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Share" Width="72" IsCircleVisible="True" ToolTip="symbol_Share" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Shop" Width="72" IsCircleVisible="True" ToolTip="symbol_Shop" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ShowBcc" Width="72" IsCircleVisible="True" ToolTip="symbol_ShowBcc" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ShowResults" Width="72" IsCircleVisible="True" ToolTip="symbol_ShowResults" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Shuffle" Width="72" IsCircleVisible="True" ToolTip="symbol_Shuffle" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_SlideShow" Width="72" IsCircleVisible="True" ToolTip="symbol_SlideShow" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_SolidStar" Width="72" IsCircleVisible="True" ToolTip="symbol_SolidStar" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Sort" Width="72" IsCircleVisible="True" ToolTip="symbol_Sort" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Stop" Width="72" IsCircleVisible="True" ToolTip="symbol_Stop" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_StopSlideShow" Width="72" IsCircleVisible="True" ToolTip="symbol_StopSlideShow" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Street" Width="72" IsCircleVisible="True" ToolTip="symbol_Street" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Switch" Width="72" IsCircleVisible="True" ToolTip="symbol_Switch" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_SwitchApps" Width="72" IsCircleVisible="True" ToolTip="symbol_SwitchApps" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Sync" Width="72" IsCircleVisible="True" ToolTip="symbol_Sync" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_SyncFolder" Width="72" IsCircleVisible="True" ToolTip="symbol_SyncFolder" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Tag" Width="72" IsCircleVisible="True" ToolTip="symbol_Tag" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Target" Width="72" IsCircleVisible="True" ToolTip="symbol_Target" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ThreeBars" Width="72" IsCircleVisible="True" ToolTip="symbol_ThreeBars" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_TouchPointer" Width="72" IsCircleVisible="True" ToolTip="symbol_TouchPointer" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Trim" Width="72" IsCircleVisible="True" ToolTip="symbol_Trim" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_TwoBars" Width="72" IsCircleVisible="True" ToolTip="symbol_TwoBars" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_TwoPage" Width="72" IsCircleVisible="True" ToolTip="symbol_TwoPage" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Underline" Width="72" IsCircleVisible="True" ToolTip="symbol_Underline" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Undo" Width="72" IsCircleVisible="True" ToolTip="symbol_Undo" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_UnFavorite" Width="72" IsCircleVisible="True" ToolTip="symbol_UnFavorite" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_UnPin" Width="72" IsCircleVisible="True" ToolTip="symbol_UnPin" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_UnSyncFolder" Width="72" IsCircleVisible="True" ToolTip="symbol_UnSyncFolder" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Up" Width="72" IsCircleVisible="True" ToolTip="symbol_Up" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Upload" Width="72" IsCircleVisible="True" ToolTip="symbol_Upload" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Video" Width="72" IsCircleVisible="True" ToolTip="symbol_Video" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_VideoChat" Width="72" IsCircleVisible="True" ToolTip="symbol_VideoChat" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_View" Width="72" IsCircleVisible="True" ToolTip="symbol_View" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ViewAll" Width="72" IsCircleVisible="True" ToolTip="symbol_ViewAll" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Volume" Width="72" IsCircleVisible="True" ToolTip="symbol_Volume" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_WebCam" Width="72" IsCircleVisible="True" ToolTip="symbol_WebCam" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_World" Width="72" IsCircleVisible="True" ToolTip="symbol_World" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_XboxOneConsole" Width="72" IsCircleVisible="True" ToolTip="symbol_XboxOneConsole" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ZeroBars" Width="72" IsCircleVisible="True" ToolTip="symbol_ZeroBars" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_Zoom" Width="72" IsCircleVisible="True" ToolTip="symbol_Zoom" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ZoomIn" Width="72" IsCircleVisible="True" ToolTip="symbol_ZoomIn" Margin="4" />
+                <ui:AppBarIcon IconKey="symbol_ZoomOut" Width="72" IsCircleVisible="True" ToolTip="symbol_ZoomOut" Margin="4" />
+            </WrapPanel>
+        </ScrollViewer>
+
+    </Grid>
+</ui:ModernContent>

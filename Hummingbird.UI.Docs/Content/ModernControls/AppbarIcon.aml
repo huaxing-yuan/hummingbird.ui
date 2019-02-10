@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="13097415-b194-4ba3-84bb-9c3904a7c7f5" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!--
+    <summary>
+      <para>Optional summary abstract</para>
+    </summary>
+    -->
+
+    <introduction>
+      <para>AppBarIcon shares the same principle with <codeEntityReference>T:Hummingbird.UI.AppBarButton</codeEntityReference>, you can use <codeEntityReference>P:Hummingbird.UI.AppBarIcon.IconKey</codeEntityReference> to specify an Icon and <codeEntityReference>P:Hummingbird.UI.AppBarIcon.IsCircleVisible</codeEntityReference> to indicate if a circle is around the icon.</para>
+      <para>This Icon element can be embedded into another WPF Controls such as Button.</para>
+    </introduction>
+
+    <section address="Section1">
+      <title>Use AppBarIcon with other WPF Controls</title>
+      <content>
+        <para>The following example shows how use AppBarIcon into a Button</para>
+        <code language="XAML">
+          <![CDATA[            <Button x:Name="btnSendRequest" Click="btnSendRequest_Click"  Style="{DynamicResource FlatButtonStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <ui:AppBarIcon IconKey="appbar_arrow_right" Height="24" Width="24" IsCircleVisible="True" />
+                    <TextBlock Text="Send Request" Margin="{DynamicResource Thickness4444}" />
+                </StackPanel>
+            </Button>]]>
+        </code>
+        <para>The button shown in the user interface by the above XAML code will be:</para>
+        <mediaLink>
+          <image placement="center"  xlink:href="flatbutton" />
+        </mediaLink>
+        <para>With AppBarIcon, you have the possibility to control the size with Height and Width property.</para>
+        <para>The AppBarIcon applies the Foreground color of current context, in order to keep the harmony with another element. You can not change the color by yourself.</para>
+        <para></para>
+        <para>Following is an example used on ToggleButton, without circle around.</para>
+        <mediaLink>
+          <image placement="center"  xlink:href="optionbutton" />
+        </mediaLink>
+        <para>To archive this, you can use the following XAML code as example. This time it has no circle with Height and Width = 16 points.</para>
+        <code language="XAML">
+          <![CDATA[                <ToggleButton HorizontalAlignment="Center" x:Name="btnSettings" Style="{DynamicResource ToolbarToggleButtonStyle}" ToolTip="Options" >
+                    <StackPanel Orientation="Horizontal">
+                        <ui:AppBarIcon IconKey="appbar_settings" Height="16" Width="16" />
+                        <TextBlock Text="Options" Margin="{DynamicResource Thickness4444}" />
+                    </StackPanel>
+                </ToggleButton>]]>
+        </code>
+      </content>
+
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="00e97994-e9e6-46e0-b420-5be86b2f8270" />
+      <codeEntityReference>T:Hummingbird.UI.AppBarIcon</codeEntityReference>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

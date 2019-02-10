@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="2ce96079-1f5e-4807-961a-3e93aaa65908" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <summary>
+      <para>Copyright &#9400; 2013-2018 Huaxing YUAN, All right reserved.</para>
+      <para>Hummingbird UI Framework is licensed under CC BY 3.0 license</para>
+      <para>A full page of the license can be found here:
+      <externalLink>
+        <linkText>https://creativecommons.org/licenses/by/3.0/legalcode</linkText>
+        <linkUri>https://creativecommons.org/licenses/by/3.0/legalcode</linkUri>
+        <linkTarget>_blank</linkTarget>
+      </externalLink>
+    </para>
+    </summary>
+
+    <!-- Add one or more top-level section elements.  These are collapsible.
+         If using <autoOutline />, add an address attribute to identify it
+         and specify a title so that it can be jumped to with a hyperlink. -->
+    <section address="Section1">
+      <title>Attribution 3.0 Unported (CC BY 3.0)</title>
+      <content>
+        <sections>
+          <section address="SubSection1">
+            <title>You are free to</title>
+            <content>
+              <list>
+                <listItem>
+                  <para>Share — copy and redistribute the material in any medium or format </para>
+                </listItem>
+                <listItem>
+                  <para>
+                    Adapt — remix, transform, and build upon the material
+                    for any purpose, even commercially.
+                  </para>
+                </listItem>
+              </list>
+            </content>
+          </section>
+          <section address="SubSection2">
+            <title>Under the following terms</title>
+            <content>
+              <list>
+                <listItem>
+                  <para>Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. </para>
+                </listItem>
+                <listItem>
+                  <para>No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits. </para>
+                </listItem>
+              </list>
+            </content>
+          </section>
+          <section address="SubSection3">
+            <title>Notices</title>
+            <content>
+              <para>You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation. </para>
+              <para>No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material. </para>
+            </content>
+          </section>
+        </sections>
+
+      </content>
+    </section>
+
+    <section address="Section2">
+      <title>3rd party components: Windows Icons</title>
+      <content>
+        Hummingbird UI Framework used some resources from the community under their own license agreements. These resources are not invented by Huaxing YUAN and the authors holds their own copyrights for their resources
+      </content>
+    </section>
+
+    <section address="Section3">
+      <title>
+        Windows Icons from modernuiicons.com
+      </title>
+      <content>
+        <para>
+          These icons are from the following GitHub project: <externalLink>
+            <linkText>https://github.com/Templarian/WindowsIcons</linkText>
+            <linkUri>https://github.com/Templarian/WindowsIcons</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink>, under CC-BY-ND 3.0 license. Downloaded from their official website:
+          <externalLink>
+            <linkText>http://modernuiicons.com/</linkText>
+            <linkUri>http://modernuiicons.com/</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink>
+          
+          
+        </para>
+        <para>
+          Hummingbird UI Framework uses the XAML version of icons without modification and compiled in the binary. If you want to use these icons for other usage than within your application, please go to the official site and download a copy.
+        </para>
+        <para>
+          The original license file can be found here:
+          <externalLink>
+            <linkText>https://github.com/Templarian/WindowsIcons/blob/master/WindowsPhone/license.txt</linkText>
+            <linkUri>https://github.com/Templarian/WindowsIcons/blob/master/WindowsPhone/license.txt</linkUri>
+            <linkTarget>_blank</linkTarget>
+          </externalLink>. Please read it before.
+        </para>
+        <alert>
+          <para>
+            The license CC-BY-ND 3.0 does not allow derived works, if you have modified at least one of these icons, these modified icons cannot be distributed.
+          </para>
+        </alert>
+
+      </content>
+    </section>
+
+    <relatedTopics>
+      <!-- One or more of the following:
+           - A local link
+           - An external link
+           - A code entity reference
+
+      <link xlink:href="Other Topic's ID"/>
+      <link xlink:href="Other Topic's ID">Link inner text</link>
+
+      <externalLink>
+          <linkText>Link text</linkText>
+          <linkAlternateText>Optional alternate link text</linkAlternateText>
+          <linkUri>URI</linkUri>
+      </externalLink>
+
+      <codeEntityReference>API member ID</codeEntityReference>
+
+      Examples:
+
+      <link xlink:href="00e97994-e9e6-46e0-b420-5be86b2f8270" />
+      <link xlink:href="00e97994-e9e6-46e0-b420-5be86b2f8278">Some other topic</link>
+
+      <externalLink>
+          <linkText>SHFB on GitHub</linkText>
+          <linkAlternateText>Go to GitHub</linkAlternateText>
+          <linkUri>https://GitHub.com/EWSoftware/SHFB</linkUri>
+      </externalLink>
+
+      <codeEntityReference>T:TestDoc.TestClass</codeEntityReference>
+      <codeEntityReference>P:TestDoc.TestClass.SomeProperty</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.#ctor</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.#ctor(System.String,System.Int32)</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.ToString</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.FirstMethod</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.SecondMethod(System.Int32,System.String)</codeEntityReference>
+      -->
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="7245aaba-39f1-423e-895c-f5b0e72394a5" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <introduction>
+      <para>AppBarButton is a button usually shown in the status bar at the bottom of the application. It is composed with an Icon and a text label under it. By default, the text is invisible, when the mouse hovers on it, the icon will float up and the text is shown.</para>
+    </introduction>
+
+    <!-- Add one or more top-level section elements.  These are collapsible.
+         If using <autoOutline />, add an address attribute to identify it
+         and specify a title so that it can be jumped to with a hyperlink. -->
+    <section address="Section1">
+      <title>Use AppBarButton in Status Bar</title>
+      <content>
+        <para>Add one or more sections with content</para>
+        <para>The following image shows some AppBarButtons in a StatusBar, while the mouse is hovering on the last one.</para>
+        <mediaLink>
+          <caption placement="after">Example of some AppBarButtons in the status bar</caption>
+          <image placement="center"  xlink:href="mw_statusbar" />
+        </mediaLink>
+        <para>
+          To create a status bar with AppBarButtons like above image, you can take following XAML code as example. The button has a Click event, assign it with an event handler to process user interaction.
+        </para>
+        <code language="XAML">
+          <![CDATA[    <ui:ModernContent.StatusBar>
+        <StatusBar>
+            <StatusBarItem>
+                <StackPanel Orientation="Horizontal">
+                    <ui:AppBarButton IconKey="appbar_page_new" Caption="new project" x:Name="btnNewProject" Click="btnNewProject_Click" />
+                    <ui:AppBarButton IconKey="appbar_folder_open" Caption="open project" x:Name="btnOpenProject" Click="btnOpenProject_Click" />
+                    <ui:AppBarButton IconKey="appbar_disk" Caption="save" x:Name="btnSaveProject" Click="btnSaveProject_Click"  />
+                    <ui:AppBarButton IconKey="appbar_disk_download" Caption="save as" x:Name="btnSaveAsProject" Click="btnSaveAsProject_Click"  />
+                    <ui:AppBarButton IconKey="appbar_close" Caption="close" x:Name="btnCloseProject" Click="btnCloseProject_Click" />
+                </StackPanel>
+            </StatusBarItem>
+        </StatusBar>
+    </ui:ModernContent.StatusBar>]]>
+        </code>
+        <list>
+          <listItem>
+            <para>
+              <codeEntityReference>P:Hummingbird.UI.AppBarButton.IconKey</codeEntityReference>
+              is the property where to specify the Icon shown in the button. You can use the native 1000+ community vector icons, the Windows 8.1 Segoe UI Symbol icons or the Windows 10 MDL2 Assert icons. To learn mow about IconKey please refers to Vector Icons.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <codeEntityReference>P:Hummingbird.UI.AppBarButton.Caption</codeEntityReference> is the text shown under the icon, it should be simple and easy to understand.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <codeEntityReference>P:Hummingbird.UI.AppBarButton.IsCircleVisible</codeEntityReference> indicates if a circle will be around the icon. In the above example, all icons have IsCircleVisible set to true.
+            </para>
+          </listItem>
+        </list>
+      </content>
+
+    </section>
+
+    <relatedTopics>
+      <codeEntityReference>T:Hummingbird.UI.AppBarButton</codeEntityReference>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

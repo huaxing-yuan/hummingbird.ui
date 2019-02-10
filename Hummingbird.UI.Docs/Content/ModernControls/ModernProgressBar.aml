@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="d6683c88-d29b-44de-8746-561380de7047" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>Modern Progress bar is an infinity state progress bar, used to indicate that some background task is running but the time remaining cannot be predicted.</para>
+    </introduction>
+
+    <!-- Add one or more top-level section elements.  These are collapsible.
+         If using <autoOutline />, add an address attribute to identify it
+         and specify a title so that it can be jumped to with a hyperlink. -->
+    <section address="Section1">
+      <title>Use of ModernProgressBar Control</title>
+      <content>
+        <para>Place a ModernProgressBar and control its Visibility to do the work: When something is loading, make it visible, otherwise hide it.</para>
+        <para>The ModernProgressBar will be performed as follow:</para>
+        <code language="XAML">
+          <![CDATA[<ui:ModernProgressBar />]]>
+        </code>
+        <para>You can use DataBinding or the Code to control is Visibility. The control is not visible, the animation will be paused.</para>
+        <mediaLink>
+          <image placement="center"  xlink:href="modernprogressbar" />
+        </mediaLink>
+        <para>
+          Remarks: If the progress is predictable and you want to indicate users about is progress, please use the native .NET <codeEntityReference>T:System.Windows.Controls.ProgressBar</codeEntityReference> control. Hummingbird UI Framework restyles the progress bar control and it is possible to use <codeEntityReference>T:Hummingbird.UI.ProgressBarSmoother</codeEntityReference> to smoothly change the progress with animation.
+        </para>
+        <para>
+          The following code uses DataBinding to bind Progress property to ProgressBarSmoother.Value, If the Progress changes, the value of ProgressBar is changed with animation.
+        </para>
+        <code language="XAML">
+          <![CDATA[<ProgressBar Grid.Row="1" Maximum="100" ui:ProgressBarSmoother.Value="{Binding Progress}" Style="{DynamicResource ThinProgressBarNoTrack}"/>]]>
+        </code>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <codeEntityReference>T:System.Windows.Controls.ProgressBar</codeEntityReference>
+      <codeEntityReference>T:Hummingbird.UI.ProgressBarSmoother</codeEntityReference>
+      <codeEntityReference>T:Hummingbird.UI.ModernProgressBar</codeEntityReference>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

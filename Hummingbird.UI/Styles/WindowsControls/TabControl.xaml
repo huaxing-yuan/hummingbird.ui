@@ -1,0 +1,353 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>
+
+    <DataTemplate x:Key="myHeader" DataType="{x:Type TabItem}">
+        <Border Padding="{DynamicResource Thickness6363}" >
+            <ContentPresenter TextElement.FontSize="{DynamicResource TextFontSize}" Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, Path=Header}" />
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="myHeaderWhite" DataType="{x:Type TabItem}">
+        <Border Padding="{DynamicResource Thickness6363}" >
+            <ContentPresenter TextElement.Foreground="{DynamicResource HighlightForegroundBrush}" TextElement.FontSize="{DynamicResource TextFontSize}" Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, Path=Header}" />
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="myHeaderHighlight" DataType="{x:Type TabItem}">
+        <Border Padding="{DynamicResource Thickness6363}" >
+            <ContentPresenter TextElement.Foreground="{DynamicResource HighlightBrush}" TextElement.FontSize="{DynamicResource TextFontSize}" Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type TabItem} }, Path=Header}" />
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="myHeaderBold">
+        <TextBlock Text="{Binding}" FontSize="{DynamicResource TextFontSize}" FontWeight="Bold" Padding="{DynamicResource Thickness6363}"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="myHeaderBoldHighlight">
+        <TextBlock Text="{Binding}" FontSize="{DynamicResource TextFontSize}" FontWeight="Bold" Foreground="{DynamicResource HighlightBrush}" Padding="{DynamicResource Thickness6363}"/>
+    </DataTemplate>
+
+    <Style TargetType="{x:Type TabItem}" x:Key="DefaultTabItemStyle">
+        <Setter Property="HeaderTemplate" Value="{StaticResource myHeader}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Border Name="Border" Margin="4,0"  >
+                        <Grid>
+                            <Border SnapsToDevicePixels ="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="Border2" Background="{DynamicResource HighlightBrush}" Opacity="0"/>
+                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" Margin="12,2,12,2" RecognizesAccessKey="True"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="AniMouseEnter">
+                            <DoubleAnimation To=".75" Duration="0:0:0.4" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseLeave">
+                            <DoubleAnimation To="0" Duration="0:0:0.4" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseDown">
+                            <DoubleAnimation To="1" Duration="0:0:0.2" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseUp">
+                            <DoubleAnimation To=".75" Duration="0:0:0.2" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="TabItem.MouseEnter">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseEnter}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="TabItem.MouseLeave">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseLeave}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="TabItem.PreviewMouseDown">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseDown}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="TabItem.PreviewMouseUp">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseUp}" />
+                        </EventTrigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Panel.ZIndex" Value="100" />
+                            <Setter Property="HeaderTemplate" Value="{StaticResource  myHeaderWhite}" />
+                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource HighlightBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}"  />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="HeaderTemplate" Value="{StaticResource  myHeaderWhite}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type TabItem}" x:Key="SecondaryTabItemStyle">
+        <Setter Property="HeaderTemplate" Value="{StaticResource myHeader}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Border Name="Border" Margin="0" BorderThickness="0,0,0,3"  >
+                        <Grid>
+                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" Margin="12,2,12,2" RecognizesAccessKey="True"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}"  />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="HeaderTemplate" Value="{StaticResource  myHeaderHighlight}" />
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ControlBorderBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Panel.ZIndex" Value="100" />
+                            <Setter Property="HeaderTemplate" Value="{StaticResource  myHeaderHighlight}" />
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource HighlightBrush}" />
+                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource ControlBackgroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type TabItem}" x:Key="RightSecondaryTabItemStyle">
+        <Setter Property="HeaderTemplate" Value="{StaticResource myHeader}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Border Name="Border" Margin="0" BorderThickness="0,0,0,3" >
+                        <Grid>
+                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" Margin="12,2,12,2" RecognizesAccessKey="True"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}"  />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="HeaderTemplate" Value="{StaticResource  myHeaderHighlight}" />
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ControlBorderBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Panel.ZIndex" Value="100" />
+                            <Setter Property="HeaderTemplate" Value="{StaticResource  myHeaderHighlight}" />
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource HighlightBrush}" />
+                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource ControlBackgroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource DefaultTabItemStyle}" />
+
+    <Style x:Key="DefaultTabControlStyle"  TargetType="{x:Type TabControl}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="BorderThickness" Value="0,2,0,0" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource DefaultTabItemStyle}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TabPanel Name="HeaderPanel" Grid.Row="0" Panel.ZIndex="1"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsItemsHost="True" KeyboardNavigation.TabIndex="1"  />
+                        <Border Name="Border" Grid.Row="1" BorderBrush="{DynamicResource HighlightBrush}" BorderThickness="{TemplateBinding BorderThickness}" KeyboardNavigation.TabNavigation="Local"  KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" >
+                            <ContentPresenter Name="PART_SelectedContentHost" Margin="{TemplateBinding Padding}" ContentSource="SelectedContent" />
+                        </Border>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}"  />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SecondaryTabControlStyle" BasedOn="{StaticResource DefaultTabControlStyle}" TargetType="{x:Type TabControl}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource SecondaryTabItemStyle}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style x:Key="RightSecondaryTabControlStyle" BasedOn="{StaticResource DefaultTabControlStyle}" TargetType="{x:Type TabControl}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource SecondaryTabItemStyle}" />
+        <Setter Property="HorizontalContentAlignment" Value="Right" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style TargetType="{x:Type TabControl}" BasedOn="{StaticResource DefaultTabControlStyle}" />
+
+    <Style TargetType="{x:Type TabItem}" x:Key="LeftTabItemStyle">
+        <Setter Property="HeaderTemplate" Value="{StaticResource myHeader}" />
+        <!--<Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" /> -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Border Name="Border" Margin="0,4"  >
+                        <Border.LayoutTransform>
+                            <RotateTransform Angle="90" />
+                        </Border.LayoutTransform>
+                        <Grid>
+                            <Border SnapsToDevicePixels ="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="Border2" Background="{DynamicResource HighlightBrush}" Opacity="0"/>
+                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" Margin="12,2,12,2" RecognizesAccessKey="True"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="AniMouseEnter">
+                            <DoubleAnimation To=".75" Duration="0:0:0.4" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseLeave">
+                            <DoubleAnimation To="0" Duration="0:0:0.4" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseDown">
+                            <DoubleAnimation To="1" Duration="0:0:0.2" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseUp">
+                            <DoubleAnimation To=".75" Duration="0:0:0.2" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="TabItem.MouseEnter">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseEnter}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="TabItem.MouseLeave">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseLeave}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="TabItem.PreviewMouseDown">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseDown}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="TabItem.PreviewMouseUp">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseUp}" />
+                        </EventTrigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Panel.ZIndex" Value="100" />
+                            <Setter Property="HeaderTemplate" Value="{StaticResource  myHeaderWhite}" />
+                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource HighlightBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}"  />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="HeaderTemplate" Value="{StaticResource  myHeaderWhite}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="{x:Type TabControl}" x:Key="LeftTabControlStyle">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="TabStripPlacement" Value="Left" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="BorderThickness" Value="2,0,0,0" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LeftTabItemStyle}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TabPanel Name="HeaderPanel" Grid.Column="0" Panel.ZIndex="1"  IsItemsHost="True" KeyboardNavigation.TabIndex="1"  />
+                        <Border Name="Border" Grid.Column="1" BorderBrush="{DynamicResource HighlightBrush}" BorderThickness="{TemplateBinding BorderThickness}" KeyboardNavigation.TabNavigation="Local"  KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" >
+                            <ContentPresenter Name="PART_SelectedContentHost" Margin="{TemplateBinding Padding}" ContentSource="SelectedContent" />
+                        </Border>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}"  />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style TargetType="{x:Type TabControl}" x:Key="RightTabControlStyle">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="TabStripPlacement" Value="Left" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="BorderThickness" Value="0,0,2,0" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LeftTabItemStyle}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TabPanel Name="HeaderPanel" Grid.Column="1" Panel.ZIndex="1"  IsItemsHost="True" KeyboardNavigation.TabIndex="1"  />
+                        <Border Name="Border" Grid.Column="0" BorderBrush="{DynamicResource HighlightBrush}" BorderThickness="{TemplateBinding BorderThickness}" KeyboardNavigation.TabNavigation="Local"  KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" >
+                            <ContentPresenter Name="PART_SelectedContentHost" Margin="{TemplateBinding Padding}" ContentSource="SelectedContent" />
+                        </Border>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}"  />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style TargetType="{x:Type TabControl}" x:Key="BottomTabControlStyle">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="BorderThickness" Value="0,0,0,2" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource DefaultTabItemStyle}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TabPanel Name="HeaderPanel" Grid.Row="1" Panel.ZIndex="1"  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsItemsHost="True" KeyboardNavigation.TabIndex="1"  />
+                        <Border Name="Border" Grid.Row="0" BorderBrush="{DynamicResource HighlightBrush}" BorderThickness="{TemplateBinding BorderThickness}" KeyboardNavigation.TabNavigation="Local"  KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" >
+                            <ContentPresenter Name="PART_SelectedContentHost" Margin="{TemplateBinding Padding}" ContentSource="SelectedContent" />
+                        </Border>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}"  />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

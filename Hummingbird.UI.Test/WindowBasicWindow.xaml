@@ -1,0 +1,33 @@
+﻿<ui:BasicWindow
+    xmlns:ui="clr-namespace:Hummingbird.UI;assembly=Hummingbird.UI" x:Class="Hummingbird.UI.Demo.WindowBasicWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" IsTitleHighlighted="True"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" SideBarTitle="Send Options"
+        xmlns:local="clr-namespace:Hummingbird.UI.Demo"
+        mc:Ignorable="d"
+        Title="WindowBasicWindow" Height="450" Width="800">
+    <ui:BasicWindow.SideBar>
+        <StackPanel>
+            <TextBlock Text="Helloworld" />
+        </StackPanel>
+    </ui:BasicWindow.SideBar>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button Content="Show sidebar on the right side" Click="Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <TextBlock Text="Set maximum width of the side bar" Grid.Row="1"/>
+        <TextBox Text="{Binding SideBarMaxWidth}" Grid.Row="2" />
+        <TextBlock Text="Set minimum width of the side bar" Grid.Row="3"/>
+        <TextBox Text="{Binding SideBarMinWidth}" Grid.Row="4" />
+        <Button Content="Show An information" Click="Button1_Click" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="5"/>
+        <Button Content="Show An Toast Notification" Click="Button2_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" />
+    </Grid>
+</ui:BasicWindow>
