@@ -1,5 +1,6 @@
 # Hummingbird UI Framework
-A ModernUI framework based on WPF, helps building professional desktop applications
+A ModernUI framework based on WPF, helps building professional desktop applications.
+![Build status](https://hummingbird.visualstudio.com/Hummingbird%20ALM/_apis/build/status/Hummingbird%20UI) ![Version](https://img.shields.io/nuget/v/hummingbird.ui.svg?style=flat)
 
 ## Design Modern UI applications
 Hummingbird UI Framework provides easy to use classes to build User Friendly, Interactive and responsive WPF applications.
