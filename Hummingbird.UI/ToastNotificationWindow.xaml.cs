@@ -185,14 +185,17 @@ namespace Hummingbird.UI
                 case NotificationLevel.Warning:
                     brush = (Brush)instance.FindResource("AlertTextBrush");
                     instance.btnLevel.IconKey = "appbar_warning";
+                    instance.btnLevel.Visibility = Visibility.Visible;
                     break;
                 case NotificationLevel.Error:
                     brush = (Brush)instance.FindResource("BadTextBrush");
                     instance.btnLevel.IconKey = "appbar_warning_circle";
+                    instance.btnLevel.Visibility = Visibility.Visible;
                     break;
                 case NotificationLevel.Good:
                     brush = (Brush)instance.FindResource("GoodTextBrush");
                     instance.btnLevel.IconKey = "appbar_check";
+                    instance.btnLevel.Visibility = Visibility.Visible;
                     break;
 
             }

@@ -20,12 +20,13 @@
                     <BeginStoryboard>
                         <Storyboard DecelerationRatio="1">
                             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" >
-                                <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
-                                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="0:0:0.0" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.RenderTransform).(ScaleTransform.ScaleY)" >
-                                <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
-                                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </BeginStoryboard>
