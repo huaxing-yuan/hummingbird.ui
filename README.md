@@ -2,7 +2,12 @@
 A ModernUI framework based on WPF, helps building professional desktop applications.
 This is the repository of the Framework and Demo application. To view documentation for developers, please refers to: https://huaxing-yuan.github.io
 
-![Build status](https://hummingbird.visualstudio.com/Hummingbird%20ALM/_apis/build/status/Hummingbird%20UI) ![Version](https://img.shields.io/nuget/v/hummingbird.ui.svg?style=flat)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=huaxing-yuan-github&metric=alert_status)](https://sonarcloud.io/dashboard?id=huaxing-yuan-github)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=huaxing-yuan-github&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=huaxing-yuan-github)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=huaxing-yuan-github&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=huaxing-yuan-github)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=huaxing-yuan-github&metric=code_smells)](https://sonarcloud.io/dashboard?id=huaxing-yuan-github)
+![Build status](https://hummingbird.visualstudio.com/Hummingbird%20ALM/_apis/build/status/Hummingbird%20UI)
+![Version](https://img.shields.io/nuget/v/hummingbird.ui.svg?style=flat)
 
 # It's all about buiding professional looking applications.
 ![example](https://huaxing-yuan.github.io/hummingbird.ui.doc/media/intro1.png)
