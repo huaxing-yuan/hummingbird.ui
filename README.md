@@ -1,6 +1,6 @@
 # Hummingbird UI Framework
 A ModernUI framework based on WPF, helps building professional desktop applications.
-This is the repository of the Framework and Demo application. To view documentation for developers, please refers to: https://huaxing-yuan.github.io
+This is the repository of the Framework and Demo application. To view documentation for developers, please refers to: https://huaxing-yuan.github.io/hummingbird.ui.doc
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=huaxing-yuan-github&metric=alert_status)](https://sonarcloud.io/dashboard?id=huaxing-yuan-github)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=huaxing-yuan-github&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=huaxing-yuan-github)
