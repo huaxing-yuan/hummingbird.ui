@@ -1,6 +1,8 @@
 # Hummingbird UI Framework
 A ModernUI framework based on WPF, helps building professional desktop applications.
-This is the repository of the Framework and Demo application. To view documentation for developers, please refers to: https://huaxing-yuan.github.io/hummingbird.ui.doc
+This is the repository of the Framework and Demo application.
+
+To view developpement documentation, please refer to: https://huaxing-yuan.github.io/hummingbird.ui.doc
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=huaxing-yuan-github&metric=alert_status)](https://sonarcloud.io/dashboard?id=huaxing-yuan-github)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=huaxing-yuan-github&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=huaxing-yuan-github)
@@ -29,4 +31,4 @@ To easily build application with professional feel and look, Hummingbird UI libr
 ### Native controls
 Hummingbird UI Framework restyles all Native .NET Controls. Develop as before no need to apply manually the styles to each control.
 ## Build an Modern application in 5 minute
-Using Hummingbird UI Framework, and you can create your first Modern UI Application very quickly. For more information, please following the tutorial of this link: Hummingbird.UI - Quick Start
+Using Hummingbird UI Framework, and you can create your first Modern UI Application very quickly. For more information, please following the tutorial of this link: [Hummingbird.UI - Quick Start](https://huaxing-yuan.github.io/hummingbird.ui.doc/html/2d044243-ea98-4212-bddf-257e4b84a285.htm)
