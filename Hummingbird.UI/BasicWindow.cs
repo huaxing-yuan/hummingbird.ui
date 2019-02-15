@@ -29,7 +29,7 @@ namespace Hummingbird.UI
     public class BasicWindow : Window, IDisposable
     {
 
-        private bool useLightIcon = false;
+        protected bool useLightIcon = false;
 
         /// <summary>
         /// Gets the value if the current theme is dark background and white text.
@@ -333,33 +333,50 @@ namespace Hummingbird.UI
 
 
         /// <summary>
-        /// Update the Icon and background to adapt the changes of theme.
+        /// Update the Icon to adapt the changes of theme.
         /// </summary>
         /// <remarks>
         /// This function will be called automatically when initalizing the Windows and applying the theme.
         /// But If the theme is changed by the code after application loads, you must call this function manually.
         /// </remarks>
-        public void UpdateIconBackground()
+        public virtual void UpdateIcon()
         {
             Color backgroundColor = (Color)FindResource("BackgroundColor");
             if (backgroundColor.R + backgroundColor.G + backgroundColor.B > 382)
             {
                 if (LightIcon != null) Icon = LightIcon;
                 else if (DefaultLightIcon != null) Icon = DefaultLightIcon.Clone();
-
-                if (LightBackground != null) Background = new ImageBrush(LightBackground) { Stretch = Stretch.UniformToFill };
-                else if (DefaultLightBackground != null) Background = new ImageBrush(DefaultLightBackground) { Stretch = Stretch.UniformToFill };
-                else { Background = (Brush)FindResource("BackgroundBrush"); }
                 useLightIcon = true;
             }
             else
             {
                 if (DarkIcon != null) Icon = DarkIcon;
                 else if (DefaultDarkIcon != null) Icon = DefaultDarkIcon.Clone();
+                useLightIcon = false;
+            }
+        }
+
+        /// <summary>
+        /// Updates the background to adapt the changes of theme
+        /// </summary>
+        /// <remarks>
+        /// This function will be called automatically when initalizing the Windows and applying the theme.
+        /// But If the theme is changed by the code after application loads, you must call this function manually.
+        /// </remarks>
+        public void UpdateBackground()
+        {
+            Color backgroundColor = (Color)FindResource("BackgroundColor");
+            if (backgroundColor.R + backgroundColor.G + backgroundColor.B > 382)
+            {
+                if (LightBackground != null) Background = new ImageBrush(LightBackground) { Stretch = Stretch.UniformToFill };
+                else if (DefaultLightBackground != null) Background = new ImageBrush(DefaultLightBackground) { Stretch = Stretch.UniformToFill };
+                else { Background = (Brush)FindResource("BackgroundBrush"); }
+            }
+            else
+            {
                 if (DarkBackground != null) Background = new ImageBrush(DarkBackground) { Stretch = Stretch.UniformToFill };
                 else if (DefaultDarkBackground != null) Background = new ImageBrush(DefaultDarkBackground) { Stretch = Stretch.UniformToFill };
                 else { Background = (Brush)FindResource("BackgroundBrush"); }
-                useLightIcon = false;
             }
         }
 
@@ -398,8 +415,8 @@ namespace Hummingbird.UI
             }
 
 
-            UpdateIconBackground();
-
+            UpdateIcon();
+            UpdateBackground();
 
             WindowChrome.SetWindowChrome(this,
                 new WindowChrome

@@ -51,7 +51,7 @@
 
     <Style TargetType="{x:Type TextBlock}" x:Key="TextBlockInformation">
         <Setter Property="FontSize" Value="{DynamicResource HeaderFontSize}" />
-        <Setter Property="FontFamily" Value="{DynamicResource HeaderFontFamily}" />
+        <Setter Property="FontFamily" Value="{DynamicResource TextFontFamily}" />
     </Style>
 
     <Style TargetType="{x:Type TextBlock}" x:Key="TextBlockViewHeaderHighlighted" BasedOn="{StaticResource TextBlockViewHeader}">

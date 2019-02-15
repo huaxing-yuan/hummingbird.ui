@@ -6,8 +6,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Hummingbird.UI;component/Styles/DefaultStyle.xaml" />
-                <!-- If you want to use Blue accent color with Dark background, uncomment this
-                <ResourceDictionary Source="pack://application:,,,/Hummingbird.UI;component/Styles/ColorShemes/Dark_Blue.xaml" /> -->
+                <!-- If you want to use Blue accent color with Dark background, uncomment this -->
+                <ResourceDictionary Source="pack://application:,,,/Hummingbird.UI;component/Styles/ColorShemes/Mixed_Blue.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -928,6 +928,29 @@ namespace Hummingbird.UI
             this.IsContentDetached = false;
         }
 
+        /// <summary>
+        /// Update the Icon to adapt the changes of theme.
+        /// </summary>
+        /// <remarks>
+        /// This function will be called automatically when initalizing the Windows and applying the theme.
+        /// But If the theme is changed by the code after application loads, you must call this function manually.
+        /// </remarks>
+        public override void UpdateIcon()
+        {
+            Color backgroundColor = (Color)FindResource("MenuBackgroundColor");
+            if (backgroundColor.R + backgroundColor.G + backgroundColor.B > 382)
+            {
+                if (LightIcon != null) Icon = LightIcon;
+                else if (DefaultLightIcon != null) Icon = DefaultLightIcon.Clone();
+                useLightIcon = true;
+            }
+            else
+            {
+                if (DarkIcon != null) Icon = DarkIcon;
+                else if (DefaultDarkIcon != null) Icon = DefaultDarkIcon.Clone();
+                useLightIcon = false;
+            }
+        }
 
     }
 }

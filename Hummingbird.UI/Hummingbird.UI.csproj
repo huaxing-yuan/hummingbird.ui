@@ -118,6 +118,7 @@
       <DependentUpon>DetachedWindowHost.xaml</DependentUpon>
     </Compile>
     <Compile Include="DotStyles.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="GridWithPadding.cs" />
     <Compile Include="IconCheckBox.cs" />
     <Compile Include="Converters\IntToVisibilityConverterReversed.cs" />
@@ -205,6 +206,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\ColorShemes\Dark_Blue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ColorShemes\Mixed_Blue.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

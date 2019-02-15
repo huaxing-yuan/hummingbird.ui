@@ -45,7 +45,11 @@ namespace Hummingbird.UI.Demo
             previousTheme = border;
             foreach (Window w in Application.Current.Windows)
             {
-                if (w is BasicWindow) (w as BasicWindow).UpdateIconBackground();
+                if (w is BasicWindow bw)
+                {
+                    bw.UpdateIcon();
+                    bw.UpdateBackground();
+                }
             }
         }
     }

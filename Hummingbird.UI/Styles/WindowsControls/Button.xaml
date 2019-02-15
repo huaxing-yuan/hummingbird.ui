@@ -84,6 +84,12 @@
         </Style.Resources>
     </Style>
 
+    <Style x:Key="ModernMenuButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}"  TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{DynamicResource MenuForegroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ModernMenuButtonBackgroundBrush}" />
+    </Style>
+           
+
     <Style x:Key="DefaultButtonRedStyle" TargetType="{x:Type ButtonBase}">
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -292,7 +298,7 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource MenuForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
@@ -366,7 +372,7 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource MenuForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
@@ -484,18 +490,6 @@
         <Setter Property="Margin" Value="0" />
     </Style>
 
-    <Style x:Key="ToolbarButton"
-           BasedOn="{StaticResource DefaultButtonStyle}"
-           TargetType="{x:Type Button}"
-           >
-        <Setter Property="Margin" Value="2,0,2,0" />
-        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
-        <Setter Property="FontSize" Value="{DynamicResource DataFontSize}" />
-        <Setter Property="Padding" Value="{DynamicResource Thickness1111}" />
-
-    </Style>
-    
-    
 
     <Style x:Key="CommandStackPanelStyle" TargetType="{x:Type StackPanel}">
         <Style.Resources>
@@ -509,7 +503,8 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="FontFamily" Value="{StaticResource TextFontFamily}" />
-        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
         <Setter Property="Padding" Value="2" />
         <Setter Property="FontWeight" Value="Normal" />
@@ -554,7 +549,9 @@
                             <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
                             <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" />
                         </Trigger>
-
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource HighlightBrush}" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -583,7 +580,8 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="FontFamily" Value="{StaticResource TextFontFamily}" />
-        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
         <Setter Property="Padding" Value="2" />
         <Setter Property="FontWeight" Value="Normal" />
@@ -631,6 +629,9 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Background" Value="{DynamicResource HighlightDarkBrush}" />
                             <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource HighlightBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
