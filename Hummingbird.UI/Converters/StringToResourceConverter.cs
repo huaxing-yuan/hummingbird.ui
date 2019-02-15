@@ -15,14 +15,14 @@ namespace Hummingbird.UI.Converters
 {
 
     /// <summary>
-    /// This converter is used to convert a <see cref="String"/> value to an UI Element. espcially used in <see cref="AppBarButton.IconKey"/> Property.
+    /// This converter is used to convert a <see cref="String"/> value to an UI Element. especially used in <see cref="AppBarButton.IconKey"/> Property.
     /// </summary>
     /// <seealso cref="System.Windows.Data.IValueConverter" />
     /// <remarks>
     /// The accept string are:
     /// <list type="bullet">
     /// <item>"appbar_*" for built-in XAML vector icons, usable for all version of Windows.</item>
-    /// <item>"symbol_*" for Icons defined in Segoe UI Symbol font, avaiable in Windows 8, Windows 8.1 and Windows 10</item>
+    /// <item>"symbol_*" for Icons defined in Segoe UI Symbol font, available in Windows 8, Windows 8.1 and Windows 10</item>
     /// <item>"mdl2_*" for Icons defined in Segoe UI MDL2 Asset font, available in Windows 10</item>
     /// </list>
     /// </remarks>

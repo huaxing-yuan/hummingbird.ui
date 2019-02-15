@@ -14,6 +14,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Text="Included color schemes including 6 light theme and 4 dark theme, click one to try it on. You can also custom your themes" Style="{DynamicResource TextBlockViewHeaderHighlighted}" />
@@ -83,8 +84,25 @@
 
             </StackPanel>
         </Border>
- 
-        <TextBlock Text="Once changed the theme, you can go to other tab to view the changes" Style="{DynamicResource TextBlockInformation}" Grid.Row="4" />
+
+        <Border Padding="4" Grid.Row="4" Grid.Column="1" >
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Mixed themes:" Width="100" Style="{DynamicResource TextBlockInformationHighlighted}" />
+                <Border Margin="5" BorderBrush="Transparent" BorderThickness="2" Name="borderMixedBlue" Tag="Mixed_Blue" MouseLeftButtonUp="borderColor_MouseLeftButtonUp" >
+                    <Border Width="64" Height="64">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="Black" Offset="0" />
+                                <GradientStop Color="White" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border Background="#3399FF" Width="48" Height="48" Margin="1" />
+                    </Border>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <TextBlock Text="Once changed the theme, you can go to other tab to view the changes" Style="{DynamicResource TextBlockInformation}" Grid.Row="5" />
         
     </Grid>
 </ui:ModernContent>

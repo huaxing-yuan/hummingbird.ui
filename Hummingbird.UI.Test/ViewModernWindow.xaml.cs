@@ -64,5 +64,15 @@ namespace Hummingbird.UI.Demo
         {
             this.ShowToastNotification("This is a toast notification", NotificationLevel.Information);
         }
+
+        private void Button3_Click(object sender, RoutedEventArgs e)
+        {
+            this.ShowToastNotification("This is a good notification", NotificationLevel.Good);
+        }
+
+        private void Button4_Click(object sender, RoutedEventArgs e)
+        {
+            this.ShowToastNotification("This is a bad notification", NotificationLevel.Error);
+        }
     }
 }

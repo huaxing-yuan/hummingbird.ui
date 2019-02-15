@@ -6,7 +6,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:ModernMenuItem}">
                     <TextBlock Text="{TemplateBinding Header}" x:Name="TextBlock"
-				           Foreground="{DynamicResource ForegroundBrush}"
+				           Foreground="{DynamicResource MenuForegroundBrush}"
 				           FontSize="{DynamicResource Value20}" 
 				           FontFamily="{DynamicResource HeaderFontFamily}"
 				           VerticalAlignment="Center"
@@ -17,7 +17,7 @@
                             <Setter TargetName="TextBlock" Property="Foreground" Value="{DynamicResource HighlightMiddleBrush}" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter TargetName="TextBlock" Property="Foreground" Value="{DynamicResource HighlightGradientBrush}" />
+                            <Setter TargetName="TextBlock" Property="Foreground" Value="{DynamicResource Level1MenuForegroundBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -30,7 +30,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:ModernMenuItem}">
                     <TextBlock Text="{TemplateBinding Header}" x:Name="TextBlock"
-				           Foreground="{DynamicResource ForegroundBrush}"
+				           Foreground="{DynamicResource MenuForegroundBrush}"
 				           FontSize="{DynamicResource TextFontSize}"
 				           Margin="{DynamicResource ThicknessMainMenuLevel2}" >
                         <TextBlock.RenderTransform>
@@ -42,7 +42,7 @@
                             <Setter TargetName="TextBlock" Property="Foreground" Value="{DynamicResource HighlightMiddleBrush}" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter TargetName="TextBlock" Property="Foreground" Value="{DynamicResource HighlightBrush}" />
+                            <Setter TargetName="TextBlock" Property="Foreground" Value="{DynamicResource Level2MenuForegroundBrush}" />
 
                         </Trigger>
                         <Trigger Property="Visibility" Value="Visible">

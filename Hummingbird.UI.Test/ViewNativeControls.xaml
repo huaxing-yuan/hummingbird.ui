@@ -11,6 +11,9 @@
         <TabItem Header="TextBlock">
             <ScrollViewer HorizontalScrollBarVisibility="Auto">
                 <UniformGrid Rows="6" Columns="2">
+
+                    <TextBlock Text="TextBlockHugeHeader" Style="{DynamicResource TextBlockHugeHeader}" Margin="10" />
+
                     <TextBlock Text="TextBlockViewHeader" Style="{DynamicResource TextBlockViewHeader}" Margin="10" />
                     <TextBlock Text="TextBlockViewHeaderHighlighted" Style="{DynamicResource TextBlockViewHeaderHighlighted}" Margin="10" />
 

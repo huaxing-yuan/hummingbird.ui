@@ -139,9 +139,9 @@
                                 </Grid.ColumnDefinitions>
 
 
-                                <!--
-                                <Border Grid.Row="0" Grid.ColumnSpan="7" Grid.RowSpan="3" Background="#10FFFFFF" />
-                                -->
+
+                                <Border Grid.Row="0" Grid.ColumnSpan="7" Grid.RowSpan="3" Background="{DynamicResource MenuBackgroundBrush}" />
+                                
 
                                 <!-- Backstage -->
                                 <Border Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="7" Visibility="Collapsed" Panel.ZIndex="40" x:Name="BackstageContainer" >
@@ -152,7 +152,7 @@
                                 </Border>
 
                                 <!-- ICON (0,0) + Control Buttons -->
-                                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" >
                                     <Image Source="{TemplateBinding Icon}" Margin="{DynamicResource Thickness4444}" VerticalAlignment="Center" Width="{DynamicResource Value20}" SnapsToDevicePixels="False" RenderOptions.BitmapScalingMode="HighQuality"/>
                                     <Border Height="16" Width="1" Margin="4,0" Background ="{DynamicResource ControlBackgroundBrush}" />
                                     <!--
@@ -176,11 +176,11 @@
 
                                 <!-- Application Title (0,2)-->
                                 <Border Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"  MouseDown="Title_MouseDown" Background="Transparent" Panel.ZIndex="200">
-                                    <TextBlock x:Name="WindowTitle" Text="{TemplateBinding Title}" FontWeight="Bold" FontSize="{DynamicResource TextFontSize}"  Margin="{DynamicResource Thickness4444}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    <TextBlock x:Name="WindowTitle" Foreground="{DynamicResource MenuForegroundBrush}" Text="{TemplateBinding Title}" FontWeight="Bold" FontSize="{DynamicResource TextFontSize}"  Margin="{DynamicResource Thickness4444}" VerticalAlignment="Center" HorizontalAlignment="Center" />
                                 </Border>
 
                                 <StackPanel Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" Margin="0,0,10,0" Panel.ZIndex="200" Visibility="{TemplateBinding IsAvatarVisible, Converter={StaticResource bool2VisibilityConverter}}" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" >
-                                    <TextBlock Text="{TemplateBinding AvatarText}" FontSize="{DynamicResource Value10}" VerticalAlignment="Center" Margin="0,0,10,0" FontWeight="Bold" />
+                                    <TextBlock Text="{TemplateBinding AvatarText}" FontSize="{DynamicResource Value10}" VerticalAlignment="Center" Margin="0,0,10,0" FontWeight="Bold" Foreground="{DynamicResource MenuForegroundBrush}" />
                                     <Rectangle Stroke="{DynamicResource HighlightBrush}" StrokeThickness="1" Fill="{TemplateBinding AvatarBrush}" Stretch="UniformToFill"  Width="{TemplateBinding AvatarSize}" Height="{TemplateBinding AvatarSize}"  MouseLeftButtonDown="Avatar_MouseClick" />
                                 </StackPanel>
                                 <!-- ControlBox (0,6) -->
@@ -209,7 +209,7 @@
 
 
                                 <!-- Banner  (1,0)-->
-                                <Button x:Name="BackstageButton" Margin="0"  Grid.Row="1" Grid.Column="0" Click="BackstageButton_Click" VerticalAlignment="Bottom"  >
+                                <Button x:Name="BackstageButton" Margin="0"  Grid.Row="1" Grid.Column="0" Click="BackstageButton_Click" VerticalAlignment="Bottom" Style="{DynamicResource ModernMenuButtonStyle}" >
                                     <local:AppBarIcon IconKey="appbar_settings" Height="16" Margin="4,2" />
                                 </Button>
                                 <Border x:Name="Banner" Visibility="Collapsed" Width="8" Background="{DynamicResource HighlightGradientBrush}"  Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="0,4" />
@@ -330,18 +330,23 @@
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
+                            <Setter TargetName="WindowTitle" Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+                            <Setter TargetName="MinimizeButton" Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+                            <Setter TargetName="MaximumButton" Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+                            <Setter TargetName="CloseButton" Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
                         </Trigger>
                         <Trigger Property="IsMaskVisible" Value="True">
                             <Setter TargetName="Mask" Property="Visibility" Value="Visible" />
                             <Setter TargetName="ContentBorder" Property="Effect">
                                 <Setter.Value>
-                                    <BlurEffect Radius="10" />
+                                    <BlurEffect />
                                 </Setter.Value>
                             </Setter>
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard FillBehavior="HoldEnd"  >
-                                        <DoubleAnimation Storyboard.TargetName="Mask" Storyboard.TargetProperty="Opacity" From="0" To="0.8" Duration="0:0:0.3" />
+                                        <DoubleAnimation Storyboard.TargetName="Mask" Storyboard.TargetProperty="Opacity" From="0" To="0.8" Duration="0:0:0.5" />
+                                        <DoubleAnimation Storyboard.TargetName="ContentBorder" Storyboard.TargetProperty="Effect.(BlurEffect.Radius)" From="0" To="10" Duration="0:0:0.5" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>

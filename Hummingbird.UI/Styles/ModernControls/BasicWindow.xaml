@@ -374,13 +374,14 @@
                             <Setter TargetName="Mask" Property="Visibility" Value="Visible" />
                             <Setter TargetName="TemplateGrid" Property="Effect">
                                 <Setter.Value>
-                                    <BlurEffect Radius="10" />
+                                    <BlurEffect />
                                 </Setter.Value>
                             </Setter>
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard FillBehavior="HoldEnd"  >
-                                        <DoubleAnimation Storyboard.TargetName="Mask" Storyboard.TargetProperty="Opacity" From="0" To="0.8" Duration="0:0:0.3" />
+                                        <DoubleAnimation Storyboard.TargetName="Mask" Storyboard.TargetProperty="Opacity" From="0" To="0.8" Duration="0:0:0.5" />
+                                        <DoubleAnimation Storyboard.TargetName="TemplateGrid" Storyboard.TargetProperty="Effect.(BlurEffect.Radius)" From="0" To="10" Duration="0:0:0.5" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>

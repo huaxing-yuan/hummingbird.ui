@@ -22,8 +22,12 @@
 
         <Button Grid.Row="3" Content="Show an Information" Click="Button1_Click" />
 
-        <Button Grid.Row="4" Content="Show an toast notification" Click="Button2_Click" />
-        
-        
+        <StackPanel Grid.Row="4" >
+            <Button Content="Show an toast notification" Click="Button2_Click" />
+            <Button Grid.Row="4" Content="Show an toast notification (good)" Click="Button3_Click" />
+            <Button Grid.Row="4" Content="Show an toast notification (bad)" Click="Button4_Click" />
+        </StackPanel>
+
+
     </ui:GridWithPadding>
 </ui:ModernContent>
