@@ -29,7 +29,7 @@ namespace Hummingbird.UI
     public class BasicWindow : Window, IDisposable
     {
 
-        protected bool useLightIcon = false;
+        internal bool useLightIcon = false;
 
         /// <summary>
         /// Gets the value if the current theme is dark background and white text.
