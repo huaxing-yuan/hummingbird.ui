@@ -4,6 +4,11 @@
 	<Style TargetType="{x:Type StatusBar}" x:Key="DefaultStatusBarStyle">
 		<Setter Property="Foreground" Value="{DynamicResource StatusBarForegroundBrush}" />
 		<Setter Property="Background" Value="{DynamicResource StatusBarBackgroundBrush}" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="10" Direction="90" ShadowDepth="0"  />
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style TargetType="{x:Type StatusBarItem}">

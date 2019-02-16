@@ -14,7 +14,7 @@
     <Name>Hummingbird.UI.Doc</Name>
     <!-- SHFB properties -->
     <FrameworkVersion>.NET Framework 4.5</FrameworkVersion>
-    <OutputPath>..\..\Github\hummingbird.ui.doc\</OutputPath>
+    <OutputPath>..\..\hummingbird.ui.doc\</OutputPath>
     <HtmlHelpName>Hummingbird UI Framework</HtmlHelpName>
     <Language>en-US</Language>
     <TransformComponentArguments>

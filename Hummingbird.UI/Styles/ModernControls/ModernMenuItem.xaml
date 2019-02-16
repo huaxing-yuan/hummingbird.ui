@@ -29,6 +29,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:ModernMenuItem}">
+                    <Border x:Name="Border" BorderThickness="0,0,0,5" BorderBrush="Transparent">
                     <TextBlock Text="{TemplateBinding Header}" x:Name="TextBlock"
 				           Foreground="{DynamicResource MenuForegroundBrush}"
 				           FontSize="{DynamicResource TextFontSize}"
@@ -37,13 +38,14 @@
                             <TranslateTransform X="0" Y="0" />
                         </TextBlock.RenderTransform>
                     </TextBlock>
+                    </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="TextBlock" Property="Foreground" Value="{DynamicResource HighlightMiddleBrush}" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter TargetName="TextBlock" Property="Foreground" Value="{DynamicResource Level2MenuForegroundBrush}" />
-
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource Level2MenuBorderBrush}" />
                         </Trigger>
                         <Trigger Property="Visibility" Value="Visible">
                             <Trigger.EnterActions>
@@ -66,6 +68,7 @@
 
 
     <Style x:Key="Level3MenuItemStyle" TargetType="{x:Type local:ModernMenuItem}">
+        <Setter Property="Foreground" Value="{DynamicResource MenuForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:ModernMenuItem}">
@@ -76,8 +79,8 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="4" FontFamily="Marlett" x:Name="SelectionTriangle" Grid.Column="0" Visibility="Hidden" VerticalAlignment="Center" Foreground="{DynamicResource HighlightMiddleBrush}" />
                         <TextBlock Text="{TemplateBinding Header}" x:Name="TextBlock" VerticalAlignment="Center" Grid.Column="1"
-				           Foreground="{DynamicResource ForegroundBrush}"
-				           FontSize="{DynamicResource TextFontSize}" 
+				           Foreground="{TemplateBinding Foreground}" FontWeight="SemiBold"
+				           FontSize="{DynamicResource TextFontSize}"
 				           Margin="{DynamicResource ThicknessMainMenuLevel3}" >
                             <TextBlock.RenderTransform>
                                 <TranslateTransform X="0" Y="0" />

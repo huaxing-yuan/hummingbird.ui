@@ -93,12 +93,50 @@
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                                 <GradientStop Color="Black" Offset="0" />
-                                <GradientStop Color="White" Offset="1" />
+                                <GradientStop Color="Black" Offset="0.5" />
+                                <GradientStop Color="White" Offset="0.5" />
                             </LinearGradientBrush>
                         </Border.Background>
                         <Border Background="#3399FF" Width="48" Height="48" Margin="1" />
                     </Border>
                 </Border>
+                <Border Margin="5" BorderBrush="Transparent" BorderThickness="2" Name="borderMixedGreen" Tag="Mixed_Green" MouseLeftButtonUp="borderColor_MouseLeftButtonUp" >
+                    <Border Width="64" Height="64">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="Black" Offset="0" />
+                                <GradientStop Color="Black" Offset="0.5" />
+                                <GradientStop Color="White" Offset="0.5" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border Background="#39ac39" Width="48" Height="48" Margin="1" />
+                    </Border>
+                </Border>
+                <Border Margin="5" BorderBrush="Transparent" BorderThickness="2" Name="borderMixedPurple" Tag="Mixed_Purple" MouseLeftButtonUp="borderColor_MouseLeftButtonUp" >
+                    <Border Width="64" Height="64">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="Black" Offset="0" />
+                                <GradientStop Color="Black" Offset="0.5" />
+                                <GradientStop Color="White" Offset="0.5" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border Background="#FFF10EA0" Width="48" Height="48" Margin="1" />
+                    </Border>
+                </Border>
+                <Border Margin="5" BorderBrush="Transparent" BorderThickness="2" Name="borderMixedGold" Tag="Mixed_Gold" MouseLeftButtonUp="borderColor_MouseLeftButtonUp" >
+                    <Border Width="64" Height="64">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="Black" Offset="0" />
+                                <GradientStop Color="Black" Offset="0.5" />
+                                <GradientStop Color="White" Offset="0.5" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border Background="#e68a00" Width="48" Height="48" Margin="1" />
+                    </Border>
+                </Border>
+
             </StackPanel>
         </Border>
 

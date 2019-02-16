@@ -298,7 +298,7 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource MenuForegroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
@@ -372,7 +372,7 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource MenuForegroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
@@ -435,6 +435,15 @@
 
         </Style.Triggers>
     </Style>
+
+    <Style x:Key="ModernWindowControlBoxButton" TargetType="{x:Type Button}" BasedOn="{StaticResource ControlBoxButton}">
+        <Setter Property="Foreground" Value="{DynamicResource MenuForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="ModernWindowCloseButton" TargetType="{x:Type Button}" BasedOn="{StaticResource CloseButton}">
+        <Setter Property="Foreground" Value="{DynamicResource MenuForegroundBrush}" />
+    </Style>
+
 
     <Style BasedOn="{StaticResource DefaultToggleButtonStyle}" TargetType="{x:Type ToggleButton}" />
 
