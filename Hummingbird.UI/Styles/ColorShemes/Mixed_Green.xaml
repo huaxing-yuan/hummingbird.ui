@@ -9,7 +9,7 @@
     <Color x:Key="TextboxTextColor">#333333</Color>
     <Color x:Key="TextboxDisabledTextColor">#999999</Color>
 
-    <Color x:Key="ControlActiveBorderColor">#FF007ACC</Color>
+    <Color x:Key="ControlActiveBorderColor">#339933</Color>
     <Color x:Key="ControlBorderColor">#CCCCCC</Color>
     <Color x:Key="ControlBackgroundColor">#DDDDDD</Color>
     <Color x:Key="ControlBusyBorderColor">#FF9933</Color>
@@ -19,19 +19,16 @@
     <Color x:Key="GoodTextColor">Green</Color>
     <Color x:Key="BadTextColor">#cc0000</Color>
 
-    <Color x:Key="HyperLinkColor">Blue</Color>
-    <Color x:Key="HyperLinkLightColor">SkyBlue</Color>
-    <Color x:Key="HighlightColor">#FF007ACC</Color>
-    <Color x:Key="HighlightAlternativeColor">#FF00D46E</Color>
-    <Color x:Key="HighlightColorUnfocused">#999999</Color>
-    <Color x:Key="HighlightDarkColor">#FF005085</Color>
-    <Color x:Key="HighlightMiddleColor">#FF39A2E6</Color>
-    <Color x:Key="HighlightLightColor">#66007ACC</Color>
+    <Color x:Key="HighlightColor">#39ac39</Color>
+    <Color x:Key="HighlightAlternativeColor">#9CC943</Color>
+    <Color x:Key="HighlightDarkColor">#0B760B</Color>
+    <Color x:Key="HighlightMiddleColor">#66cc66</Color>
+    <Color x:Key="HighlightLightColor">#6639ac39</Color>
 
     <Color x:Key="ForegroundColor">Black</Color>
     <Color x:Key="DisabledForegroundColor">#666666</Color>
     <Color x:Key="BackgroundColor">#FFFFFF</Color>
-    <Color x:Key="DisabledBackgroundColor">#EEEEEE</Color>
+    <Color x:Key="DisabledBackgroundColor">#FFFFFF</Color>
     <Color x:Key="ButtonBorderColor">#333333</Color>
     <Color x:Key="StatusBarBackgroundColor">#333333</Color>
     <Color x:Key="SideBarBackgroundColor">#EEEEEE</Color>
@@ -62,9 +59,9 @@
     
     <SolidColorBrush x:Key="MenuForegroundBrush" Color="White" />
 
-    <SolidColorBrush x:Key="Level1MenuForegroundBrush" Color="DeepSkyBlue" />
-    <SolidColorBrush x:Key="Level2MenuForegroundBrush" Color="SkyBlue" />
-    <SolidColorBrush x:Key="Level2MenuBorderBrush" Color="#33adff" />
+    <SolidColorBrush x:Key="Level1MenuForegroundBrush" Color="LawnGreen" />
+    <SolidColorBrush x:Key="Level2MenuForegroundBrush" Color="{StaticResource HighlightMiddleColor}" />
+    <SolidColorBrush x:Key="Level2MenuBorderBrush" Color="{StaticResource HighlightColor}" />
     
     <SolidColorBrush x:Key="ModernMenuButtonBackgroundBrush" Color="{StaticResource StatusBarBackgroundColor}" />
 

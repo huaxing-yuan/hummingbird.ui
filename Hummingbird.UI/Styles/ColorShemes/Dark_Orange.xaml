@@ -40,15 +40,24 @@
     <SolidColorBrush x:Key="BadTextBrush" Color="{StaticResource BadTextColor}" />    
     <SolidColorBrush x:Key="FlatButtonForegroundBrush" Color="{StaticResource ForegroundColor}" />
     <SolidColorBrush x:Key="FlatButtonBackgroundBrush" Color="{StaticResource StatusBarBackgroundColor}" />
+    
     <Color x:Key="MenuBackgroundColor">Black</Color>
     <SolidColorBrush x:Key="MenuBackgroundBrush" Color="Transparent" />
+
+    <Style x:Key="MenuBackgroundStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource MenuBackgroundBrush}" />
+    </Style>
+
     <SolidColorBrush x:Key="MenuForegroundBrush" Color="{StaticResource ForegroundColor}" />
+
     <LinearGradientBrush x:Key="Level1MenuForegroundBrush" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="{StaticResource HighlightColor}" Offset="0" />
-        <GradientStop Color="{StaticResource HighlightMiddleColor}" Offset="1" />
+        <GradientStop Offset="0" Color="{StaticResource HighlightColor}" />
+        <GradientStop Offset="1" Color="{StaticResource HighlightMiddleColor}" />
     </LinearGradientBrush>
     <SolidColorBrush x:Key="Level2MenuForegroundBrush" Color="{StaticResource HighlightMiddleColor}" />
-    <SolidColorBrush x:Key="ModernMenuButtonBackgroundBrush" Color="{StaticResource ControlBackgroundColor}" />
+    <SolidColorBrush x:Key="Level2MenuBorderBrush" Color="Transparent" />
+
+    <SolidColorBrush x:Key="ModernMenuButtonBackgroundBrush" Color="{StaticResource StatusBarBackgroundColor}" />
     
     
     <SolidColorBrush x:Key="HighlightBrush" Color="{StaticResource HighlightColor}" />

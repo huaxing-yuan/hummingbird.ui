@@ -9,7 +9,7 @@
     <Color x:Key="TextboxTextColor">#333333</Color>
     <Color x:Key="TextboxDisabledTextColor">#999999</Color>
 
-    <Color x:Key="ControlActiveBorderColor">#FF007ACC</Color>
+    <Color x:Key="ControlActiveBorderColor">#A05000</Color>
     <Color x:Key="ControlBorderColor">#CCCCCC</Color>
     <Color x:Key="ControlBackgroundColor">#DDDDDD</Color>
     <Color x:Key="ControlBusyBorderColor">#FF9933</Color>
@@ -19,19 +19,16 @@
     <Color x:Key="GoodTextColor">Green</Color>
     <Color x:Key="BadTextColor">#cc0000</Color>
 
-    <Color x:Key="HyperLinkColor">Blue</Color>
-    <Color x:Key="HyperLinkLightColor">SkyBlue</Color>
-    <Color x:Key="HighlightColor">#FF007ACC</Color>
-    <Color x:Key="HighlightAlternativeColor">#FF00D46E</Color>
-    <Color x:Key="HighlightColorUnfocused">#999999</Color>
-    <Color x:Key="HighlightDarkColor">#FF005085</Color>
-    <Color x:Key="HighlightMiddleColor">#FF39A2E6</Color>
-    <Color x:Key="HighlightLightColor">#66007ACC</Color>
+    <Color x:Key="HighlightColor">#b35900</Color>
+    <Color x:Key="HighlightAlternativeColor">#B31500</Color>    
+    <Color x:Key="HighlightDarkColor">#994d00</Color>
+    <Color x:Key="HighlightMiddleColor">#ff8c1a</Color>
+    <Color x:Key="HighlightLightColor">#66b35900</Color>
 
     <Color x:Key="ForegroundColor">Black</Color>
     <Color x:Key="DisabledForegroundColor">#666666</Color>
     <Color x:Key="BackgroundColor">#FFFFFF</Color>
-    <Color x:Key="DisabledBackgroundColor">#EEEEEE</Color>
+    <Color x:Key="DisabledBackgroundColor">#FFFFFF</Color>
     <Color x:Key="ButtonBorderColor">#333333</Color>
     <Color x:Key="StatusBarBackgroundColor">#333333</Color>
     <Color x:Key="SideBarBackgroundColor">#EEEEEE</Color>
@@ -45,12 +42,12 @@
     <SolidColorBrush x:Key="FlatButtonBackgroundBrush" Color="{StaticResource ForegroundColor}" />
 
     <Color x:Key="MenuBackgroundColor">Black</Color>
-    
+
     <LinearGradientBrush x:Key="MenuBackgroundBrush" StartPoint="0,0" EndPoint="0,1" >
         <GradientStop Color="{StaticResource MenuBackgroundColor}" Offset="1" />
         <GradientStop Color="#222222"  Offset="0"/>
     </LinearGradientBrush>
-    
+
     <Style x:Key="MenuBackgroundStyle" TargetType="Border">
         <Setter Property="Background" Value="{StaticResource MenuBackgroundBrush}" />
         <Setter Property="Effect">
@@ -59,24 +56,20 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <SolidColorBrush x:Key="MenuForegroundBrush" Color="White" />
 
-    <SolidColorBrush x:Key="Level1MenuForegroundBrush" Color="DeepSkyBlue" />
-    <SolidColorBrush x:Key="Level2MenuForegroundBrush" Color="SkyBlue" />
-    <SolidColorBrush x:Key="Level2MenuBorderBrush" Color="#33adff" />
-    
+    <SolidColorBrush x:Key="Level1MenuForegroundBrush" Color="Goldenrod" />
+    <SolidColorBrush x:Key="Level2MenuForegroundBrush" Color="#ffad33" />
+    <SolidColorBrush x:Key="Level2MenuBorderBrush" Color="#ff9900" />
     <SolidColorBrush x:Key="ModernMenuButtonBackgroundBrush" Color="{StaticResource StatusBarBackgroundColor}" />
 
     <SolidColorBrush x:Key="HighlightBrush" Color="{StaticResource HighlightColor}" />
-    <SolidColorBrush x:Key="HighlightAlternativeBrush" Color="{StaticResource HighlightAlternativeColor}" />
-    <SolidColorBrush x:Key="HighlightBrushUnfocused" Color="{StaticResource HighlightColorUnfocused}" />
+    <SolidColorBrush x:Key="HighlightAlternativeBrush" Color="{StaticResource HighlightAlternativeColor}" />    
     <SolidColorBrush x:Key="HighlightForegroundBrush" Color="{StaticResource BackgroundColor}" />
     <SolidColorBrush x:Key="HighlightDarkBrush" Color="{StaticResource HighlightDarkColor}" />
     <SolidColorBrush x:Key="HighlightLightBrush" Color="{StaticResource HighlightLightColor}" />
     <SolidColorBrush x:Key="HighlightMiddleBrush" Color="{StaticResource HighlightMiddleColor}" />
-    <SolidColorBrush x:Key="HyperLinkLightBrush" Color="{StaticResource HyperLinkLightColor}" />
-    <SolidColorBrush x:Key="HyperLinkBrush" Color="{StaticResource HyperLinkColor}" />    
 
     <SolidColorBrush x:Key="StatusBarBackgroundBrush" Color="{StaticResource StatusBarBackgroundColor}" />
     <SolidColorBrush x:Key="StatusBarForegroundBrush" Color="{StaticResource BackgroundColor}" />
@@ -95,7 +88,6 @@
     <SolidColorBrush x:Key="ControlBusyBorderBrush" Color="{StaticResource ControlBusyBorderColor}" />
     <SolidColorBrush x:Key="ControlGoodBorderBrush" Color="{StaticResource ControlGoodBorderColor}" />
     <SolidColorBrush x:Key="ControlBadBorderBrush" Color="{StaticResource ControlBadBorderColor}" />
-
     
     <SolidColorBrush x:Key="ButtonBorderBrush" Color="{StaticResource ButtonBorderColor}" />
     <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{StaticResource ControlBackgroundColor}" />
@@ -103,16 +95,15 @@
     <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="{StaticResource DisabledBackgroundColor}" />
 
     <LinearGradientBrush x:Key="HighlightGradientBrush" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="{StaticResource HighlightDarkColor}" Offset="0" />
-        <GradientStop Color="{StaticResource HighlightColor}" Offset="1" />
+        <GradientStop Color="{StaticResource HighlightColor}" Offset="0" />
+        <GradientStop Color="PaleVioletRed" Offset="1" />
     </LinearGradientBrush>
 
     <LinearGradientBrush x:Key="HighlightGradientBrushHorizontal" StartPoint="0,0" EndPoint="1,0">
         <GradientStop Color="{StaticResource HighlightColor}" Offset="0" />
-        <GradientStop Color="LimeGreen" Offset="1" />
+        <GradientStop Color="PaleVioletRed" Offset="1" />
     </LinearGradientBrush>
 
     <Thickness x:Key="DefaultControlBorderThickness">0</Thickness>
-
-</ResourceDictionary>
     
+</ResourceDictionary>

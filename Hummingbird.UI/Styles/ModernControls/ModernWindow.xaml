@@ -139,8 +139,8 @@
                                 </Grid.ColumnDefinitions>
 
 
-
-                                <Border Grid.Row="0" Grid.ColumnSpan="7" Grid.RowSpan="3" Background="{DynamicResource MenuBackgroundBrush}" />
+                                <!--This border is used as background of the menu bar (Title, Level 1 menu and Level2 menu -->
+                                <Border Grid.Row="0" Grid.ColumnSpan="7" Grid.RowSpan="3" Style="{DynamicResource MenuBackgroundStyle}" />
                                 
 
                                 <!-- Backstage -->
@@ -202,9 +202,9 @@
                                             </Rectangle.Fill>
                                         </Rectangle>
                                     </Button>
-                                    <Button x:Name="MinimizeButton" FontFamily="Marlett" Style="{DynamicResource ControlBoxButton}" Click="MinimizeButton_Click">0</Button>
-                                    <Button x:Name="MaximumButton" FontFamily="Marlett" Style="{DynamicResource ControlBoxButton}" Click="MaximumButton_Click">1</Button>
-                                    <Button x:Name="CloseButton" FontFamily="Marlett" Style="{DynamicResource CloseButton}" Click="CloseButton_Click">r</Button>
+                                    <Button x:Name="MinimizeButton" FontFamily="Marlett" Style="{DynamicResource ModernWindowControlBoxButton}" Click="MinimizeButton_Click">0</Button>
+                                    <Button x:Name="MaximumButton" FontFamily="Marlett" Style="{DynamicResource ModernWindowControlBoxButton}" Click="MaximumButton_Click">1</Button>
+                                    <Button x:Name="CloseButton" FontFamily="Marlett" Style="{DynamicResource ModernWindowCloseButton}" Click="CloseButton_Click">r</Button>
                                 </StackPanel>
 
 
@@ -231,7 +231,7 @@
                                 <ItemsControl ItemsSource="{TemplateBinding MainMenuLevel2}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6">
                                     <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10" >
+                                            <StackPanel Orientation="Horizontal" MinHeight="20" >
                                                 <StackPanel.Resources>
                                                     <Style TargetType="{x:Type local:ModernMenuItem}" BasedOn="{StaticResource Level2MenuItemStyle}" />
                                                 </StackPanel.Resources>
@@ -250,8 +250,13 @@
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
 
-                                    <StackPanel Orientation="Horizontal">
-                                        <Border Style="{DynamicResource LeftInBorder}" Visibility="{Binding Items.Count, Converter={StaticResource IntToVisibilityConverter}, Mode=OneWay}" DataContext="{Binding ElementName=ItemsControl}">
+
+                                    <!-- Content -->
+                                    <ContentPresenter Grid.Column="1"  />
+                                    
+                                    
+                                    <!-- Level 3 menu-->
+                                        <Border Style="{DynamicResource LeftInBorder}" Visibility="{Binding Items.Count, Converter={StaticResource IntToVisibilityConverter}, Mode=OneWay}" DataContext="{Binding ElementName=ItemsControl}" Padding="0,30,20,0" Background="{DynamicResource MenuBackgroundBrush}" >
                                             <ItemsControl ItemsSource="{TemplateBinding MainMenuLevel3}" x:Name="ItemsControl"  >
                                                 <ItemsControl.RenderTransform>
                                                     <TranslateTransform />
@@ -268,11 +273,7 @@
                                             </ItemsControl>
                                         </Border>
 
-                                        <GridSplitter Margin="0,0,20,0" Visibility="{Binding Items.Count, Converter={StaticResource IntToVisibilityConverter}, Mode=OneWay}" DataContext="{Binding ElementName=ItemsControl}"  />
-                                    </StackPanel>
 
-                                    <!-- Content -->
-                                    <ContentPresenter Grid.Column="2"  />
 
 
                                 </Grid>

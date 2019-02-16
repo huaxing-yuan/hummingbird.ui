@@ -21,6 +21,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Button Content="Show sidebar on the right side" Click="Button_Click" VerticalAlignment="Center" HorizontalAlignment="Center" />
         <TextBlock Text="Set maximum width of the side bar" Grid.Row="1"/>
@@ -29,5 +30,6 @@
         <TextBox Text="{Binding SideBarMinWidth}" Grid.Row="4" />
         <Button Content="Show An information" Click="Button1_Click" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Row="5"/>
         <Button Content="Show An Toast Notification" Click="Button2_Click" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" />
+        <ui:ModernSwitch Grid.Row="7" CheckedText="Show highlighted title" UnCheckedText="show unhighlighted title" IsChecked="{Binding IsTitleHighlighted, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ui:BasicWindow}}}" />
     </Grid>
 </ui:BasicWindow>
