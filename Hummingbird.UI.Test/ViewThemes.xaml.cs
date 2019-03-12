@@ -39,7 +39,7 @@ namespace Hummingbird.UI.Demo
                 previousTheme.BorderBrush = new SolidColorBrush(Colors.Transparent);
             }
             string theme = themeColor;
-            Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("pack://application:,,,/Hummingbird.UI;component/Styles/ColorShemes/" + theme + ".xaml") });
+            Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri($"pack://application:,,,/Hummingbird.UI;component/Styles/ColorShemes/{theme}.xaml") });
 
             border.BorderBrush = (Brush)FindResource("HighlightBrush");
             previousTheme = border;

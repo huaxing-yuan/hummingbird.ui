@@ -44,8 +44,8 @@
     <Color x:Key="MenuBackgroundColor">Black</Color>
 
     <LinearGradientBrush x:Key="MenuBackgroundBrush" StartPoint="0,0" EndPoint="0,1" >
-        <GradientStop Color="{StaticResource MenuBackgroundColor}" Offset="1" />
-        <GradientStop Color="#222222"  Offset="0"/>
+        <GradientStop Color="#1A0900" Offset="1" />
+        <GradientStop Color="#331100"  Offset="0"/>
     </LinearGradientBrush>
 
     <Style x:Key="MenuBackgroundStyle" TargetType="Border">
@@ -59,7 +59,7 @@
 
     <SolidColorBrush x:Key="MenuForegroundBrush" Color="White" />
 
-    <SolidColorBrush x:Key="Level1MenuForegroundBrush" Color="Goldenrod" />
+    <SolidColorBrush x:Key="Level1MenuForegroundBrush" Color="#ffad33" />
     <SolidColorBrush x:Key="Level2MenuForegroundBrush" Color="#ffad33" />
     <SolidColorBrush x:Key="Level2MenuBorderBrush" Color="#ff9900" />
     <SolidColorBrush x:Key="ModernMenuButtonBackgroundBrush" Color="{StaticResource StatusBarBackgroundColor}" />

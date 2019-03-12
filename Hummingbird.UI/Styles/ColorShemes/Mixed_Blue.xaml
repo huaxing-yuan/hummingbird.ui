@@ -47,8 +47,8 @@
     <Color x:Key="MenuBackgroundColor">Black</Color>
     
     <LinearGradientBrush x:Key="MenuBackgroundBrush" StartPoint="0,0" EndPoint="0,1" >
-        <GradientStop Color="{StaticResource MenuBackgroundColor}" Offset="1" />
-        <GradientStop Color="#222222"  Offset="0"/>
+        <GradientStop Color="#001122" Offset="1" />
+        <GradientStop Color="#002244"  Offset="0"/>
     </LinearGradientBrush>
     
     <Style x:Key="MenuBackgroundStyle" TargetType="Border">
