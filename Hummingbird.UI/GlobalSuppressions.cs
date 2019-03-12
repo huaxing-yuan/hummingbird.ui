@@ -11,4 +11,6 @@
 // a specific target and scoped to a namespace, type, member, etc.
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S3220:Method calls should not resolve ambiguously to overloads with \"params\"", Justification = "<Pending>", Scope = "member", Target = "~M:Hummingbird.UI.BasicWindow.SideBarVisibilityChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S3220:Method calls should not resolve ambiguously to overloads with \"params\"", Justification = "<Pending>", Scope = "member", Target = "~M:Hummingbird.UI.GridWithPadding.GridWithMargin_Loaded(System.Object,System.Windows.RoutedEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Minor Code Smell", "S3220:Method calls should not resolve ambiguously to overloads with \"params\"", Justification = "<Pending>", Scope = "member", Target = "~M:Hummingbird.UI.TextBlockAutoToolTip.OnAutoToolTipEnabledChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)")]
 
