@@ -22,18 +22,21 @@
         <Setter Property="SnapsToDevicePixels" Value="true"/>
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="FocusVisualStyle"    Value="{StaticResource RadioButtonFocusVisual}"/>
+        <Setter Property="Margin" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <StackPanel Orientation="Horizontal" Margin="{TemplateBinding Margin}">
                     <BulletDecorator Background="Transparent">
                         <BulletDecorator.Bullet>
-                            <Grid Width="16" Height="16"  VerticalAlignment="Center" >
-                                <Ellipse x:Name="Border"  Fill="{DynamicResource ControlBackgroundSemiTransparentBrush}" StrokeThickness="1" Stroke="{DynamicResource ForegroundBrush}" />
-                                <Ellipse x:Name="CheckMark" Margin="4" Fill="{DynamicResource ForegroundBrush}" />
+                            <Grid Width="16" Height="16"  VerticalAlignment="Center" Margin="4" >
+                                <Ellipse x:Name="Border"  Fill="{DynamicResource BackgroundBrush}" StrokeThickness="1" Stroke="{DynamicResource ForegroundBrush}" />
+                                <Ellipse x:Name="CheckMark" Margin="3" Fill="{DynamicResource HighlightBrush}" />
                             </Grid>
                         </BulletDecorator.Bullet>
-                        <ContentPresenter Margin="4,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" RecognizesAccessKey="True"/>
                     </BulletDecorator>
+                    <ContentPresenter Margin="4,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" RecognizesAccessKey="True"/>
+                    </StackPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="false">
                             <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
@@ -41,6 +44,7 @@
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter TargetName="Border" Property="Fill" Value="{DynamicResource ControlBackgroundBrush}" />
                             <Setter TargetName="Border" Property="Stroke" Value="{DynamicResource HighlightBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource HighlightBrush}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter TargetName="Border" Property="Fill" Value="{DynamicResource ControlBackgroundSemiTransparentBrush}" />
