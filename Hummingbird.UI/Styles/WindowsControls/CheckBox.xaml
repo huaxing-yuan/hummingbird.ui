@@ -94,13 +94,13 @@
                                     Grid.Column="1" Grid.ColumnSpan="5"
                                     Grid.Row="2" Grid.RowSpan="5"
                                     BorderThickness="1" Background="{DynamicResource BackgroundBrush}"
-                                BorderBrush="{DynamicResource ControlBorderBrush}" />
+                                BorderBrush="{DynamicResource ForegroundBrush}" />
 
                                 <Path x:Name="InnerPath"
                                   Grid.Column="1" Grid.ColumnSpan="5"
                                   Grid.Row="2" Grid.RowSpan="5"
                                   Data="M31,5 L19.5,5 19.5,19.5 34.5,19.5 34.5,11.75" Fill="{DynamicResource BackgroundBrush}" 
-                                  Stretch="Fill" Stroke="{DynamicResource ControlBorderBrush}"/>
+                                  Stretch="Fill" Stroke="{DynamicResource ForegroundBrush}"/>
 
                                 <Path x:Name="CheckMark"
                                   Grid.Column="2" Grid.ColumnSpan="5"
@@ -151,7 +151,7 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="InnerBorder" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="InnerBorder" Property="Visibility" Value="Hidden" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="CheckMark" Property="Fill" Value="{DynamicResource DisabledForegroundBrush}" />

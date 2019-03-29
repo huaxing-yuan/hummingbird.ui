@@ -43,6 +43,25 @@
                 </StackPanel>
             </ScrollViewer>
         </TabItem>
+        <TabItem Header="Selection Controls">
+            <WrapPanel Orientation="Vertical">
+            <RadioButton Content="Radio Button - Checked" IsChecked="True" GroupName="normalStyle" />
+                <RadioButton Content="Radio Button - Unchecked" IsChecked="False" GroupName="normalStyle" />
+
+                <RadioButton Style="{DynamicResource ButtonStyleRadioButton}" Content="ButtonStyleRadioButton" GroupName="buttonStyle" Margin="4" />
+                <RadioButton Style="{DynamicResource ButtonStyleRadioButton}" Content="ButtonStyleRadioButton 2" GroupName="buttonStyle" Margin="4" />
+                <RadioButton Style="{DynamicResource ButtonStyleRadioButton}" Content="ButtonStyleRadioButton 3" GroupName="buttonStyle" Margin="4" />
+
+                <RadioButton Style="{DynamicResource LargeButtonStyleRadioButton}" Content="LargeButtonStyleRadioButton" GroupName="buttonStyle" Margin="4" />
+                <RadioButton Style="{DynamicResource LightTabStyleRadioButton}" Content="LightTabStyleRadioButton" GroupName="buttonStyle" Margin="4" />
+                <RadioButton Style="{DynamicResource LightTabStyleRadioButton2}" Content="LightTabStyleRadioButton2" GroupName="buttonStyle" Margin="4" />
+
+                <RadioButton Style="{DynamicResource TabStyleRadioButton}" Content="TabStyleRadioButton" GroupName="buttonStyle" Margin="4" />
+
+                <CheckBox Content="This is a check box" />
+                <CheckBox Content="This is another check box" />
+            </WrapPanel>
+        </TabItem>
         <TabItem Header="TextBox">
             <ScrollViewer HorizontalScrollBarVisibility="Auto">
                 <UniformGrid Rows="6" Columns="2" VerticalAlignment="Top">
