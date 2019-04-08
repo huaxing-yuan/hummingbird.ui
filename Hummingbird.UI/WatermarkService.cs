@@ -67,10 +67,18 @@ namespace Hummingbird.UI
             Control control = (Control)d;
             control.Loaded += Control_Loaded;
 
-            if (d is ComboBox || d is TextBox)
+            if (d is ComboBox || d is TextBox || d is PasswordBox)
             {
                 control.GotKeyboardFocus += Control_GotKeyboardFocus;
                 control.LostKeyboardFocus += Control_Loaded;
+                if(d is TextBox tb)
+                {
+                    tb.TextChanged += Tb_TextChanged;
+                }
+                if(d is PasswordBox pb)
+                {
+                    pb.PasswordChanged += Pb_PasswordChanged;
+                }
             }
 
             if (d is ItemsControl && !(d is ComboBox))
@@ -84,6 +92,24 @@ namespace Hummingbird.UI
                 // for ItemsSource property  
                 DependencyPropertyDescriptor prop = DependencyPropertyDescriptor.FromProperty(ItemsControl.ItemsSourceProperty, i.GetType());
                 prop.AddValueChanged(i, ItemsSourceChanged);
+            }
+        }
+
+        private static void Pb_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            Control control = (Control)sender;
+            if (ShouldShowWatermark(control))
+            {
+                ShowWatermark(control);
+            }
+        }
+
+        private static void Tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Control control = (Control)sender;
+            if (ShouldShowWatermark(control))
+            {
+                ShowWatermark(control);
             }
         }
 

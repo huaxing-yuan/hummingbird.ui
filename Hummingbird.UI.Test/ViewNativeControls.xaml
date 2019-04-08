@@ -70,8 +70,24 @@
                     <TextBox Text="NoBorderTextboxStyle" Style="{DynamicResource NoBorderTextboxStyle}" Margin="4" IsReadOnly="True" />
 
                     <PasswordBox Password="password" Margin="4" ToolTip="DefaultPasswordBoxStyle" />
-                    
-                    
+
+                    <AdornerDecorator>
+                        <TextBox Margin="4">
+                            <ui:WatermarkService.Watermark>
+                                <TextBlock Text="TextBox with watermark" />
+                            </ui:WatermarkService.Watermark>
+                        </TextBox>
+                    </AdornerDecorator>
+
+                    <AdornerDecorator>
+                        <TextBox Margin="4">
+                            <ui:WatermarkService.Watermark>
+                                <TextBlock Text="Passwordbox with watermark" />
+                            </ui:WatermarkService.Watermark>
+                        </TextBox>
+                    </AdornerDecorator>
+
+
                 </UniformGrid>
             </ScrollViewer>
         </TabItem>
