@@ -33,7 +33,15 @@ namespace Hummingbird.UI
         /// <returns>the <see cref="double"/> value within the Dependency Object</returns>
         public static double GetValue(DependencyObject obj)
         {
-            return double.Parse(obj.GetValue(ValueProperty).ToString());
+            var value = double.Parse(obj.GetValue(ValueProperty).ToString());
+            if(double.IsNaN(value) || double.IsInfinity(value))
+            {
+                return 0d;
+            }
+            else
+            {
+                return value;
+            }
         }
 
         /// <summary>
@@ -43,7 +51,14 @@ namespace Hummingbird.UI
         /// <param name="value">The value.</param>
         public static void SetValue(DependencyObject obj, double value)
         {
-            obj.SetValue(ValueProperty, value);
+            if (double.IsNaN(value) || double.IsInfinity(value))
+            {
+                //do nothing: do not set value for NaN or infinity.
+            }
+            else
+            {
+                obj.SetValue(ValueProperty, value);
+            }
         }
 
         /// <summary>
