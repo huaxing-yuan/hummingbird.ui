@@ -131,5 +131,39 @@
             <DataGrid x:Name="dgDemo" >
             </DataGrid>
         </TabItem>
+        <TabItem Header="Treeview">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TreeView Grid.Column="0">
+                    <TreeViewItem Header="1">
+                        <TreeViewItem Header="1.1"></TreeViewItem>
+                    </TreeViewItem>
+                    <TreeViewItem Header="2"></TreeViewItem>
+                </TreeView>
+
+                <TreeView Grid.Column="1" Style="{StaticResource NoConnectionLineTreeViewStyle}">
+                    <TreeView.Resources>
+                        <Style TargetType="TreeViewItem" BasedOn="{StaticResource TreeViewItemStyleNoConnectionLine}"/>
+                    </TreeView.Resources>
+                    <TreeViewItem>
+                        <TreeViewItem.Header>
+                            <TextBlock Text="101" FontSize="40" />
+                        </TreeViewItem.Header>
+                        <TreeViewItem Header="1.1"></TreeViewItem>
+                    </TreeViewItem>
+                    <TreeViewItem Header="2">
+                        <TreeViewItem Header="2.1"></TreeViewItem>
+                        <TreeViewItem Header="2.1"></TreeViewItem>
+                    </TreeViewItem>
+                </TreeView>
+
+            </Grid>
+
+
+        </TabItem>
     </TabControl>
 </ui:ModernContent>
