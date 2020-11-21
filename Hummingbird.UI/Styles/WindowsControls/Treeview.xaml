@@ -99,7 +99,7 @@
                 <ControlTemplate TargetType="{x:Type TreeViewItem}">
                     <Grid SnapsToDevicePixels="True">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition MinWidth="19" Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
@@ -122,7 +122,7 @@
                             <Setter TargetName="ItemsHost" Property="Visibility" Value="Collapsed"/>
                         </Trigger>
                         <Trigger Property="HasItems" Value="false">
-                            <Setter TargetName="Expander" Property="Visibility" Value="Hidden"/>
+                            <Setter TargetName="Expander" Property="Visibility" Value="Collapsed"/>
                         </Trigger>
                         <Trigger  Property="IsExpanded" Value="True">
                             <Trigger.EnterActions>
