@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib" 
+>
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="Fonts.xaml" />
+		<ResourceDictionary Source="ColorShemes/Light_Blue.xaml" />
+		<ResourceDictionary Source="Sizes/DefaultSize.xaml" />
+        <ResourceDictionary Source="WindowsControls/Image.xaml" />
+        <ResourceDictionary Source="WindowsControls/Toolbar.xaml" />
+        <ResourceDictionary Source="WindowsControls/Textbox.xaml" />
+		<ResourceDictionary Source="WindowsControls/Textblock.xaml" />
+		<ResourceDictionary Source="WindowsControls/Border.xaml" />
+        <ResourceDictionary Source="WindowsControls/GridSplitter.xaml" />
+        <!--<ResourceDictionary Source="WindowsControls/Button.xaml" />   added by toolbar-->
+        <ResourceDictionary Source="WindowsControls/ComboBoxItem.xaml" />
+        <ResourceDictionary Source="WindowsControls/ComboBox.xaml" />
+        <ResourceDictionary Source="WindowsControls/CheckBox.xaml" />
+        <ResourceDictionary Source="WindowsControls/ListBox.xaml" />
+        <ResourceDictionary Source="WindowsControls/ListView.xaml" />
+        <ResourceDictionary Source="WindowsControls/Menu.xaml" />
+        <ResourceDictionary Source="WindowsControls/RadioButton.xaml" />
+        <ResourceDictionary Source="WindowsControls/Scrollbars.xaml" />
+        <ResourceDictionary Source="WindowsControls/Tooltip.xaml" />
+        <ResourceDictionary Source="WindowsControls/Treeview.xaml" />
+        <ResourceDictionary Source="WindowsControls/StatusBar.xaml" />
+		<ResourceDictionary Source="WindowsControls/TabControl.xaml" />
+		<ResourceDictionary Source="WindowsControls/ProgressBar.xaml" />
+        <ResourceDictionary Source="WindowsControls/Expander.xaml" />
+        <ResourceDictionary Source="WindowsControls/DataGrid.xaml" />
+        <ResourceDictionary Source="ModernControls/Icons.xaml" />
+        <ResourceDictionary Source="ModernControls/Symbols.xaml" />
+        <ResourceDictionary Source="ModernControls/Mdl2.xaml" />
+        <ResourceDictionary Source="ModernControls/ModernLink.xaml" />
+        <ResourceDictionary Source="ModernControls/IconCheckBox.xaml" />
+        <!--<ResourceDictionary Source="ModernControls/AppbarButton.xaml" /> added by ModernWindow -->
+        <ResourceDictionary Source="ModernControls/SharedAnimations.xaml" />
+        <ResourceDictionary Source="ModernControls/ModernSwitch.xaml" />
+        <ResourceDictionary Source="ModernControls/ModernTile.xaml" />
+        <ResourceDictionary Source="ModernControls/BasicWindow.xaml" />
+        <ResourceDictionary Source="ModernControls/ModernWindow.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+    
+    
+</ResourceDictionary>

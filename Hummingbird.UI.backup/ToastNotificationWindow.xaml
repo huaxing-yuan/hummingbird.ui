@@ -1,0 +1,28 @@
+﻿<Window x:Class="Hummingbird.UI.ToastNotificationWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" ResizeMode="NoResize"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" SizeToContent="Height" Topmost="True" MaxHeight="150" MinHeight="60" Width="350"  ShowInTaskbar="False" WindowStyle="None"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" WindowStartupLocation="Manual" x:ClassModifier="internal"
+        xmlns:ui="clr-namespace:Hummingbird.UI" Foreground="{DynamicResource StatusBarForegroundBrush}" Background="{DynamicResource StatusBarBackgroundBrush}"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Loaded="Window_Loaded" Closed="Window_Closed"
+        mc:Ignorable="d" >
+    <Border Style="{StaticResource FadeInBorder2}"  x:Name="mainBorder"  >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.ColumnSpan="3" BorderThickness="1" BorderBrush="{DynamicResource HighlightBrush}">
+            </Border>
+
+            <Border x:Name="iconBorder" MinWidth="{DynamicResource Value8}" Background="{DynamicResource HighlightBrush}">
+                <ui:AppBarButton x:Name="btnLevel" IconKey="appbar_information" IsCircleVisible="False" Width="32" Margin="0" Height="32" Style="{DynamicResource IconOnlyAppbarButton}" />
+            </Border>
+
+            <TextBlock Grid.Column="1" Margin="{DynamicResource Thickness6363}" MouseLeftButtonDown="txtInformation_MouseLeftButtonDown" x:Name="txtInformation" Style="{DynamicResource TextBlockInformation}" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" Text="{Binding Information, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ui:ToastNotificationWindow}}}"  VerticalAlignment="Center" />
+
+            <ui:AppBarButton Click="AppbarButton_Click" IconKey="appbar_close" Style="{DynamicResource IconOnlyAppbarButton}" IsCircleVisible="False" Width="16" Height="16" Grid.Column="2" VerticalAlignment="Top" Margin="{DynamicResource Thickness2222}" />
+        </Grid>
+    </Border>
+</Window>

@@ -44,6 +44,10 @@
     <Color x:Key="MenuBackgroundColor">White</Color>
     <SolidColorBrush x:Key="MenuBackgroundBrush" Color="Transparent" />
 
+    <Style x:Key="FocusedMenuBackgroundStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource MenuBackgroundBrush}" />
+    </Style>
+    
     <Style x:Key="MenuBackgroundStyle" TargetType="Border">
         <Setter Property="Background" Value="{StaticResource MenuBackgroundBrush}" />
     </Style>

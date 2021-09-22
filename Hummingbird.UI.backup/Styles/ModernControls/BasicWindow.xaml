@@ -1,0 +1,425 @@
+﻿<ResourceDictionary x:Class="Hummingbird.UI.ModernControls.BasicWindowHandler"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Hummingbird.UI" x:ClassModifier="internal"
+                    xmlns:sys="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
+                    xmlns:converters="clr-namespace:Hummingbird.UI.Converters"
+                    >
+    <converters:IntToVisibilityConverterReversed x:Key="IntToVisibilityConverter"/>
+
+    <Style x:Key="TitleCommandButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="FontFamily" Value="{DynamicResource TextFontFamily}" />
+        <Setter Property="FontSize" Value="{DynamicResource ButtonFontSize}" />
+        <Setter Property="Padding" Value="{DynamicResource Thickness6363}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border x:Name="Border" 
+                            Margin="{TemplateBinding Margin}"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Property=Background}"
+                            >
+                        <Grid>
+                            <Border x:Name="Background"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Margin="{DynamicResource Thickness6363N}"
+                                    Background="{DynamicResource HighlightBrush}"
+                                    BorderThickness="0"
+                                    Opacity="0"
+                                    />
+                            <ContentPresenter Margin="{TemplateBinding Padding}" />
+                        </Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStatus">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2"
+                                                         FillBehavior="HoldEnd"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly" />
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2"
+                                                         FillBehavior="HoldEnd"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.8"
+                                                         />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+            </Trigger>
+
+        </Style.Triggers>
+
+    </Style>
+
+    <Style x:Key="TitleCommandToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="FontFamily" Value="{DynamicResource TextFontFamily}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border x:Name="Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            Padding="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="True"
+                            >
+                        <Grid SnapsToDevicePixels="True">
+                            <Label x:Name="Border2"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch"
+                                   Background="{DynamicResource HighlightMiddleBrush}"
+                                   Opacity="0"
+                                   />
+                            <ContentPresenter x:Name="Content"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"
+                                              />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="AniMouseEnter">
+                            <DoubleAnimation Duration="0:0:0.4"
+                                             Storyboard.TargetName="Border2"
+                                             Storyboard.TargetProperty="(Label.Opacity)"
+                                             To=".5"
+                                             />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseLeave">
+                            <DoubleAnimation Duration="0:0:0.4"
+                                             Storyboard.TargetName="Border2"
+                                             Storyboard.TargetProperty="(Label.Opacity)"
+                                             To="0"
+                                             />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseDown">
+                            <DoubleAnimation Duration="0:0:0.2"
+                                             Storyboard.TargetName="Border2"
+                                             Storyboard.TargetProperty="(Label.Opacity)"
+                                             To="1"
+                                             />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseUp">
+                            <DoubleAnimation Duration="0:0:0.2"
+                                             Storyboard.TargetName="Border2"
+                                             Storyboard.TargetProperty="(Label.Opacity)"
+                                             To=".5"
+                                             />
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseEnter}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseLeave}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.PreviewMouseDown">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseDown}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.PreviewMouseUp">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseUp}" />
+                        </EventTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="Border2" Value="{DynamicResource StatusBarBackgroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource StatusBarBackgroundBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource StatusBarForegroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Resources>
+            <Style TargetType="Image">
+                <Setter Property="UseLayoutRounding" Value="True"/>
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Opacity" Value="0.5" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+
+            <Style TargetType="Path">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+            <Style TargetType="Rectangle">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="DefaultBasicWindow" TargetType="{x:Type local:BasicWindow}">
+        <Setter Property="WindowStyle" Value="SingleBorderWindow" />
+        <Setter Property="ResizeMode" Value="CanResizeWithGrip" />
+        <Setter Property="BorderThickness" Value="{DynamicResource Thickness1111}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlActiveBorderBrush}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="FontSize" Value="{DynamicResource TextFontSize}" />
+        <Setter Property="SideBarVisibility" Value="Collapsed" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:BasicWindow}">
+                    <Border x:Name="WindowBorder"
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            >
+                        <Grid>
+                            <Grid x:Name="TemplateGrid">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Border x:Name="TitleBorder" Visibility="Hidden"  Grid.ColumnSpan="4" Background="{DynamicResource ControlActiveBorderBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  />
+
+                                <!--  ICON (0,0) + Control Buttons  -->
+                                <Image Grid.Row="0"
+                                       Grid.Column="0"
+                                       Width="{DynamicResource Value20}"
+                                       Height="{DynamicResource Value20}"
+                                       Margin="{DynamicResource Thickness4444}"
+                                       VerticalAlignment="Center"
+                                       RenderOptions.BitmapScalingMode="HighQuality"
+                                       Source="{TemplateBinding Icon}"
+                                       />
+
+                                <!--  Application Title (0,1)  -->
+                                <Border Grid.Row="0" Background="Transparent"
+                                        Grid.Column="1" Grid.ColumnSpan="2" MouseDown="Title_MouseDown">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock  x:Name="WindowTitle"
+                                               Margin="{DynamicResource Thickness4444}"
+                                               VerticalAlignment="Center"
+                                               FontSize="{DynamicResource Value12}"
+                                               FontWeight="Bold"
+                                               Text="{TemplateBinding Title}"
+                                               />
+
+                                        <TextBlock Text="/" Margin="{DynamicResource Thickness4444}" x:Name="Slash"
+                                               VerticalAlignment="Center"
+                                               FontSize="{DynamicResource Value12}"
+                                               FontWeight="Bold" Visibility="{Binding Commands.Count, Converter={StaticResource IntToVisibilityConverter}, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"  />
+
+                                        <!--  Commands (0,2) -->
+                                        <ItemsControl Grid.Row="0" x:Name="CommandControls"
+                                              Grid.Column="2"
+                                              ItemsSource="{TemplateBinding Commands}"
+                                              >
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <StackPanel IsItemsHost="True"
+                                                        Orientation="Horizontal"
+                                                        Style="{DynamicResource CommandStackPanelStyle}"
+                                                        >
+                                                        <StackPanel.Resources>
+                                                            <Style TargetType="ToggleButton" BasedOn="{StaticResource TitleCommandToggleButtonStyle}" />
+                                                            <Style TargetType="Button" BasedOn="{StaticResource TitleCommandButtonStyle}" />
+                                                        </StackPanel.Resources>
+                                                    </StackPanel>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                        </ItemsControl>
+                                    </StackPanel>
+
+                                </Border>
+
+
+                                <!--  ControlBox (0,3) -->
+                                <StackPanel x:Name="ControlBox"
+                                            Grid.Row="0"
+                                            Grid.Column="3"
+                                            Orientation="Horizontal"
+                                            >
+                                    <Button x:Name="MinimizeButton"
+                                            Click="MinimizeButton_Click"
+                                            FontFamily="Marlett"
+                                            Style="{DynamicResource ControlBoxButton}"
+                                            >
+                                        0
+                                    </Button>
+                                    <Button x:Name="MaximumButton"
+                                            Click="MaximumButton_Click"
+                                            FontFamily="Marlett"
+                                            Style="{DynamicResource ControlBoxButton}"
+                                            >
+                                        1
+                                    </Button>
+                                    <Button x:Name="CloseButton"
+                                            Click="CloseButton_Click"
+                                            FontFamily="Marlett"
+                                            Style="{DynamicResource CloseButton}"
+                                            >
+                                        r
+                                    </Button>
+                                </StackPanel>
+
+                                <ContentPresenter Grid.Row="1" Grid.ColumnSpan="4"/>
+
+
+                                <!-- SideBar -->
+                                <ContentControl Panel.ZIndex="0" Grid.Row="0" Grid.RowSpan="2" MaxWidth="{TemplateBinding SideBarMaxWidth}" MinWidth="{TemplateBinding SideBarMinWidth}" Grid.ColumnSpan="4" HorizontalAlignment="Right" x:Name="SideBar" Visibility="Collapsed" >
+                                    <ContentControl.RenderTransform>
+                                        <TranslateTransform X="0" Y="0" />
+                                    </ContentControl.RenderTransform>
+                                    <Border Background="{DynamicResource SideBarBackgroundBrush}" BorderThickness="4,0,0,0" BorderBrush="{DynamicResource HighlightBrush}" Padding="{DynamicResource HeaderMargin}">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Orientation="Horizontal">
+                                                <local:AppBarButton IconKey="appbar_chevron_right" Height="32" Width="32" Style="{DynamicResource IconOnlyAppbarButton}" IsCircleVisible="True" Click="BtnHideSideBar_Click"  />
+                                                <TextBlock Text="{TemplateBinding SideBarTitle}" Style="{DynamicResource TextBlockViewHeader}" Margin="4" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                            </StackPanel>
+                                            <ContentControl Content="{TemplateBinding SideBar}" Grid.Row="1" Grid.ColumnSpan="2" />
+                                        </Grid>
+                                    </Border>
+                                </ContentControl>
+
+
+                            </Grid>
+                            <Border x:Name="Mask"
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="4"
+                                        Panel.ZIndex="50"
+                                        Background="{DynamicResource BackgroundBrush}"
+                                        Opacity="0.8"
+                                        Visibility="Collapsed"
+                                        />
+                            <Border Padding="{DynamicResource HeaderMargin}" VerticalAlignment="Center" x:Name="MessageBox" Style="{DynamicResource FadeInBorder}" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="7" Panel.ZIndex="100" Background="{DynamicResource HighlightBrush}" Visibility="Collapsed">
+                                <StackPanel Margin="{DynamicResource HeaderMargin}">
+                                    <TextBlock Style="{DynamicResource TextBlockViewHeader}" Foreground="{DynamicResource HighlightForegroundBrush}" Text="{TemplateBinding MessageBoxTitle}" />
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" MaxHeight="250" MinHeight="50">
+                                        <TextBlock Foreground="{DynamicResource HighlightForegroundBrush}" Margin="{DynamicResource HeaderMargin}" TextWrapping="Wrap" x:Name="MessageBoxContent" Text="{TemplateBinding MessageBoxContent}" />
+                                    </ScrollViewer>
+                                    <Button Content="OK" Style="{DynamicResource DialogButton}" x:Name="btnCloseMessageBox" Click="btnCloseMessageBox_Click" HorizontalAlignment="Right" />
+                                </StackPanel>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasControlBox" Value="False">
+                            <Setter TargetName="ControlBox" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="WindowStatus" Value="Busy">
+                            <Setter TargetName="WindowBorder" Property="BorderBrush" Value="{DynamicResource ControlBusyBorderBrush}" />
+                        </Trigger>
+                        <Trigger Property="WindowStatus" Value="Good">
+                            <Setter TargetName="WindowBorder" Property="BorderBrush" Value="{DynamicResource ControlGoodBorderBrush}" />
+                        </Trigger>
+                        <Trigger Property="WindowStatus" Value="Bad">
+                            <Setter TargetName="WindowBorder" Property="BorderBrush" Value="{DynamicResource ControlBadBorderBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsMaskVisible" Value="True">
+                            <Setter TargetName="Mask" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="TemplateGrid" Property="Effect">
+                                <Setter.Value>
+                                    <BlurEffect />
+                                </Setter.Value>
+                            </Setter>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard FillBehavior="HoldEnd"  >
+                                        <DoubleAnimation Storyboard.TargetName="Mask" Storyboard.TargetProperty="Opacity" From="0" To="0.8" Duration="0:0:0.5" />
+                                        <DoubleAnimation Storyboard.TargetName="TemplateGrid" Storyboard.TargetProperty="Effect.(BlurEffect.Radius)" From="0" To="10" Duration="0:0:0.5" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsMessageBoxVisible" Value="True">
+                            <Setter TargetName="MessageBox" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsTitleHighlighted" Value="True">
+                            <Setter TargetName="TitleBorder" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="Slash" Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+                            <Setter TargetName="WindowTitle" Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+                            <Setter TargetName="MinimizeButton" Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+                            <Setter TargetName="MaximumButton" Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+                            <Setter TargetName="CloseButton" Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+                            <Setter TargetName="WindowBorder" Property="BorderThickness" Value="{DynamicResource Thickness4444}" />
+                        </Trigger>
+                        <Trigger Property="ResizeMode" Value="NoResize">
+                            <Setter TargetName="MinimizeButton" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="MaximumButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="ResizeMode" Value="CanMinimize">
+                            <Setter TargetName="MaximumButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsActive" Value="False">
+                            <Setter TargetName="WindowTitle" Property="Opacity" Value="80" />
+                            <Setter TargetName="WindowBorder" Property="BorderBrush" Value="{DynamicResource DisabledForegroundBrush}" />
+                            <Setter TargetName="TitleBorder" Property="Background" Value="{DynamicResource DisabledForegroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <!--  {Binding Source={x:Static shell:SystemParameters2.Current}, Path=WindowResizeBorderThickness}  -->
+                            <Setter TargetName="WindowBorder" Property="Padding" Value="6,7" />
+                            <Setter TargetName="WindowBorder" Property="BorderThickness" Value="{DynamicResource Thickness1111}" />
+                            <Setter TargetName="MaximumButton" Property="Content" Value="2" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:ModernWindow
+	x:Class="Hummingbird.UI.Demo.Window1" xmlns:ui="clr-namespace:Hummingbird.UI;assembly=Hummingbird.UI" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib"
+	Title="Hummingbird UI Demo" AvatarSize="28" AvatarClicked="ModernWindow_AvatarClicked"
+	xmlns:demo="clr-namespace:Hummingbird.UI.Demo" IsAvatarVisible="True" AvatarText="Username"
+	Height="500" MinHeight="500" MinWidth="600"
+	Width="700"
+>
+    <ui:ModernWindow.AvatarBrush>
+        <ImageBrush ImageSource="Images/avatar.png" Stretch="UniformToFill" />
+    </ui:ModernWindow.AvatarBrush>
+    <ui:ModernWindow.MainMenu>
+        <ui:ModernMenuItem Header="windows" Key="controls" >
+            <ui:ModernMenuItem Header="MODERN WINDOW" Key="modern" ContentType="{x:Type demo:ViewModernWindow}"/>
+        </ui:ModernMenuItem>
+        <ui:ModernMenuItem Header="menus" Key="menus" >
+            <ui:ModernMenuItem Header="level2" Key="level2">
+                <ui:ModernMenuItem Header="level 3 menu 1" Key="31" ContentType="{x:Type demo:ViewLevel3MenuDemo1}" />
+                <ui:ModernMenuItem Header="level 3 menu 2" Key="32" ContentType="{x:Type demo:ViewLevel3MenuDemo2}"  />
+                <ui:ModernMenuItem Header="level 3 menu 3" Key="33" />
+            </ui:ModernMenuItem>
+        </ui:ModernMenuItem>
+        <ui:ModernMenuItem Header="controls" Key="controls" >
+            <ui:ModernMenuItem Header="NATIVE CONTROLS" Key="native" ContentType="{x:Type demo:ViewNativeControls}"/>
+            <ui:ModernMenuItem Header="MODERN CONTROLS" Key="modern">
+                <ui:ModernMenuItem Header="ModernPresenter" Key="mp" ContentType="{x:Type demo:ViewModernPresenter}" />
+                <ui:ModernMenuItem Header="ModernTile" Key="mt" />
+                <ui:ModernMenuItem Header="AppbarButton" Key="appbarButton" />
+                <ui:ModernMenuItem Header="AppbarIcon" Key="ai" />
+                <ui:ModernMenuItem Header="ModernCounter" Key="mc" />
+                <ui:ModernMenuItem Header="ModernSwitch" Key="ms" />
+                <ui:ModernMenuItem Header="MultiSelectComboBox" Key="mscb" />
+            </ui:ModernMenuItem>
+        </ui:ModernMenuItem>
+        <ui:ModernMenuItem	Header="themes" Key="themes" ContentType="{x:Type demo:ViewThemes}" />
+        <ui:ModernMenuItem	Header="icons" Key="icons" >
+            <ui:ModernMenuItem Header="NATIVE ICONS" Key="native" ContentType="{x:Type demo:ViewNativeIcons}"/>
+            <ui:ModernMenuItem Header="WINDOWS 8.1 ICONS" Key="win81" ContentType="{x:Type demo:ViewWin8Icons}"/>
+            <ui:ModernMenuItem Header="WINDOWS 10 ICONS" Key="win10"  ContentType="{x:Type demo:ViewWin10Icons}"/>
+        </ui:ModernMenuItem>
+        <ui:ModernMenuItem	Header="advanced features" Key="advanced" />
+    </ui:ModernWindow.MainMenu>
+    <ui:ModernWindow.BackstagePanel>
+        <TabControl>
+            <TabItem Header="General"></TabItem>
+            <TabItem Header="Settings"></TabItem>
+            <TabItem Header="Extensions"></TabItem>
+        </TabControl>
+    </ui:ModernWindow.BackstagePanel>
+    <ui:ModernWindow.DefaultStatusBar>
+        <StatusBar>
+            <ui:AppBarButton IconKey="appbar_new" Caption="new" />
+            <ui:AppBarButton IconKey="appbar_folder_open" Caption="open" />
+            <ui:AppBarButton IconKey="appbar_save" Caption="save" />
+            <ui:AppBarButton IconKey="appbar_close" Caption="close" />
+            <ui:AppBarButton IconKey="appbar_arrow_expand" Caption="expand" />
+            <ui:AppBarButton IconKey="appbar_draw_brush" Caption="brush" />
+        </StatusBar>
+    </ui:ModernWindow.DefaultStatusBar>
+</ui:ModernWindow> 

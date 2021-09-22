@@ -50,6 +50,10 @@
         <Setter Property="Background" Value="{StaticResource MenuBackgroundBrush}" />
     </Style>
 
+    <Style x:Key="FocusedMenuBackgroundStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource MenuBackgroundBrush}" />
+    </Style>
+
     <SolidColorBrush x:Key="MenuForegroundBrush" Color="{StaticResource ForegroundColor}" />
 
     <LinearGradientBrush x:Key="Level1MenuForegroundBrush" StartPoint="0,0" EndPoint="0,1">
