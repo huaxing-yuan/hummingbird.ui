@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Huaxing YUAN</authors>
+    <owners>Huaxing YUAN</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Hummingbird UI is a package that helps you to build professional applications with WPF. In this release, we introduced a SaveAsImageExtender that can be attached to any FrameworkElement, in order to save the UI Content as an Image.</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>Modern UI Framework WPF</tags>
+    <projectUrl>https://hummingbirdalm.azurewebsites.net/uiframework.aspx</projectUrl>
+    <licenseUrl>https://huaxing-yuan.github.io/hummingbird.ui.doc/html/2ce96079-1f5e-4807-961a-3e93aaa65908.htm</licenseUrl>
+    <iconUrl>https://huaxing-yuan.github.io/hummingbird.ui.doc/icons/favicon.ico</iconUrl>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework="net45"  />
+      <frameworkAssembly assemblyName="System.Data.DataSetExtensions" targetFramework="net45" />
+      <frameworkAssembly assemblyName="System.Xaml" targetFramework="net45" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="net45" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework="net45" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="net45" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\Hummingbird.UI.XML" target="lib\net45" />
+  </files>
+</package>

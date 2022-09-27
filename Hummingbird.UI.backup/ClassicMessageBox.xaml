@@ -1,0 +1,36 @@
+﻿<ui:BasicWindow x:Class="Hummingbird.UI.ClassicMessageBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  SizeToContent="Height"
+             xmlns:ui="clr-namespace:Hummingbird.UI"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  Topmost="True"
+             mc:Ignorable="d" 
+             ShowInTaskbar="False" HasControlBox="False" MaxHeight="500" Width="700" HorizontalAlignment="Center" VerticalAlignment="Center"  WindowStartupLocation="CenterOwner">
+    <Border Style="{StaticResource FadeInBorder2}">
+        <Grid Margin="5,10,5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.RenderTransform>
+                <ScaleTransform ScaleX="1" ScaleY="1" />
+            </Grid.RenderTransform>
+            <TextBlock Grid.Row="0" Margin="20,0,0,0"  x:Name="txtHeader" Text="PLEASE CONFIRM?" HorizontalAlignment="Left" Style="{DynamicResource TextBlockViewHeaderHighlighted}" />
+            <TextBlock Grid.Row="1" Background="{DynamicResource HighlightGradientBrushHorizontal}" Width="300" Margin="20,0,0,0" Height="4" HorizontalAlignment="Left" SnapsToDevicePixels="True" />
+            <ScrollViewer Grid.Row="2" Margin="20,10,20,10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" x:Name="sv">
+            <StackPanel>
+                 <TextBox x:Name="txtMessage" Foreground="{DynamicResource ForegroundBrush}" BorderThickness="0" IsReadOnly="True" Background="Transparent" Style="{DynamicResource NoBorderTextboxStyle}" TextWrapping="Wrap" />
+                <TextBox x:Name="txtDetailedMessages" Visibility="Collapsed" IsReadOnly="True" Background="Transparent" Style="{DynamicResource NoBorderTextboxStyle}" BorderThickness="0" />
+            </StackPanel>
+            </ScrollViewer>
+            <StackPanel Grid.Row="3" Margin="20,0,0,0" x:Name="spDetails" >
+                <TextBlock x:Name="txtShowDetails" Text="Show detailed information..."  Style="{DynamicResource TextBlockHighlighted}"  MouseDown="txtShowDetails_MouseDown" />
+                <TextBlock x:Name="txtDetails" Text="Copy detailed information to clipboard."   Style="{DynamicResource TextBlockHighlighted}" MouseDown="txtDetails_MouseDown" />
+            </StackPanel>
+            <StackPanel x:Name="spButtons" Grid.Row="4" Margin="0,0,20,20" HorizontalAlignment="Right" Orientation="Horizontal" />
+        </Grid>
+    </Border>
+</ui:BasicWindow>

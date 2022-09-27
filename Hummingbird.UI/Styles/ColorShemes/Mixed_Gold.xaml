@@ -57,6 +57,11 @@
         </Setter>
     </Style>
 
+    <Style x:Key="FocusedMenuBackgroundStyle" TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource HighlightDarkBrush}" />
+    </Style>
+
+    
     <SolidColorBrush x:Key="MenuForegroundBrush" Color="White" />
 
     <SolidColorBrush x:Key="Level1MenuForegroundBrush" Color="#ffad33" />

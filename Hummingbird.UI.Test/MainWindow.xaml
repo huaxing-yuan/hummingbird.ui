@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ui:ModernWindow
 	x:Class="Hummingbird.UI.Demo.Window1" xmlns:ui="clr-namespace:Hummingbird.UI;assembly=Hummingbird.UI" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib"
-	Title="Hummingbird UI Demo" AvatarSize="28" AvatarClicked="ModernWindow_AvatarClicked"
+	Title="Hummingbird UI Demo" AvatarSize="28" AvatarClicked="ModernWindow_AvatarClicked" Icon="Images/avatar.png"
 	xmlns:demo="clr-namespace:Hummingbird.UI.Demo" IsAvatarVisible="True" AvatarText="Username"
 	Height="500" MinHeight="500" MinWidth="600"
 	Width="700"

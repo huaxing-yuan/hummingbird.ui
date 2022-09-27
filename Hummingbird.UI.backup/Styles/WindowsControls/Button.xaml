@@ -1,0 +1,673 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="DefaultButtonStyle" TargetType="{x:Type ButtonBase}">
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FontSize" Value="{DynamicResource TextFontSize}" />
+        <Setter Property="Margin" Value="{DynamicResource Thickness4444}" />
+        <Setter Property="Padding" Value="{DynamicResource ThicknessButtonPadding}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border x:Name="Border"
+                            Width="{TemplateBinding Width}"
+                            MinWidth="{TemplateBinding MinWidth}"
+                            Margin="{TemplateBinding Margin}"
+                            Background="{TemplateBinding Property=Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            >
+                        <Grid>
+                            <Border x:Name="Background"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Background="{DynamicResource HighlightBrush}"
+                                    BorderThickness="0"
+                                    Opacity="0"
+                                    />
+                            <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                        </Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStatus">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2"
+                                                         FillBehavior="HoldEnd"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To=".70"
+                                                         />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly" />
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2"
+                                                         FillBehavior="HoldEnd"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+            </Trigger>
+
+        </Style.Triggers>
+        <Style.Resources>
+            <Style TargetType="Path">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+            <Style TargetType="Rectangle">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="ModernMenuButtonStyle" BasedOn="{StaticResource DefaultButtonStyle}"  TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{DynamicResource MenuForegroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ModernMenuButtonBackgroundBrush}" />
+    </Style>
+           
+
+    <Style x:Key="DefaultButtonRedStyle" TargetType="{x:Type ButtonBase}">
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FontSize" Value="{DynamicResource TextFontSize}" />
+        <Setter Property="Margin" Value="{DynamicResource Thickness4444}" />
+        <Setter Property="Padding" Value="{DynamicResource ThicknessButtonPadding}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border x:Name="Border"
+                            Width="{TemplateBinding Width}"
+                            MinWidth="{TemplateBinding MinWidth}"
+                            Margin="{TemplateBinding Margin}"
+                            Background="{TemplateBinding Property=Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            >
+                        <Grid>
+                            <Border x:Name="Background"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Background="Red"
+                                    BorderThickness="0"
+                                    Opacity="0"
+                                    />
+                            <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="Center" />
+                        </Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStatus">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2"
+                                                         FillBehavior="HoldEnd"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To=".70"
+                                                         />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly" />
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2"
+                                                         FillBehavior="HoldEnd"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+            </Trigger>
+
+        </Style.Triggers>
+        <Style.Resources>
+            <Style TargetType="Path">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+            <Style TargetType="Rectangle">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+        </Style.Resources>
+    </Style>
+    
+    <Style BasedOn="{StaticResource DefaultButtonStyle}" TargetType="{x:Type Button}" />
+
+    <Style x:Key="DefaultToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="FontFamily" Value="{DynamicResource TextFontFamily}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Padding" Value="{DynamicResource Thickness6363}" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border x:Name="Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            Padding="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="True"
+                            >
+                        <Grid SnapsToDevicePixels="True">
+                            <Label x:Name="Border2"
+                                   Margin="{DynamicResource Thickness6363N}"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch"
+                                   Background="{DynamicResource HighlightBrush}"
+                                   Opacity="0"
+                                   />
+                            <ContentPresenter x:Name="Content"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"
+                                              />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="AniMouseEnter">
+                            <DoubleAnimation Duration="0:0:0.4"
+                                             Storyboard.TargetName="Border2"
+                                             Storyboard.TargetProperty="(Label.Opacity)"
+                                             To=".75"
+                                             />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseLeave">
+                            <DoubleAnimation Duration="0:0:0.4"
+                                             Storyboard.TargetName="Border2"
+                                             Storyboard.TargetProperty="(Label.Opacity)"
+                                             To="0"
+                                             />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseDown">
+                            <DoubleAnimation Duration="0:0:0.2"
+                                             Storyboard.TargetName="Border2"
+                                             Storyboard.TargetProperty="(Label.Opacity)"
+                                             To="1"
+                                             />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseUp">
+                            <DoubleAnimation Duration="0:0:0.2"
+                                             Storyboard.TargetName="Border2"
+                                             Storyboard.TargetProperty="(Label.Opacity)"
+                                             To=".75"
+                                             />
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseEnter}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseLeave}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.PreviewMouseDown">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseDown}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.PreviewMouseUp">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseUp}" />
+                        </EventTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource HighlightDarkBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Resources>
+            <Style TargetType="Image">
+                <Setter Property="UseLayoutRounding" Value="True" />
+                <Setter Property="SnapsToDevicePixels" Value="True" />
+                <Setter Property="Stretch" Value="None"/>
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Opacity" Value="0.5" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+
+            <Style TargetType="Path">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+            <Style TargetType="Rectangle">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="ControlBoxButton" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Padding" Value="{DynamicResource ThicknessControlBoxPadding}" />
+        <Setter Property="FontSize" Value="{DynamicResource Value14}" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border x:Name="Border"
+                            Margin="{TemplateBinding Margin}"
+                            Background="{TemplateBinding Property=Background}"
+                            >
+                        <Grid>
+                            <Border x:Name="Background"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Background="{DynamicResource HighlightMiddleBrush}"
+                                    BorderThickness="0"
+                                    Opacity="0"
+                                    />
+                            <ContentPresenter Margin="{TemplateBinding Padding}" />
+                        </Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStatus">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2"
+                                                         FillBehavior="HoldEnd"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly" />
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2"
+                                                         FillBehavior="HoldEnd"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.8"
+                                                         />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+            </Trigger>
+
+        </Style.Triggers>
+
+    </Style>
+
+    <Style x:Key="CloseButton" TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Padding" Value="{DynamicResource ThicknessControlBoxPadding}" />
+        <Setter Property="FontSize" Value="{DynamicResource Value14}" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border x:Name="Border"
+                            Margin="{TemplateBinding Margin}"
+                            Background="{TemplateBinding Property=Background}"
+                            >
+                        <Grid>
+                            <Border x:Name="Background"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Background="Crimson"
+                                    BorderThickness="0"
+                                    Opacity="0"
+                                    />
+                            <ContentPresenter Margin="{TemplateBinding Padding}" />
+                        </Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStatus">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2"
+                                                         FillBehavior="HoldEnd"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly" />
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2"
+                                                         FillBehavior="HoldEnd"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.8"
+                                                         />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+            </Trigger>
+
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ModernWindowControlBoxButton" TargetType="{x:Type Button}" BasedOn="{StaticResource ControlBoxButton}">
+        <Setter Property="Foreground" Value="{DynamicResource MenuForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="ModernWindowCloseButton" TargetType="{x:Type Button}" BasedOn="{StaticResource CloseButton}">
+        <Setter Property="Foreground" Value="{DynamicResource MenuForegroundBrush}" />
+    </Style>
+
+
+    <Style BasedOn="{StaticResource DefaultToggleButtonStyle}" TargetType="{x:Type ToggleButton}" />
+
+    <Style x:Key="FlatButtonStyle"
+           BasedOn="{StaticResource DefaultButtonStyle}"
+           TargetType="{x:Type Button}"
+           >
+        <Setter Property="Background" Value="{DynamicResource FlatButtonBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource FlatButtonForegroundBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource DefaultControlBorderThickness}" />
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="{DynamicResource CornerRadius4444}" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+            <Style TargetType="Path">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="FlatButtonRedStyle" BasedOn="{StaticResource DefaultButtonRedStyle}" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Maroon" />
+        <Setter Property="Foreground" Value="{DynamicResource FlatButtonForegroundBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource DefaultControlBorderThickness}" />
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="{DynamicResource CornerRadius4444}" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+            <Style TargetType="Path">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+        </Style.Resources>
+    </Style>
+    <Style x:Key="DialogButton"
+           BasedOn="{StaticResource DefaultButtonStyle}"
+           TargetType="{x:Type Button}"
+           >
+        <Setter Property="BorderThickness" Value="{DynamicResource Thickness2222}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+        <Setter Property="MinWidth" Value="86" />
+    </Style>
+
+    <Style x:Key="CommandButton"
+           BasedOn="{StaticResource DefaultButtonStyle}"
+           TargetType="{x:Type Button}"
+           >
+        <Setter Property="Margin" Value="0" />
+    </Style>
+
+
+    <Style x:Key="CommandStackPanelStyle" TargetType="{x:Type StackPanel}">
+        <Style.Resources>
+            <Style BasedOn="{StaticResource DefaultButtonStyle}" TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="0" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="ToolbarButtonStyle"  TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="FontFamily" Value="{StaticResource TextFontFamily}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                        <Grid>
+                            <Border SnapsToDevicePixels ="True" Margin="-2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="Border2" Background="{DynamicResource HighlightLightBrush}" Opacity="0"/>
+                            <ContentPresenter x:Name="Content" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="AniMouseEnter">
+                            <DoubleAnimation To=".75" Duration="0:0:0.4" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseLeave">
+                            <DoubleAnimation To="0" Duration="0:0:0.4" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseDown">
+                            <DoubleAnimation To="1" Duration="0:0:0.2" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseUp">
+                            <DoubleAnimation To=".75" Duration="0:0:0.2" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseEnter}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseLeave}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.PreviewMouseDown">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseDown}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.PreviewMouseUp">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseUp}" />
+                        </EventTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource HighlightBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Resources>
+            <Style TargetType="Image">
+                <Setter Property="UseLayoutRounding" Value="True" />
+                <Setter Property="SnapsToDevicePixels" Value="True" />
+                <Setter Property="Stretch" Value="None"/>
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Opacity" Value="0.5" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="Path">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+            <Style TargetType="Rectangle">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="ToolbarToggleButtonStyle"  TargetType="ToggleButton">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="FontFamily" Value="{StaticResource TextFontFamily}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                        <Grid>
+                            <Border SnapsToDevicePixels ="True" Margin="-2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="Border2" Background="{DynamicResource HighlightLightBrush}" Opacity="0"/>
+                            <ContentPresenter x:Name="Content" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="AniMouseEnter">
+                            <DoubleAnimation To=".75" Duration="0:0:0.4" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseLeave">
+                            <DoubleAnimation To="0" Duration="0:0:0.4" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseDown">
+                            <DoubleAnimation To="1" Duration="0:0:0.2" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                        <Storyboard x:Key="AniMouseUp">
+                            <DoubleAnimation To=".75" Duration="0:0:0.2" Storyboard.TargetProperty="(Label.Opacity)" Storyboard.TargetName="Border2" />
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseEnter}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseLeave}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.PreviewMouseDown">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseDown}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.PreviewMouseUp">
+                            <BeginStoryboard Storyboard="{StaticResource AniMouseUp}" />
+                        </EventTrigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource HighlightDarkBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource HighlightBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Resources>
+            <Style TargetType="Image">
+                <Setter Property="UseLayoutRounding" Value="True" />
+                <Setter Property="SnapsToDevicePixels" Value="True" />
+                <Setter Property="Stretch" Value="None"/>
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Opacity" Value="0.5" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="Path">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+            <Style TargetType="Rectangle">
+                <Setter Property="Fill" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ButtonBase}}" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+</ResourceDictionary>

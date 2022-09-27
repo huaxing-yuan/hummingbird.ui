@@ -92,6 +92,21 @@ namespace Hummingbird.UI.ModernControls
             Window window = Window.GetWindow(e.Source as DependencyObject);
             ChangeWindowState(window);
         }
+
+
+        void RegularViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            ModernWindow window = Window.GetWindow(e.Source as DependencyObject) as ModernWindow;
+            window.Style = (Style)window.FindResource("DefaultModernWindow");
+        }
+
+        void FocusedViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            ModernWindow window = Window.GetWindow(e.Source as DependencyObject) as ModernWindow;
+            window.Style = (Style)window.FindResource("FocusedModernWindow");
+        }
+
+
         void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             Window window = Window.GetWindow(e.Source as DependencyObject);
